@@ -1,3 +1,6 @@
+import GameCard from "./components/GameCard/GameCard";
+
 export default function App() {
-    return <></>;
+    // TODO this component should not be created here, this is just for testing
+    return <GameCard />;
 }

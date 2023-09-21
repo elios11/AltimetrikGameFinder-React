@@ -1,0 +1,73 @@
+.gameInfo {
+    position: relative;
+    top: -8px;
+    width: 91.18%;
+    padding-left: 4.41%;
+    padding-right: 4.41%;
+
+    .titleAndRanking {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .ranking {
+            font-family: 'Exo';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: right;
+            color: #BF5FE1;
+        }
+
+    }
+
+    .gameDetails {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        font-style: normal;
+        font-size: 14px;
+        align-items: start;
+
+        .gameAttributesName {
+            margin-right: 8px;
+        }
+
+        .gameAttributesValue {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            line-height: 1;
+            margin: 7px;
+            width: 150px;
+        }
+
+        .gameDetailsAttributes {
+            display: flex;
+            flex-direction: column;
+            line-height: 0;
+        }
+
+        .gameDetailsAttributes div {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .platformsIcons {
+        display: flex;
+        width: 25%;
+
+        /*This div needs a little bit of width to keep the layout consistent,
+        it doesn't matter if the icons are bigger, they'll simply overflow to the left*/
+        width: 1px;
+        justify-content: right;
+
+        .icon {
+            margin: 3px;
+        }
+    }
+}
