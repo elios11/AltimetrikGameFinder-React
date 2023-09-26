@@ -3,3 +3,4 @@ dist/
 .prettierrc.js
 .eslintrc.js
 .env.development.local
+commitlint.config.js
