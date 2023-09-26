@@ -10,7 +10,6 @@ export default function LoginForm() {
                 autoComplete="email"
                 id="email"
                 className={styles['form__input']}
-                method="post"
             />
             <span className={styles['form__feedback']} id="emailFeedback">
                 Invalid email
