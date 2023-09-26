@@ -3,7 +3,6 @@ import GameCard from './GameCard/GameCard';
 import fetchData from '../../api/fetchData';
 
 export default function GamesContainer() {
-    console.log('hola')
     const result = fetchData('http://localhost:3001/api/games')
 
     return (
