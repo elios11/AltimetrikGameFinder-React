@@ -5,26 +5,26 @@ export default function fetchData(url) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
-    const rawgioApiKey = ""
+    const rawgioApiKey = '';
     const requestOptions = {
         headers: {
-            "Target-URL": "https://rawg.io",
-            "Authorization": "" // the cors-proxy expects this attribute, otherwise it fails
-        }
-    }
+            'Target-URL': 'https://rawg.io',
+            Authorization: '', // cors-proxy expects this attribute, otherwise it fails
+        },
+    };
 
     useEffect(() => {
         fetch(`${url}?key=${rawgioApiKey}`, requestOptions)
             .then((res) => res.json())
             .then((data) => setData(data))
-            .catch(error => {
+            .catch((error) => {
                 throw new Error(
                     setError(
                         `Cannot fetch the data, error with status ${error}`
                     )
-                )
+                );
             })
-            .finally(() => setLoading(false))
+            .finally(() => setLoading(false));
     }, [loading]);
 
     return { data, loading, error };

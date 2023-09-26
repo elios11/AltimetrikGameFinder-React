@@ -57,17 +57,5 @@
         }
     }
 
-    .platformsIcons {
-        display: flex;
-        width: 25%;
-
-        /*This div needs a little bit of width to keep the layout consistent,
-        it doesn't matter if the icons are bigger, they'll simply overflow to the left*/
-        width: 1px;
-        justify-content: right;
-
-        .icon {
-            margin: 3px;
-        }
-    }
+    
 }

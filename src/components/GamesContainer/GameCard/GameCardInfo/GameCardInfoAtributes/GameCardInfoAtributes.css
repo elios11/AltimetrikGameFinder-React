@@ -1,0 +1,12 @@
+.gameAttributesName {
+    margin-right: 8px;
+}
+
+.gameAttributesValue {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1;
+    margin: 7px;
+    width: 150px;
+}
