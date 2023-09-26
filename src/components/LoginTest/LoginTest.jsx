@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import registerOrLogin from '@api/registerOrLogin';
+import { handleLogin, handleRegister } from '@/utils/loginHandlers';
 
 function LoginTest() {
     // Disabled next line till const response is used
@@ -11,27 +11,13 @@ function LoginTest() {
         error: null,
     });
 
-    const handleLogin = () => {
-        const route = '/login';
-        const email = 'wewe@wewe.com';
-        const password = 'Hola123$';
-        registerOrLogin(email, password, route, setResponse);
-    };
-
-    const handleRegister = () => {
-        const route = '/register';
-        const email = 'wewe@wewe.com';
-        const password = 'Hola123$';
-        registerOrLogin(email, password, route, setResponse);
-    };
-
     return (
         <>
             <div>
-                <button onClick={handleLogin}>login</button>
+                <button onClick={() => handleLogin(setResponse)}>login</button>
             </div>
             <div>
-                <button onClick={handleRegister}>register</button>
+                <button onClick={() => handleRegister(setResponse)}>register</button>
             </div>
         </>
     );

@@ -18,7 +18,7 @@ const registerOrLogin = async (email, password, route, setResponse) => {
 
         let error = null;
         if (!responseFromServer.ok) {
-            error = 'Error http: ' + data.status;
+            error = 'Error http: ' + data;
         }
 
         setResponse((prevResponse) => ({
