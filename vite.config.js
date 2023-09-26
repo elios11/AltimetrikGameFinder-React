@@ -11,6 +11,7 @@ export default defineConfig({
             '@': path.resolve(__dirname, 'src'), // Alias for the src directory
             '@components': path.resolve(__dirname, 'src/components'), // Alias for the components directory
             '@utils': path.resolve(__dirname, 'src/utils'), // Alias for the utils directory
+            '@api': path.resolve(__dirname, 'src/api'), // Alias for the api directory
         },
     },
 });
