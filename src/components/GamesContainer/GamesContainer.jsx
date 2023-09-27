@@ -2,7 +2,8 @@ import GameCard from './GameCard/GameCard';
 import fetchData from '../../api/fetchData';
 
 export default function GamesContainer() {
-    const result = fetchData('http://localhost:3001/api/games');
+    const url = import.meta.env.VITE_REACT_APP_API_URL;
+    const result = fetchData(`${url}/api/games`);
 
     return (
         <div>

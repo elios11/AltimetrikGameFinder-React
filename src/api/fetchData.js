@@ -5,7 +5,7 @@ export default function fetchData(url) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
-    const rawgioApiKey = '';
+    const rawgioApiKey = import.meta.env.VITE_API_KEY;
     const requestOptions = {
         headers: {
             'Target-URL': 'https://rawg.io',
