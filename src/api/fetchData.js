@@ -15,14 +15,16 @@ export default function fetchData(url) {
 
     useEffect(() => {
         fetch(`${url}?key=${rawgioApiKey}`, requestOptions)
-            .then((res) => res.json())
+            .then((res) => {
+                if (res.status >= 400) {
+                    throw new Error(`Request failed with status: ${res.status}`);
+                }
+                return res.json();
+            })
             .then((data) => setData(data))
             .catch((error) => {
-                throw new Error(
-                    setError(
-                        `Cannot fetch the data, error with status ${error}`
-                    )
-                );
+                setError(`Cannot fetch the data, error with status ${error}`);
+                throw new Error(error);
             })
             .finally(() => setLoading(false));
     }, [loading]);
