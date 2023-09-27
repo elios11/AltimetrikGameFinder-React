@@ -1,8 +1,8 @@
-import './GameCardInfo.css';
+import styles from './GameCardInfo.module.css';
 import GameCardInfoAtributes from './GameCardInfoAtributes/GameCardInfoAtributes';
 import GameCardPlatformIcons from './GameCardPlatformIcons/GameCardPlatformIcons';
 
-export default function GameCardInfo(props) {
+export default function GameCardInfo({ game }) {
     function parseDate(dateStrig) {
         const date = new Date(dateStrig);
         return `${date.toLocaleString('en-US', {
@@ -10,33 +10,25 @@ export default function GameCardInfo(props) {
         })} ${date.getDate()}, ${date.getFullYear()}`;
     }
 
-    const genreNames = props.game.genres.map((genre) => genre.name);
+    const genreNames = game.genres.map((genre) => genre.name);
 
     return (
-        <div className="gameInfo">
-            <div className="titleAndRanking">
-                <h3 className="gameTitle">{props.game.name}</h3>
-                <p className="ranking"></p>
+        <div className={styles.gameInfo}>
+            <div className={styles.titleAndRanking}>
+                <h3 className={styles.gameTitle}>{game.name}</h3>
+                <p className={styles.ranking}></p>
             </div>
-            <div className="gameDetails">
-                <div className="gameDetailsAttributes">
-                    <GameCardInfoAtributes
-                        tag="Release date: "
-                        info={parseDate(props.game.released)}
-                    />
-                    <GameCardInfoAtributes
-                        tag="Genres: "
-                        info={genreNames.join(', ')}
-                    />
+            <div className={styles.gameDetails}>
+                <div className={styles.gameDetailsAttributes}>
+                    <GameCardInfoAtributes tag="Release date: " info={parseDate(game.released)} />
+                    <GameCardInfoAtributes tag="Genres: " info={genreNames.join(', ')} />
                 </div>
                 <GameCardPlatformIcons
-                    parentPlatformIds={props.game.parent_platforms.map(
-                        (parentPlatform) => parentPlatform.platform.id
-                    )}
+                    parentPlatformIds={game.parent_platforms.map((parentPlatform) => parentPlatform.platform.id)}
                 />
             </div>
-            <div className="description">
-                <p className="descriptionText"></p>
+            <div className={styles.description}>
+                <p className={styles.descriptionText}></p>
             </div>
         </div>
     );

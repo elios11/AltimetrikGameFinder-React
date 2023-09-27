@@ -1,13 +1,12 @@
-import './GameCard.css';
+import styles from './GameCard.module.css';
 import GameCardImage from './GameCardImage/GameCardImage';
 import GameCardInfo from './GameCardInfo/GameCardInfo';
 
-export default function GameCard(props) {
-    
+export default function GameCard({ game }) {
     return (
-        <div className="card">
-            <GameCardImage image={props.game.background_image} />
-            <GameCardInfo game={props.game} />
+        <div className={styles.card}>
+            <GameCardImage image={game.background_image} />
+            <GameCardInfo game={game} />
         </div>
     );
 }

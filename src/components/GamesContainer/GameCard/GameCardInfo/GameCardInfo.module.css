@@ -18,9 +18,8 @@
             font-size: 18px;
             line-height: 24px;
             text-align: right;
-            color: #BF5FE1;
+            color: #bf5fe1;
         }
-
     }
 
     .gameDetails {
@@ -56,6 +55,4 @@
             flex-direction: row;
         }
     }
-
-    
 }

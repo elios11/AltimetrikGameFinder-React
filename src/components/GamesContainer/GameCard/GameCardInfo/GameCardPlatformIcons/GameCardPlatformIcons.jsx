@@ -1,4 +1,4 @@
-import './GameCardPlatformIcons.css';
+import './GameCardPlatformIcons.module.css';
 
 import icon1 from './dark/icon-01.png';
 import icon2 from './dark/icon-02.png';
@@ -15,13 +15,14 @@ import icon12 from './dark/icon-12.png';
 import icon13 from './dark/icon-13.png';
 import icon14 from './dark/icon-14.png';
 
-export default function GameCardPlatformIcons(props) {
+export default function GameCardPlatformIcons({ parentPlatformIds }) {
     // Array of parent platform icons where the parent platform with id N
     // has its icon in the position N - 1 in the array
     const parentPlatformsImages = [
         icon1,
         icon2,
         icon3,
+        icon4,
         icon5,
         icon6,
         icon7,
@@ -36,8 +37,8 @@ export default function GameCardPlatformIcons(props) {
 
     return (
         <div className="platformsIcons">
-            {props.parentPlatformIds.slice(0, 4).map((id) => (
-                <img src={parentPlatformsImages[id - 1]} />
+            {parentPlatformIds.slice(0, 4).map((id) => (
+                <img key={id} src={parentPlatformsImages[id - 1]} />
             ))}
         </div>
     );

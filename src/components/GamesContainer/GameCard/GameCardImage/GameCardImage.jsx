@@ -1,12 +1,9 @@
-import './GameCardImage.css';
+import styles from './GameCardImage.module.css';
 import notLiked from './notLiked.png';
 
-export default function GameCardImage(props) {
+export default function GameCardImage({ image }) {
     return (
-        <div
-            className="gameImage"
-            style={{ backgroundImage: `url(${props.image})` }}
-        >
+        <div className={styles.gameImage} style={{ backgroundImage: `url(${image})` }}>
             <img className="likeIcon" src={notLiked} />
         </div>
     );
