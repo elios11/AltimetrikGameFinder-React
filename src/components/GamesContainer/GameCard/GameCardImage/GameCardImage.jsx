@@ -1,5 +1,5 @@
 import styles from './GameCardImage.module.css';
-import notLiked from './notLiked.png';
+import notLiked from '../../../../assets/GameCard/like/notLiked.png';
 
 export default function GameCardImage({ image }) {
     return (

@@ -1,0 +1,8 @@
+.platformsIcons {
+    display: flex;
+    flex-direction: row;
+}
+
+.platformsIcons img {
+    width: 16px;
+}

@@ -1,19 +1,19 @@
-import './GameCardPlatformIcons.module.css';
+import styles from './GameCardPlatformIcons.module.css';
 
-import icon1 from './dark/icon-01.png';
-import icon2 from './dark/icon-02.png';
-import icon3 from './dark/icon-03.png';
-import icon4 from './dark/icon-04.png';
-import icon5 from './dark/icon-05.png';
-import icon6 from './dark/icon-06.png';
-import icon7 from './dark/icon-07.png';
-import icon8 from './dark/icon-08.png';
-import icon9 from './dark/icon-09.png';
-import icon10 from './dark/icon-10.png';
-import icon11 from './dark/icon-11.png';
-import icon12 from './dark/icon-12.png';
-import icon13 from './dark/icon-13.png';
-import icon14 from './dark/icon-14.png';
+import icon1 from '../../../../../assets/GameCard/platforms/dark/icon-01.svg';
+import icon2 from '../../../../../assets/GameCard/platforms/dark/icon-02.svg';
+import icon3 from '../../../../../assets/GameCard/platforms/dark/icon-03.svg';
+import icon4 from '../../../../../assets/GameCard/platforms/dark/icon-04.svg';
+import icon5 from '../../../../../assets/GameCard/platforms/dark/icon-05.svg';
+import icon6 from '../../../../../assets/GameCard/platforms/dark/icon-06.svg';
+import icon7 from '../../../../../assets/GameCard/platforms/dark/icon-07.svg';
+import icon8 from '../../../../../assets/GameCard/platforms/dark/icon-08.svg';
+import icon9 from '../../../../../assets/GameCard/platforms/dark/icon-09.svg';
+import icon10 from '../../../../../assets/GameCard/platforms/dark/icon-10.svg';
+import icon11 from '../../../../../assets/GameCard/platforms/dark/icon-11.svg';
+import icon12 from '../../../../../assets/GameCard/platforms/dark/icon-12.svg';
+import icon13 from '../../../../../assets/GameCard/platforms/dark/icon-13.svg';
+import icon14 from '../../../../../assets/GameCard/platforms/dark/icon-14.svg';
 
 export default function GameCardPlatformIcons({ parentPlatformIds }) {
     // Array of parent platform icons where the parent platform with id N
@@ -36,7 +36,7 @@ export default function GameCardPlatformIcons({ parentPlatformIds }) {
     ];
 
     return (
-        <div className="platformsIcons">
+        <div className={styles.platformsIcons}>
             {parentPlatformIds.slice(0, 4).map((id) => (
                 <img key={id} src={parentPlatformsImages[id - 1]} />
             ))}
