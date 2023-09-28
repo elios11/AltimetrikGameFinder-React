@@ -1,6 +1,6 @@
 import styles from './Login.module.css';
 import LoginForm from '@components/LoginForm/LoginForm';
-import SocialMediaButton from '@components/SocialMediaButtons/SocialMediaButton';
+import SocialMediaButton from '@components/SocialMediaButton/SocialMediaButton';
 import darkLogo from '@assets/brand/dark-logo.svg';
 
 export default function Login() {
