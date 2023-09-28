@@ -1,12 +1,13 @@
-.gameAttributesName {
-    margin-right: 8px;
+.card__game-details-atributes-name {
+    margin-right: 0.5rem;
+    color: #939393;
 }
 
-.gameAttributesValue {
+.card__game-details-atributes-value {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     line-height: 1;
-    margin: 7px;
-    width: 150px;
+    margin-top: 7px;
+    justify-content: right;
 }

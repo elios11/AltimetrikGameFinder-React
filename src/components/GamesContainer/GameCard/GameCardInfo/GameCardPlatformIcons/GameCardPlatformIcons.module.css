@@ -1,8 +1,10 @@
-.platformsIcons {
+.card__game-platforms-icons {
     display: flex;
     flex-direction: row;
+    margin-top: 0.5rem;
 }
 
-.platformsIcons img {
-    width: 16px;
+.card__game-platforms-icons img {
+    width: 1.25rem;
+    margin-right: 1rem;
 }

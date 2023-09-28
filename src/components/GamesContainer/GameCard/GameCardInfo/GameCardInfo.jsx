@@ -13,13 +13,13 @@ export default function GameCardInfo({ game }) {
     const genreNames = game.genres.map((genre) => genre.name);
 
     return (
-        <div className={styles.gameInfo}>
-            <div className={styles.titleAndRanking}>
-                <h3 className={styles.gameTitle}>{game.name}</h3>
-                <p className={styles.ranking}></p>
+        <div className={styles['card__game-info']}>
+            <div className={styles['card__title-and-ranking']}>
+                <h3 className={styles['card__title']}>{game.name}</h3>
+                <p className={styles['card__renking']}>#1</p>
             </div>
-            <div className={styles.gameDetails}>
-                <div className={styles.gameDetailsAttributes}>
+            <div className={styles['card__game-details']}>
+                <div className={styles['card__game-details-atributes']}>
                     <GameCardInfoAtributes tag="Release date: " info={parseDate(game.released)} />
                     <GameCardInfoAtributes tag="Genres: " info={genreNames.join(', ')} />
                 </div>

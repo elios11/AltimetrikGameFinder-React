@@ -1,58 +1,64 @@
-.gameInfo {
+.card__game-info {
     position: relative;
-    top: -8px;
-    width: 91.18%;
+    width: 100%;
     padding-left: 4.41%;
     padding-right: 4.41%;
+}
 
-    .titleAndRanking {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
+.card__title-and-ranking {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0.5rem;
+}
 
-        .ranking {
-            font-family: 'Exo';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 24px;
-            text-align: right;
-            color: #bf5fe1;
-        }
-    }
+.card__title {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 85%;
+}
 
-    .gameDetails {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        font-style: normal;
-        font-size: 14px;
-        align-items: start;
+.card__renking {
+    font-family: 'Exo';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem;
+    text-align: right;
+    justify-content: right;
+    color: #bf5fe1;
+}
 
-        .gameAttributesName {
-            margin-right: 8px;
-        }
+.card__game-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-style: normal;
+    font-size: 14px;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 0.5rem;
+}
 
-        .gameAttributesValue {
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            line-height: 1;
-            margin: 7px;
-            width: 150px;
-        }
+.card__game-details-atributes {
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    width: 100%;
+}
 
-        .gameDetailsAttributes {
-            display: flex;
-            flex-direction: column;
-            line-height: 0;
-        }
-
-        .gameDetailsAttributes div {
-            display: flex;
-            flex-direction: row;
-        }
-    }
+.card__game-details-atributes div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
 }
