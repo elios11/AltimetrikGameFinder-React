@@ -12,6 +12,7 @@ import LastSearches from '@/pages/LastSearches';
 import Login from '@/pages/Login';
 import PageNotFound from '@/pages/PageNotFound';
 import Register from '@/pages/Register';
+import ForgotPassword from '@/pages/ForgotPassword';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
             <Route element={<UseIsLoggedIn />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
             </Route>
             <Route element={<UseIsLoggedOut />}>
                 <Route path="/" element={<Layout />}>
