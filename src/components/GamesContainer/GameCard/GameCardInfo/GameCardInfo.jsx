@@ -2,7 +2,7 @@ import styles from './GameCardInfo.module.css';
 import GameCardInfoAtributes from './GameCardInfoAtributes/GameCardInfoAtributes';
 import GameCardPlatformIcons from './GameCardPlatformIcons/GameCardPlatformIcons';
 
-export default function GameCardInfo({ game }) {
+export default function GameCardInfo({ game, ranking }) {
     function parseDate(dateStrig) {
         const date = new Date(dateStrig);
         return `${date.toLocaleString('en-US', {
@@ -16,7 +16,7 @@ export default function GameCardInfo({ game }) {
         <div className={styles['card__game-info']}>
             <div className={styles['card__title-and-ranking']}>
                 <h3 className={styles['card__title']}>{game.name}</h3>
-                <p className={styles['card__renking']}>#1</p>
+                <p className={styles['card__renking']}>#{ranking}</p>
             </div>
             <div className={styles['card__game-details']}>
                 <div className={styles['card__game-details-atributes']}>

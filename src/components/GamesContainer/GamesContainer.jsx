@@ -7,7 +7,9 @@ export default function GamesContainer() {
 
     return (
         <div>
-            {result.loading ? '' : result.data.results.map((game, index) => <GameCard game={game} key={index} />)}
+            {result.loading
+                ? ''
+                : result.data.results.map((game, index) => <GameCard game={game} key={index} ranking={index + 1} />)}
         </div>
     );
 }
