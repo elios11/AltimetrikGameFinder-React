@@ -16,7 +16,7 @@ export default function fetchData(url) {
     useEffect(() => {
         fetch(`${url}?key=${rawgioApiKey}`, requestOptions)
             .then((res) => {
-                if (res.status >= 400) {
+                if (!res.ok) {
                     throw new Error(`Request failed with status: ${res.status}`);
                 }
                 return res.json();
