@@ -1,4 +1,4 @@
-import { setCookie } from '@hooks/useCookie';
+import { setCookie } from '@utils/cookies';
 
 /**
  * Sends a POST request to the specified API route for user registration or login.
