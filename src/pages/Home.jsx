@@ -1,3 +1,7 @@
+import GamesContainer from '../components/GamesContainer/GamesContainer'
+
 export default function Home() {
-    return <div>Home</div>;
+    return <div>
+        <GamesContainer />
+    </div>;
 }
