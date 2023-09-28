@@ -23,9 +23,7 @@ export default function GameCardInfo({ game }) {
                     <GameCardInfoAtributes tag="Release date: " info={parseDate(game.released)} />
                     <GameCardInfoAtributes tag="Genres: " info={genreNames.join(', ')} />
                 </div>
-                <GameCardPlatformIcons
-                    parentPlatformIds={game.parent_platforms.map((parentPlatform) => parentPlatform.platform.id)}
-                />
+                <GameCardPlatformIcons parentPlatforms={game.parent_platforms} />
             </div>
             <div className={styles.description}>
                 <p className={styles.descriptionText}></p>

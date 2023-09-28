@@ -15,7 +15,7 @@ import icon12 from '../../../../../assets/GameCard/platforms/dark/icon-12.svg';
 import icon13 from '../../../../../assets/GameCard/platforms/dark/icon-13.svg';
 import icon14 from '../../../../../assets/GameCard/platforms/dark/icon-14.svg';
 
-export default function GameCardPlatformIcons({ parentPlatformIds }) {
+export default function GameCardPlatformIcons({ parentPlatforms }) {
     // Array of parent platform icons where the parent platform with id N
     // has its icon in the position N - 1 in the array
     const parentPlatformsImages = [
@@ -37,8 +37,12 @@ export default function GameCardPlatformIcons({ parentPlatformIds }) {
 
     return (
         <div className={styles['card__game-platforms-icons']}>
-            {parentPlatformIds.slice(0, 4).map((id) => (
-                <img key={id} src={parentPlatformsImages[id - 1]} />
+            {parentPlatforms.slice(0, 4).map((parentPlatform) => (
+                <img
+                    key={parentPlatform.platform.id}
+                    src={parentPlatformsImages[parentPlatform.platform.id - 1]}
+                    alt={parentPlatform.platform.name}
+                />
             ))}
         </div>
     );
