@@ -1,0 +1,27 @@
+.social-media-login {
+    display: flex;
+}
+
+.social-media-login__button {
+    background-color: transparent;
+    border: 2px solid var(--neutral-color-5);
+    font-weight: 700;
+    font-size: 1.4rem;
+    width: 100%;
+    padding: 1.15rem 0 1.15rem 8rem;
+    border-radius: 0.375rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.social-media-login__icon {
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    transform: translateY(50%);
+    left: 6.25rem;
+}
+
+.social-media-login__name {
+    text-transform: capitalize;
+}
