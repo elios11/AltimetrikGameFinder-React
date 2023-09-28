@@ -1,16 +1,19 @@
 import { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 
-import { getCookie } from '../hooks/useCookie';
+import { getCookie } from '@utils/cookies';
 
-const UseIsLoggedIn = () => {
+const UseIsLoggedIn = (needAccess) => {
     const navigate = useNavigate();
 
     const loggedInUser = getCookie('authToken');
 
     useEffect(() => {
-        if (loggedInUser) {
+        if (loggedInUser && !needAccess) {
             navigate('/');
+        }
+        if (!loggedInUser && needAccess) {
+            navigate('/login');
         }
     }, []);
 

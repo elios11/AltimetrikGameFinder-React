@@ -6,23 +6,22 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 
 import Layout from '@/components/Layout/Layout';
 import UseIsLoggedIn from '@/hooks/UseIsLoggedIn';
-import UseIsLoggedOut from '@/hooks/UseIsLoggedOut';
+import ForgotPassword from '@/pages/ForgotPassword';
 import Home from '@/pages/Home';
 import LastSearches from '@/pages/LastSearches';
 import Login from '@/pages/Login';
 import PageNotFound from '@/pages/PageNotFound';
 import Register from '@/pages/Register';
-import ForgotPassword from '@/pages/ForgotPassword';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route element={<UseIsLoggedIn />}>
+            <Route element={<UseIsLoggedIn needAccess={false} />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
             </Route>
-            <Route element={<UseIsLoggedOut />}>
+            <Route element={<UseIsLoggedIn needAccess={true} />}>
                 <Route path="/" element={<Layout />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/last-searches" element={<LastSearches />} />
