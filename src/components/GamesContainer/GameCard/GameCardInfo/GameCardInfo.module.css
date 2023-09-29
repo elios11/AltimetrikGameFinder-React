@@ -10,14 +10,14 @@
     align-content: center;
     justify-content: space-between;
     width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
 }
 
 .card__title {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: 3.3rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -26,10 +26,10 @@
 
 .card__renking {
     font-family: 'Exo';
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5rem;
+    line-height: 3.3rem;
     text-align: right;
     justify-content: right;
     color: #bf5fe1;
@@ -41,10 +41,10 @@
     justify-content: space-between;
     width: 100%;
     font-style: normal;
-    font-size: 14px;
+    font-size: 1.4rem;
     align-items: start;
     flex-direction: column;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
 }
 
 .card__game-details-atributes {
@@ -60,5 +60,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+    margin-top: 0.7rem;
 }
