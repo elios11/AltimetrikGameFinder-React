@@ -1,7 +1,7 @@
 .card__game-platforms-icons {
     display: flex;
     flex-direction: row;
-    margin-top: 0.5rem;
+    margin-top: 1.2rem;
 }
 
 .card__game-platforms-icons img {

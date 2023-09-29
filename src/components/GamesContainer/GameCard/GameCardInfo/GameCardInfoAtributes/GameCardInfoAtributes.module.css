@@ -1,5 +1,6 @@
 .card__game-details-atributes-name {
     margin-right: 0.8rem;
+    line-height: 1.2;
     color: #939393;
 }
 
@@ -7,7 +8,6 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    line-height: 1;
-    margin-top: 0.7rem;
+    line-height: 1.2;
     justify-content: right;
 }
