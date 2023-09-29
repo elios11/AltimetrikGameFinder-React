@@ -30,7 +30,7 @@
     /* Styles for the password container */
     position: relative;
     margin-top: 1.6rem;
-    margin-bottom: 1.56rem;
+    margin-bottom: 0.2rem;
 }
 
 .form__password-icon {
@@ -47,10 +47,10 @@
     /* Styles for the password details container */
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2.24rem;
     font-size: 1.4rem;
     font-family: 'Open Sans', sans-serif;
-    margin-top: 1.28rem;
+    margin-top: 1.3rem;
+    margin-bottom: 3rem;
 }
 
 .form__checkbox {
@@ -66,19 +66,13 @@
 
 .form__checkbox-icon {
     /* Styles for checkbox icons */
-    display: none;
-    margin-right: 0.96rem;
+    display: block;
+    margin-right: 1rem;
     width: 2rem;
     height: 2rem;
 }
 
 .form__checkbox-icon--on {
-    display: block;
-}
-
-.form__forgot-password-link {
-    /* Styles for the forgot password link */
-    color: var(--primary-color-1);
-    text-decoration: none;
-    line-height: 2.4rem;
+    /* Styles for checkbox checked icon */
+    display: none;
 }

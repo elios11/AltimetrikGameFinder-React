@@ -9,7 +9,7 @@ import UseIsLoggedIn from '@hooks/UseIsLoggedIn';
 import ForgotPassword from '@pages/ForgotPassword';
 import Home from '@pages/Home';
 import LastSearches from '@pages/LastSearches';
-import Login from '@pages/Login';
+import Login from '@pages/Login/Login';
 import PageNotFound from '@pages/PageNotFound';
 import Register from '@pages/Register';
 

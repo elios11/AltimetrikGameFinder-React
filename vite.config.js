@@ -14,6 +14,7 @@ export default defineConfig({
             '@api': path.resolve(__dirname, 'src/api'), // Alias for the api directory
             '@hooks': path.resolve(__dirname, 'src/hooks'), // Alias for the hooks directory
             '@pages': path.resolve(__dirname, 'src/pages'), // Alias for the pages directory
+            '@assets': path.resolve(__dirname, 'src/assets'), // Alias for the assets directory
         },
     },
 });
