@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 import { getCookie } from '@utils/cookies';
 
-const UseIsLoggedIn = (needAccess) => {
+const UseIsLoggedIn = ({ needAccess }) => {
     const navigate = useNavigate();
 
     const loggedInUser = getCookie('authToken');
@@ -18,6 +19,10 @@ const UseIsLoggedIn = (needAccess) => {
     }, []);
 
     return <Outlet />;
+};
+
+UseIsLoggedIn.propTypes = {
+    needAccess: PropTypes.bool,
 };
 
 export default UseIsLoggedIn;
