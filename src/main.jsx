@@ -4,14 +4,14 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 
-import Layout from '@/components/Layout/Layout';
-import UseIsLoggedIn from '@/hooks/UseIsLoggedIn';
-import ForgotPassword from '@/pages/ForgotPassword';
-import Home from '@/pages/Home';
-import LastSearches from '@/pages/LastSearches';
-import Login from '@/pages/Login';
-import PageNotFound from '@/pages/PageNotFound';
-import Register from '@/pages/Register';
+import Layout from '@components/Layout/Layout';
+import UseIsLoggedIn from '@hooks/UseIsLoggedIn';
+import ForgotPassword from '@pages/ForgotPassword';
+import Home from '@pages/Home';
+import LastSearches from '@pages/LastSearches';
+import Login from '@pages/Login';
+import PageNotFound from '@pages/PageNotFound';
+import Register from '@pages/Register';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
