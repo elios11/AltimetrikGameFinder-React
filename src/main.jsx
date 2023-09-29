@@ -27,6 +27,7 @@ const router = createBrowserRouter(
                 <Route path="/last-searches" element={<LastSearches />} />
             </Route>
         </>
+
     )
 );
 
