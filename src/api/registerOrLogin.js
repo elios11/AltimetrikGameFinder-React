@@ -14,11 +14,11 @@ import { setCookie } from '@utils/cookies';
  * @returns {void}
  */
 const registerOrLogin = async (email, password, route, navigate) => {
-    const response = { loading: false, data: {}, error: null };
+    const result = { loading: false, data: {}, error: null };
 
     try {
         // Start loading
-        response.loading = true;
+        result.loading = true;
 
         const responseFromServer = await fetch(import.meta.env.VITE_REACT_APP_API_URL + route, {
             method: 'POST',
@@ -30,7 +30,7 @@ const registerOrLogin = async (email, password, route, navigate) => {
         const data = await responseFromServer.json();
 
         if (!responseFromServer.ok) {
-            response.error = 'Error http: ' + data;
+            result.error = 'Error http: ' + data;
         }
 
         if (data?.accessToken) {
@@ -39,20 +39,20 @@ const registerOrLogin = async (email, password, route, navigate) => {
         }
 
         if (!data.accessToken) {
-            response.error = data;
+            result.error = data;
         }
 
-        response.data = data;
+        result.data = data;
 
         if (data?.accessToken) {
             navigate('/');
         }
     } catch (e) {
-        response.error = `Cannot fetch the data, error: ${e}`;
+        result.error = `Cannot fetch the data, error: ${e}`;
     } finally {
-        response.loading = false;
+        result.loading = false;
     }
-    return response;
+    return result;
 };
 
 export default registerOrLogin;

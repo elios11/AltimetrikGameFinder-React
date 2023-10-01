@@ -6,7 +6,8 @@ import { handleRegisterAndLogin } from '@/utils/loginHandlers';
 import styles from './LoginForm.module.css';
 
 export default function LoginForm() {
-    const [setResponse] = useState({
+    /* eslint-disable-next-line */
+    const [response, setResponse] = useState({
         loading: false,
         data: {},
         error: null,
