@@ -1,23 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function fetchData(url) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
-    const rawgioApiKey = import.meta.env.VITE_API_KEY;
-    const requestOptions = {
-        headers: {
-            'Target-URL': 'https://rawg.io',
-            Authorization: '', // cors-proxy expects this attribute, otherwise it fails
-        },
-    };
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const corsProxy = import.meta.env.VITE_CORS_PROXY;
 
     useEffect(() => {
-        fetch(`${url}?key=${rawgioApiKey}`, requestOptions)
+        fetch(`${corsProxy}${url}?key=${apiKey}`)
             .then((res) => {
                 if (!res.ok) {
-                    throw new Error(`Request failed with status: ${res.status}`);
+                    setError(`Request failed with status: ${res.status}`);
+                    throw new Error(error);
                 }
                 return res.json();
             })
