@@ -13,13 +13,12 @@ import { setCookie } from '@utils/cookies';
  *
  * @returns {void}
  */
-const registerOrLogin = async (email, password, route, setResponse, navigate) => {
+const registerOrLogin = async (email, password, route, navigate) => {
+    const response = { loading: false, data: {}, error: null };
+
     try {
         // Start loading
-        setResponse((prevResp) => ({
-            ...prevResp,
-            loading: true,
-        }));
+        response.loading = true;
 
         const responseFromServer = await fetch(import.meta.env.VITE_REACT_APP_API_URL + route, {
             method: 'POST',
@@ -28,12 +27,10 @@ const registerOrLogin = async (email, password, route, setResponse, navigate) =>
                 'Content-Type': 'application/json',
             },
         });
-
         const data = await responseFromServer.json();
 
-        let error = null;
         if (!responseFromServer.ok) {
-            error = 'Error http: ' + data;
+            response.error = 'Error http: ' + data;
         }
 
         if (data?.accessToken) {
@@ -42,30 +39,20 @@ const registerOrLogin = async (email, password, route, setResponse, navigate) =>
         }
 
         if (!data.accessToken) {
-            error = data;
+            response.error = data;
         }
 
-        setResponse((prevResp) => ({
-            ...prevResp,
-            data: data,
-            error: error,
-        }));
+        response.data = data;
 
         if (data?.accessToken) {
             navigate('/');
         }
     } catch (e) {
-        setResponse((prevResp) => ({
-            ...prevResp,
-            error: `Cannot fetch the data, error: ${e}`,
-        }));
+        response.error = `Cannot fetch the data, error: ${e}`;
     } finally {
-        setResponse((prevResp) => ({
-            ...prevResp,
-            loading: false,
-        }));
+        response.loading = false;
     }
-    return;
+    return response;
 };
 
 export default registerOrLogin;
