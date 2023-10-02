@@ -11,10 +11,11 @@
         "format": "prettier . --write",
         "prepare": "husky install",
         "pretty-quick": "pretty-quick",
-        "start": "concurrently \"vite\" \"json-server db.json -m ./node_modules/json-server-auth\""
+        "start": "concurrently \"vite\" \"node server.js\" \"json-server db.json -m ./node_modules/json-server-auth\""
     },
     "dependencies": {
         "concurrently": "^8.2.1",
+        "cors-anywhere": "^0.4.4",
         "js-cookie": "^3.0.5",
         "prop-types": "^15.8.1",
         "react": "^18.2.0",

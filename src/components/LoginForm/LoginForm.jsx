@@ -6,11 +6,10 @@ import { handleRegisterAndLogin } from '@/utils/loginHandlers';
 import styles from './LoginForm.module.css';
 
 export default function LoginForm() {
-    // Disabled next line till const response is used
     /* eslint-disable-next-line */
     const [response, setResponse] = useState({
-        data: {},
         loading: false,
+        data: {},
         error: null,
     });
     const [loginOrRegisterData, setLoginOrRegisterData] = useState({ email: '', password: '' });
@@ -22,11 +21,7 @@ export default function LoginForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const { email, password } = loginOrRegisterData;
-        handleRegisterAndLogin(setResponse, '/login', email, password, navigate);
-
-        // handleRegisterAndLogin(setResponse, '/register', email, password, navigate)
+        await handleRegisterAndLogin(setResponse, loginOrRegisterData, '/login', navigate);
     };
 
     return (

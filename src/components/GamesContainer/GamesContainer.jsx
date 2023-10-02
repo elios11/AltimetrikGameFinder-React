@@ -1,15 +1,14 @@
+import fetchGames from '../../api/fetchGames';
 import GameCard from './GameCard/GameCard';
-import fetchData from '../../api/fetchData';
 
 export default function GamesContainer() {
-    const url = import.meta.env.VITE_REACT_APP_API_URL;
-    const result = fetchData(`${url}/api/games`);
+    const { loading, data } = fetchGames('https://rawg.io/api/games?token');
 
     return (
         <div>
-            {result.loading
+            {loading
                 ? ''
-                : result.data.results.map((game, index) => <GameCard game={game} key={index} ranking={index + 1} />)}
+                : data?.results?.map((game, index) => <GameCard game={game} key={index} ranking={index + 1} />)}
         </div>
     );
 }
