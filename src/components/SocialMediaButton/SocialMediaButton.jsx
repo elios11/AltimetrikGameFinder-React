@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './SocialMediaButton.module.css';
 import ICONS_D_PATH from './socialMediaLogosSVGPath';
 
@@ -15,3 +16,7 @@ export default function SocialMediaButton({ social }) {
         </div>
     );
 }
+
+SocialMediaButton.propTypes = {
+    social: PropTypes.string,
+};
