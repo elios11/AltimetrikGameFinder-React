@@ -13,6 +13,7 @@ export const handleRegisterAndLogin = async (setResponse, loginOrRegisterData, r
     setResponse((prevResp) => ({
         ...prevResp,
         loading: true,
+        error: null,
     }));
 
     const { email, password } = loginOrRegisterData;
