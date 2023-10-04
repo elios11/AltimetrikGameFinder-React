@@ -6,8 +6,8 @@ import darkLogo from '@assets/brand/dark-logo.svg';
 export default function Login() {
     return (
         <div className={styles['login-container']}>
+            <img className={styles.logo} src={darkLogo} alt="game finder logo" />
             <div className={styles['login-card']}>
-                <img className={styles['login-card--logo']} src={darkLogo} alt="game finder logo" />
                 <h1 className={styles['login-card--title']}>Welcome! Log in or register</h1>
                 <h2 className={styles['login-card--subtitle']}>Log in to find the games you&apos;re looking for!</h2>
                 <LoginForm />
