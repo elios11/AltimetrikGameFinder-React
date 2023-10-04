@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './GameCardImage.module.css';
 import notLiked from '../../../../assets/GameCard/like/not-liked.svg';
 
@@ -8,3 +9,7 @@ export default function GameCardImage({ image }) {
         </div>
     );
 }
+
+GameCardImage.propTypes = {
+    image: PropTypes.string,
+};
