@@ -25,3 +25,15 @@
 .social-media-login__name {
     text-transform: capitalize;
 }
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+    .social-media-login__button {
+        font-size: 1.8rem;
+        padding: 0.8rem 0 0.8rem 10.2rem;
+    }
+
+    .social-media-login__icon {
+        left: 11rem;
+    }
+}
