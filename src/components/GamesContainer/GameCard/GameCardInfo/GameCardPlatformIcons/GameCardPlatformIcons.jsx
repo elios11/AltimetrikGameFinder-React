@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './GameCardPlatformIcons.module.css';
 
 import icon1 from '../../../../../assets/GameCard/platforms/dark/icon-01.svg';
@@ -47,3 +48,7 @@ export default function GameCardPlatformIcons({ parentPlatforms }) {
         </div>
     );
 }
+
+GameCardPlatformIcons.propTypes = {
+    parentPlatforms: PropTypes.bool,
+};

@@ -6,5 +6,5 @@
     min-width: 24rem;
     width: 28.8rem;
     margin: 1.6rem;
-    height: 33.2rem;
+    min-height: 33.2rem;
 }
