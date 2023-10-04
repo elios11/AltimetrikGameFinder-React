@@ -7,14 +7,19 @@ import SocialMediaButton from '@components/SocialMediaButton/SocialMediaButton';
 
 import styles from './Login.module.css';
 
-export default function Auth({ title, title2, label, label2, link, rememberMe, forgotPassword, buttonText }) {
+export default function Auth({ title, title2, label, label2, link, rememberMe, forgotPassword, buttonText, apiRoute }) {
     return (
         <div className={styles['login-container']}>
             <div className={styles['login-card']}>
                 <img className={styles['login-card--logo']} src={darkLogo} alt="game finder logo" />
                 <h1 className={styles['login-card--title']}>{title}</h1>
                 <h2 className={styles['login-card--subtitle']}>{title2}</h2>
-                <LoginForm rememberMe={rememberMe} forgotPassword={forgotPassword} buttonText={buttonText} />
+                <LoginForm
+                    rememberMe={rememberMe}
+                    forgotPassword={forgotPassword}
+                    buttonText={buttonText}
+                    apiRoute={apiRoute}
+                />
                 <div className={styles['login-card--register-section']}>
                     <p>{label}</p>
                     <Link className="text-primary" to={link}>
@@ -45,4 +50,5 @@ Auth.propTypes = {
     rememberMe: PropTypes.bool,
     forgotPassword: PropTypes.bool,
     buttonText: PropTypes.string,
+    apiRoute: PropTypes.string,
 };

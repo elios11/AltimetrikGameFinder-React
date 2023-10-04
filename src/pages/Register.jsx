@@ -11,6 +11,7 @@ export default function Register() {
             rememberMe={false}
             forgotPassword={false}
             buttonText="Sign up"
+            apiRoute="/register"
         />
     );
 }
