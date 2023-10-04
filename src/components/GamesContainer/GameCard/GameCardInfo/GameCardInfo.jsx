@@ -34,5 +34,11 @@ export default function GameCardInfo({ game }) {
 }
 
 GameCardInfo.propTypes = {
-    game: PropTypes.object,
+    game: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        genres: PropTypes.array,
+        released: PropTypes.string,
+        parent_platforms: PropTypes.array,
+    }),
 };

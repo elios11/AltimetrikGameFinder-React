@@ -50,5 +50,5 @@ export default function GameCardPlatformIcons({ parentPlatforms }) {
 }
 
 GameCardPlatformIcons.propTypes = {
-    parentPlatforms: PropTypes.bool,
+    parentPlatforms: PropTypes.array,
 };
