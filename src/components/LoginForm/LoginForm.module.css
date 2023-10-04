@@ -14,13 +14,23 @@
     font-size: 1.4rem;
 }
 
+.form__input.invalid {
+    /* Styles for invalid inputs */
+    outline: 1px solid #ff0000;
+}
+
 .form__input:focus-visible {
+    /* Styles for selected inputs */
     outline: 1px solid var(--primary-color-1);
+}
+
+.form__input.invalid:focus-visible {
+    /* Styles for selected invalid inputs */
+    outline: 1px solid #bf0000;
 }
 
 .form__feedback {
     /* Styles for feedback elements */
-    display: none;
     color: #ff0000;
     font-size: 1.4rem;
     margin-top: 0.64rem;
