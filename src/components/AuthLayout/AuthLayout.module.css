@@ -2,12 +2,12 @@
     background-image: url('@assets/login/bg_dark.png');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100%;
+    min-height: 100vh;
     min-width: 100%;
 }
 
 .login-card {
-    padding: 0 1.6rem 0 1.6rem;
+    padding: 12.1rem 1.6rem 4rem 1.6rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,9 +15,13 @@
     background-color: rgba(23, 23, 23, 0.8);
 }
 
-.login-card--logo {
+.logo {
+    position: absolute;
     width: 19.95rem;
-    margin: 1.7rem 0 2.9rem 3.2rem;
+    left: 50%;
+    transform: translateX(-55%);
+    top: 1.7rem;
+    z-index: 1;
 }
 
 .login-card--title {
@@ -57,7 +61,6 @@
 
 .login-card--divisor span {
     padding: 0 2rem 0 2rem;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .login-card--divisor hr {
@@ -71,5 +74,64 @@
     flex-direction: column;
     gap: 1.6rem;
     margin-top: 1.12rem;
-    margin-bottom: 2rem;
+}
+
+/* Styles for intermediate sizes between phone and tablet */
+@media (min-width: 600px) {
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-position: center;
+    }
+
+    .logo {
+        position: initial;
+        transform: unset;
+        margin-top: 6rem;
+        transform: translateX(-5%);
+    }
+
+    .login-card {
+        padding: 3.6rem 5rem 3rem 5rem;
+        min-width: 46.2rem;
+        min-height: 70.2rem;
+        border-radius: 1.2rem;
+        margin-top: 5rem;
+    }
+}
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+    .logo {
+        width: 23rem;
+        margin-top: 4.6rem;
+    }
+
+    .login-card {
+        padding: 3.6rem 5rem 4rem 5rem;
+        margin-top: 6.9rem;
+    }
+
+    .login-card--subtitle {
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    }
+
+    .login-card--register-section {
+        margin-top: 3.1rem;
+    }
+
+    .login-card--divisor {
+        margin-top: 2.2rem;
+    }
+
+    .login-card--divisor span {
+        padding: 0 2.6rem 0 2.6rem;
+    }
+
+    .login-card--social-media {
+        margin-top: 2.6rem;
+        gap: 2.4rem;
+    }
 }
