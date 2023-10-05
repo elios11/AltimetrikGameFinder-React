@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import styles from './GameCardInfo.module.css';
 import GameCardInfoAtributes from './GameCardInfoAtributes/GameCardInfoAtributes';
 import GameCardPlatformIcons from './GameCardPlatformIcons/GameCardPlatformIcons';
 
-export default function GameCardInfo({ game, ranking }) {
+export default function GameCardInfo({ game }) {
     function parseDate(dateStrig) {
         const date = new Date(dateStrig);
         return `${date.toLocaleString('en-US', {
@@ -16,7 +17,7 @@ export default function GameCardInfo({ game, ranking }) {
         <div className={styles['card__game-info']}>
             <div className={styles['card__title-and-ranking']}>
                 <h3 className={styles['card__title']}>{game.name}</h3>
-                <p className={styles['card__renking']}>#{ranking}</p>
+                <p className={styles['card__renking']}>#{game.id}</p>
             </div>
             <div className={styles['card__game-details']}>
                 <div className={styles['card__game-details-atributes']}>
@@ -31,3 +32,13 @@ export default function GameCardInfo({ game, ranking }) {
         </div>
     );
 }
+
+GameCardInfo.propTypes = {
+    game: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        genres: PropTypes.array,
+        released: PropTypes.string,
+        parent_platforms: PropTypes.array,
+    }),
+};
