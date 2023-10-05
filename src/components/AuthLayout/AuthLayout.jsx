@@ -9,8 +9,8 @@ import styles from './AuthLayout.module.css';
 export default function Auth({ title, title2, label, label2, link, children }) {
     return (
         <div className={styles['login-container']}>
+            <img className={styles.logo} src={darkLogo} alt="game finder logo" />
             <div className={styles['login-card']}>
-                <img className={styles['login-card--logo']} src={darkLogo} alt="game finder logo" />
                 <h1 className={styles['login-card--title']}>{title}</h1>
                 <h2 className={styles['login-card--subtitle']}>{title2}</h2>
                 {children}
