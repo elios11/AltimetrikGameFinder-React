@@ -95,6 +95,8 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
     font-size: 1.6rem;
+    background-color: #131313;
+    color: var(--neutral-color-5);
 }
 
 .text-primary {
