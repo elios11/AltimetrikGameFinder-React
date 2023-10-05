@@ -106,7 +106,7 @@
 /* Styles for desktop size */
 @media (width >= 1200px) {
     .form__password-details-container {
-        margin-top: 1.4rem;
+        margin-top: 1rem;
         margin-bottom: 2.3rem;
     }
 }
