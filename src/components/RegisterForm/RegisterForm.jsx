@@ -53,6 +53,7 @@ export default function RegisterForm() {
                 autoComplete="on"
                 error={errors.email}
             />
+
             <FormInput
                 register={register}
                 validationName={'user'}
@@ -63,6 +64,7 @@ export default function RegisterForm() {
                 autoComplete="on"
                 error={errors.user}
             />
+
             <FormInput
                 register={register}
                 validationName={'password'}
@@ -73,6 +75,7 @@ export default function RegisterForm() {
                 autoComplete="on"
                 error={errors.password}
             />
+
             <FormInput
                 register={register}
                 validationName={'repeatPassword'}
@@ -83,6 +86,7 @@ export default function RegisterForm() {
                 autoComplete="on"
                 error={errors.repeatPassword}
             />
+
             <div className={styles['form__password-details-container']}></div>
             <button className="primary-button" type="submit" formNoValidate>
                 Sign up
