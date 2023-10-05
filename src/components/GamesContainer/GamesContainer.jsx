@@ -13,9 +13,7 @@ export default function GamesContainer() {
             .catch((err) => setResult(err));
     }, []);
 
-    const gameCards = result?.data?.results?.map((game, index) => (
-        <GameCard game={game} key={index} ranking={index + 1} />
-    ));
+    const gameCards = result?.data?.results?.map((game, index) => <GameCard game={game} key={index} />);
 
     return <div>{!result.loading && gameCards}</div>;
 }

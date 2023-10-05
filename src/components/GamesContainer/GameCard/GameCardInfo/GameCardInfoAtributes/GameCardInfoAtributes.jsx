@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './GameCardInfoAtributes.module.css';
 
 export default function GameCardInfoAtributes({ tag, info }) {
@@ -8,3 +9,8 @@ export default function GameCardInfoAtributes({ tag, info }) {
         </div>
     );
 }
+
+GameCardInfoAtributes.propTypes = {
+    tag: PropTypes.string,
+    info: PropTypes.string,
+};

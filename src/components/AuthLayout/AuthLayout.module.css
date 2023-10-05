@@ -135,28 +135,3 @@
         gap: 2.4rem;
     }
 }
-
-/* Styles for desktop size */
-@media (width >= 1200px) {
-    .login-container {
-        align-items: end;
-    }
-
-    .logo {
-        align-self: start;
-        width: 17.8rem;
-        margin-top: 2.5rem;
-        margin-left: 3rem;
-    }
-
-    .login-card {
-        min-width: 46.2rem;
-        min-height: 70.2rem;
-        margin-top: 8.6rem;
-        margin-right: 10rem;
-    }
-
-    .login-card--register-section {
-        margin-left: 0.4rem;
-    }
-}

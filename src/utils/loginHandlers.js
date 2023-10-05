@@ -16,7 +16,6 @@ export const handleRegisterAndLogin = async (setResponse, loginOrRegisterData, r
         error: null,
     }));
 
-    const { email, password } = loginOrRegisterData;
-    const res = await registerOrLogin(email, password, route, navigate);
+    const res = await registerOrLogin(loginOrRegisterData, route, navigate);
     setResponse(res);
 };
