@@ -13,7 +13,7 @@ import { setCookie } from '@utils/cookies';
  *
  * @returns {void}
  */
-const registerOrLogin = async (email, password, route, navigate) => {
+const registerOrLogin = async (authFormData, route, navigate) => {
     const result = { loading: false, data: {}, error: null };
 
     try {
@@ -22,7 +22,7 @@ const registerOrLogin = async (email, password, route, navigate) => {
 
         const responseFromServer = await fetch(import.meta.env.VITE_REACT_APP_API_URL + route, {
             method: 'POST',
-            body: JSON.stringify({ email: email, password: password }),
+            body: JSON.stringify(authFormData),
             headers: {
                 'Content-Type': 'application/json',
             },

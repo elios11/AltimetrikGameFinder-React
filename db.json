@@ -4,6 +4,13 @@
             "email": "wewe@wewe.com",
             "password": "$2a$10$TGKU6SrJOdsGJgEXg4ZCvu6IcYlWlFGmD/MFPw9CFeWWRuX3nldoO",
             "id": 1
+        },
+
+        {
+            "email": "wewe@hello.com",
+            "password": "$2a$10$YtnUfYpm0mMOwy./EU/NpeX0FJx7ooxSYyyPhG1DxSgChVm0vufgS",
+            "user": "Churlo",
+            "id": 2
         }
     ]
 }
