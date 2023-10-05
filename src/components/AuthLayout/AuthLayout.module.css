@@ -1,0 +1,75 @@
+.login-container {
+    background-image: url('@assets/login/bg_dark.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.login-card {
+    padding: 0 1.6rem 0 1.6rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    background-color: rgba(23, 23, 23, 0.8);
+}
+
+.login-card--logo {
+    width: 19.95rem;
+    margin: 1.7rem 0 2.9rem 3.2rem;
+}
+
+.login-card--title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+.login-card--subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 3.4rem;
+}
+
+.login-card--register-section {
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    gap: 0.9rem;
+    font-size: 1.4rem;
+    margin-top: 3.05rem;
+}
+
+.login-card--register-section {
+    margin-left: 0.7rem;
+}
+
+.login-card--divisor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.4rem;
+}
+
+.login-card--divisor span {
+    padding: 0 2rem 0 2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.login-card--divisor hr {
+    width: 100%;
+    transform: scaleY(0.5);
+    align-self: center;
+}
+
+.login-card--social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-top: 1.12rem;
+    margin-bottom: 2rem;
+}
