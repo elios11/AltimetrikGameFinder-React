@@ -10,7 +10,7 @@ import ForgotPassword from '@pages/ForgotPassword';
 import Home from '@pages/Home';
 import LastSearches from '@pages/LastSearches';
 import Login from '@pages/Login';
-import PageNotFound from '@pages/PageNotFound';
+import PageNotFound from '@pages/PageNotFound/PageNotFound';
 import Register from '@pages/Register';
 
 const router = createBrowserRouter(
