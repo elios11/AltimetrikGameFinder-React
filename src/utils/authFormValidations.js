@@ -1,5 +1,5 @@
-const validEmailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-const validPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#^])[A-Za-z\d@$!%*?&#^]{8,}$/;
+const validEmailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const validPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 export const loginFormEmailValidation = {
     required: {
@@ -19,6 +19,13 @@ export const loginFormPasswordValidation = {
     },
 };
 
+export const registerFormUsernameValidation = {
+    required: {
+        value: true,
+        message: 'You must provide a username',
+    },
+};
+
 export const registerFormPasswordValidation = {
     required: 'Password is required',
     minLength: {
@@ -34,4 +41,11 @@ export const registerFormPasswordValidation = {
         message:
             'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character.',
     },
+};
+
+export const registerFormRepeatPasswordValidation = (watch) => {
+    return {
+        required: 'Password confirmation is required',
+        validate: (value) => value === watch('password') || 'Passwords do not match',
+    };
 };
