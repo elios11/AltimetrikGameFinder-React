@@ -35,12 +35,12 @@ export default function LoginForm() {
     }, [response]);
 
     /* Handles form submit and logs the user if the data is correct */
-    async function logUser(data) {
-        await handleRegisterAndLogin(setResponse, data, '/login', navigate);
+    async function logUser(loginFormData) {
+        await handleRegisterAndLogin(setResponse, loginFormData, '/login', navigate);
     }
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit((data) => logUser(data))}>
+        <form className={styles.form} onSubmit={handleSubmit((registerFormData) => logUser(registerFormData))}>
             <FormInput
                 register={register}
                 validationName={'email'}

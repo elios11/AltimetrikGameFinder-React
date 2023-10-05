@@ -37,12 +37,14 @@ export default function RegisterForm() {
         }
     }, [response]);
 
-    async function logUser(data) {
-        await handleRegisterAndLogin(setResponse, data, '/register', navigate);
+    async function logUser(registerFormData) {
+        /* eslint-disable-next-line*/
+        const { repeatPassword, ...filteredRegisterFormData } = registerFormData;
+        await handleRegisterAndLogin(setResponse, filteredRegisterFormData, '/register', navigate);
     }
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit((data) => logUser(data))}>
+        <form className={styles.form} onSubmit={handleSubmit((registerFormData) => logUser(registerFormData))}>
             <FormInput
                 register={register}
                 validationName={'email'}
