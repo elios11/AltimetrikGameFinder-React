@@ -1,6 +1,7 @@
 import fetchGames from '@api/fetchGames';
 import GameCard from './GameCard/GameCard';
 import { useEffect, useState } from 'react';
+import styles from './gamesContainer.module.css';
 
 export default function GamesContainer() {
     const [result, setResult] = useState({ loading: true, data: {}, error: null });
@@ -15,5 +16,5 @@ export default function GamesContainer() {
 
     const gameCards = result?.data?.results?.map((game, index) => <GameCard game={game} key={index} />);
 
-    return <div>{!result.loading && gameCards}</div>;
+    return <div className={styles['games-container']}>{!result.loading && gameCards}</div>;
 }

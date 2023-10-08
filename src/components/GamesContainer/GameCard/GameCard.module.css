@@ -8,3 +8,17 @@
     margin: 1.6rem;
     min-height: 33.2rem;
 }
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+    .card {
+        width: 45.7vw;
+        min-width: 32rem;
+        margin: 1.2rem 0.9rem 1.2rem 0.9rem;
+        min-height: 32rem;
+    }
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
+}

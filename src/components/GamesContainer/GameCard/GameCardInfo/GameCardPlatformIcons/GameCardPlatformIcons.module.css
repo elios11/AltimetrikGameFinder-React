@@ -8,3 +8,23 @@
     width: 2rem;
     margin: 0 1.6rem 1.6rem 0;
 }
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+    .card__game-platforms-icons {
+        display: flex;
+        justify-content: right;
+        right: 0;
+        width: 11.2rem;
+        margin-top: 0.3rem;
+    }
+
+    .card__game-platforms-icons img {
+        width: 1.6rem;
+        margin: 0 0 0 1.2rem;
+    }
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
+}
