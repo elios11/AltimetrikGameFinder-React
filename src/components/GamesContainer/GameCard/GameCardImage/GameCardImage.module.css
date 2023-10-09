@@ -13,3 +13,11 @@
     top: 0.7rem;
     right: 0.5rem;
 }
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
+}

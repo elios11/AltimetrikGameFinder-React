@@ -63,3 +63,30 @@
     margin-bottom: 0.4rem;
     margin-top: 0.4rem;
 }
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+    .card__game-info {
+        margin-top: 1.6rem;
+    }
+
+    .card__title-and-ranking {
+        min-height: 4.5rem;
+    }
+
+    .card__game-details {
+        flex-direction: row;
+        margin-top: 0.6rem;
+    }
+
+    .card__game-details-atributes {
+    }
+
+    .card__game-details-atributes div {
+        justify-content: left;
+    }
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
+}
