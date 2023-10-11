@@ -1,0 +1,32 @@
+.header {
+    /* Styles for header bar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 1.6rem 0.6rem 1.9rem;
+    background-color: var(--neutral-color-2);
+    min-width: 100%;
+}
+
+.header__logo {
+    /* Styles for page logo */
+    width: 9.72rem;
+    margin-right: 1.1rem;
+    transform: translateY(-2px);
+}
+
+.header__profile-img {
+    /* Styles for profile image icon */
+    display: none;
+    width: 4.8rem;
+    height: 4.8rem;
+    order: 2;
+    border-radius: 50%;
+    background: white;
+    margin-left: 3.5rem;
+}
+
+.header__search-bar {
+    /* Styles for search bar */
+    display: none;
+}

@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import MainSection from '@components/MainSection/MainSection';
+import Header from '../Header/Header';
 
 export default function Layout() {
     const location = useLocation();
@@ -9,6 +10,7 @@ export default function Layout() {
 
     return (
         <div>
+            <Header />
             <MainSection title={title} subtitle={subtitle} />
             <Outlet />
         </div>
