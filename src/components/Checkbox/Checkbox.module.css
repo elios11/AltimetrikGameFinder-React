@@ -1,4 +1,4 @@
-.remember__me-checkbox {
+.remember-me__checkbox {
     width: 20px;
     height: 20px;
     margin: 1px 15px 0 0;
@@ -7,19 +7,19 @@
     border: 1.5px solid var(--neutral-color-5);
     cursor: pointer;
 }
-.remember__me-checkbox:after {
+.remember-me__checkbox:after {
     font-family: 'Font Awesome 5 free';
     font-weight: 900;
     color: var(--neutral-color-5);
     display: none;
 }
-.remember__me-checkbox:checked {
+.remember-me__checkbox:checked {
     background-color: var(--primary-color-1);
     content: url(../../assets/login/check.svg);
     border: none;
     padding: 5.33px 4px 4.67px 4.67px;
 }
-.remember__me-checkbox:checked:after {
+.remember-me__checkbox:checked:after {
     display: block;
 }
 
