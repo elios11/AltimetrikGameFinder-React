@@ -6,7 +6,7 @@ import SocialMediaButton from '@components/SocialMediaButton/SocialMediaButton';
 
 import styles from './AuthLayout.module.css';
 
-export default function Auth({ title, title2, label, label2, link, children }) {
+export default function AuthLayout({ title, title2, label, label2, link, children }) {
     return (
         <div className={styles['login-container']}>
             <img className={styles.logo} src={darkLogo} alt="game finder logo" />
@@ -35,7 +35,7 @@ export default function Auth({ title, title2, label, label2, link, children }) {
     );
 }
 
-Auth.propTypes = {
+AuthLayout.propTypes = {
     title: PropTypes.string,
     title2: PropTypes.string,
     label: PropTypes.string,
