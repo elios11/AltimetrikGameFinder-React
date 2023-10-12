@@ -59,3 +59,37 @@
         margin-left: auto;
     }
 }
+
+@media (width >= 1200px) {
+    .header {
+        padding: 0.6rem 4rem 0.5rem 2rem;
+    }
+
+    .header__logo {
+        width: 18rem;
+    }
+
+    .header__search-icon {
+        display: none;
+    }
+
+    .header__log-out-btn {
+        margin-left: auto;
+        order: 2;
+    }
+
+    .header__menu {
+        display: none;
+    }
+
+    .header__profile-img {
+        margin-left: 1.6rem;
+        order: 3;
+    }
+
+    .header__search-bar {
+        display: block;
+        margin-left: auto;
+        margin-right: 4.5rem;
+    }
+}
