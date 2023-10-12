@@ -1,7 +1,23 @@
 .games-container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    row-gap: 1.6rem;
+}
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+    .games-container {
+        flex-direction: row;
+        row-gap: 2.4rem;
+        column-gap: 1.8rem;
+    }
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
+    .games-container {
+        column-gap: 2.4rem;
+    }
 }
