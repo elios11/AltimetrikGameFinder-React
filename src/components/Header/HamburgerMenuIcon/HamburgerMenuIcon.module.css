@@ -1,0 +1,15 @@
+.hamburger-menu-icon {
+    display: flex;
+    flex-direction: column;
+    width: 1.8rem;
+    height: 1.4rem;
+    gap: 0.4rem;
+}
+
+.hamburger-menu-icon div {
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    border-radius: 0.5rem;
+    transition: 0.5s all;
+}
