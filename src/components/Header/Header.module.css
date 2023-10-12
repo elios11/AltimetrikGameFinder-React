@@ -26,6 +26,10 @@
     margin-left: 3.5rem;
 }
 
+.header__log-out-btn {
+    display: none;
+}
+
 .header__search-bar {
     /* Styles for search bar */
     display: none;
@@ -74,6 +78,7 @@
     }
 
     .header__log-out-btn {
+        display: block;
         margin-left: auto;
         order: 2;
     }
