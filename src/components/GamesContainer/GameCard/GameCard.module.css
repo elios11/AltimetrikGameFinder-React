@@ -4,8 +4,7 @@
 
     color: #fff;
     min-width: 24rem;
-    width: 28.8rem;
-    margin: 1.6rem;
+    width: 90vw;
     min-height: 33.2rem;
 }
 
@@ -14,7 +13,7 @@
     .card {
         width: 45.7vw;
         min-width: 32rem;
-        margin: 1.2rem 0.9rem 1.2rem 0.9rem;
+        max-width: 38rem;
         min-height: 32rem;
     }
 }
