@@ -10,6 +10,7 @@
     overflow: hidden;
     line-height: 1.2;
     justify-content: right;
+    max-width: 12rem;
 }
 
 /* Styles for tablet size */
