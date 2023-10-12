@@ -30,3 +30,32 @@
     /* Styles for search bar */
     display: none;
 }
+
+@media (width >= 768px) {
+    .header {
+        justify-content: end;
+        padding: 1.7rem 2.4rem 1.4rem 2.1rem;
+    }
+
+    .header__menu {
+        order: 1;
+    }
+
+    .header__logo {
+        width: 13rem;
+        margin-right: auto;
+        transform: translateY(-3px);
+    }
+
+    .header__profile-img {
+        display: block;
+    }
+
+    .header__menu {
+        margin-left: 3.6rem;
+    }
+
+    .header__search-icon {
+        margin-left: auto;
+    }
+}
