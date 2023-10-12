@@ -13,6 +13,9 @@ export default function SearchBar() {
                 src={clearSearchBtn}
                 alt="clear search button"
             />
+            <img src={searchBarIcon} alt="search bar icon" />
+            <input id="searchBar" type="text" placeholder="Search games..." />
+            <img id="clearSearchBtn" src={clearSearchBtn} alt="clear search button" />
         </div>
     );
 }
