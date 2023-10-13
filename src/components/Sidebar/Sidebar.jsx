@@ -22,7 +22,7 @@ const Sidebar = () => {
             ) : (
                 <>
                     <div className="header">
-                        <button className="close-icon" onClick={() => setSidebarOpen(false)}>
+                        <button className="close-icon " onClick={() => setSidebarOpen(false)}>
                             <img src={x} alt="Close" />
                         </button>
                         <img src={desktopAvatarCustom} alt="Avatar" className="avatar"/>
@@ -61,8 +61,10 @@ const Sidebar = () => {
                         </div>
                     </nav>
                     <div className="line-div"></div>
+                    <div className="dark-mode">
                         <span className="logout">Dark mode</span> 
                         <img src={desktopSwitchon} alt="Dark Mode Icon" className="dark-mode-icon"/>
+                    </div>
                     <div className="line-div"></div>
                     <div className="logout">Logout</div>
                 </>
