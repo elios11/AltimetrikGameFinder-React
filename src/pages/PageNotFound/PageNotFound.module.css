@@ -1,0 +1,66 @@
+.pageNotFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2rem;
+}
+
+.pageNotFound__logo {
+    width: 16rem;
+}
+
+.pageNotFound__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pageNotFound__description {
+    margin-bottom: 3rem;
+}
+
+.pageNotFound__links {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+    gap: 1.3rem;
+}
+
+.pageNotFound__links div {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.pageNotFound__links img {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+@media (width >= 600px) {
+    .pageNotFound {
+        min-height: 100vh;
+        justify-content: center;
+        margin: 0 12rem;
+    }
+}
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+    .pageNotFound__title {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .pageNotFound__description {
+        font-size: 1.8rem;
+    }
+
+    .pageNotFound__links {
+        font-size: 2.2rem;
+    }
+
+    .pageNotFound__links img {
+        width: 3rem;
+        height: 3rem;
+    }
+}

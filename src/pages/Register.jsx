@@ -1,3 +1,5 @@
-export default function Register() {
-    return <div>Register</div>;
+import Register from '@components/templates/Register';
+
+export default function RegisterPage() {
+    return <Register />;
 }
