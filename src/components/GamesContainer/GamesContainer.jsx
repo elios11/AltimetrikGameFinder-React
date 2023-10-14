@@ -1,15 +1,15 @@
+import { useContext, useEffect } from 'react';
 import fetchGames from '@api/fetchGames';
 import GameCard from './GameCard/GameCard';
-import { useEffect, useState } from 'react';
 import styles from './gamesContainer.module.css';
+import RequestsContext from '@context/RequestsContext';
 
 export default function GamesContainer() {
-    const [result, setResult] = useState({ loading: true, data: {}, error: null });
+    const { result, setResult } = useContext(RequestsContext);
 
     /* Fetches games data and set the result to state */
     useEffect(() => {
-        const getGamesData = async () => await fetchGames('https://rawg.io/api/games/');
-        getGamesData()
+        fetchGames('https://rawg.io/api/games/')
             .then((result) => setResult(result))
             .catch((err) => setResult(err));
     }, []);
