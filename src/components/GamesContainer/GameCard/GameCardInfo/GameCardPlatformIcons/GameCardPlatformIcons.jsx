@@ -38,7 +38,7 @@ export default function GameCardPlatformIcons({ parentPlatforms }) {
 
     return (
         <div className={styles['card__game-platforms-icons']}>
-            {parentPlatforms.slice(0, 4).map((parentPlatform) => (
+            {parentPlatforms?.slice(0, 4).map((parentPlatform) => (
                 <img
                     key={parentPlatform.platform.id}
                     src={parentPlatformsImages[parentPlatform.platform.id - 1]}
