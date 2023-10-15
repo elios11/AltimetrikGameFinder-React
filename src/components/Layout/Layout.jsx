@@ -23,6 +23,7 @@ export default function Layout() {
                         </div>
                         <Outlet />
                     </div>
+                    <div className={styles['fading-bottom']}></div>
                 </div>
             </RequestsContextProvider>
         </div>
