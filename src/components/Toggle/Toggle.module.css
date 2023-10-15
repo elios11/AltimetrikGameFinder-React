@@ -1,11 +1,9 @@
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
     display: inline-block;
-    width: 44px;
-    height: 22px;
-    margin-top: 0px;
-    margin-left: 16px;
+    position: relative;
+    width: 4.4rem;
+    height: 2.2rem;
 }
 
 /* Hide default HTML checkbox */
@@ -61,10 +59,10 @@ input:checked + .slider:before {
 }
 
 .slider.round::after {
-    content: 'OFF';
-    color: #939393;
     display: block;
     position: absolute;
+    content: 'OFF';
+    color: #939393;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 75%;
