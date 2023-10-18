@@ -6,6 +6,10 @@
     row-gap: 1.6rem;
 }
 
+.games-container.single-column {
+    background-color: aquamarine;
+}
+
 /* Styles for tablet size */
 @media (width >= 768px) {
     .games-container {
@@ -13,11 +17,19 @@
         row-gap: 2.4rem;
         column-gap: 1.8rem;
     }
+
+    .games-container.single-column {
+        row-gap: 5.4rem;
+    }
 }
 
 /* Styles for desktop size */
 @media (width >= 1200px) {
     .games-container {
         column-gap: 2.4rem;
+    }
+
+    .games-container.single-column {
+        row-gap: 4.6rem;
     }
 }
