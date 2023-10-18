@@ -3,9 +3,11 @@ import fetchGames from '@api/fetchGames';
 import GameCard from './GameCard/GameCard';
 import styles from './gamesContainer.module.css';
 import RequestsContext from '@context/RequestsContext';
+import SingleColumnContext from '@context/SingleColumnContext';
 
 export default function GamesContainer() {
     const { result, setResult } = useContext(RequestsContext);
+    const { singleColumn } = useContext(SingleColumnContext);
 
     /* Fetches games data and set the result to state */
     useEffect(() => {
@@ -16,5 +18,9 @@ export default function GamesContainer() {
 
     const gameCards = result?.data?.results?.map((game, index) => <GameCard game={game} key={index} />);
 
-    return <div className={styles['games-container']}>{!result.loading && gameCards}</div>;
+    return (
+        <div className={styles[singleColumn ? 'games-container' : 'games-container']}>
+            {!result.loading && gameCards}
+        </div>
+    );
 }
