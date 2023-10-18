@@ -6,16 +6,25 @@
     width: 100%;
     height: 17.9rem;
     border-radius: 1.2rem 1.2rem 0 0;
-}
 
-.card__like-icon {
-    position: absolute;
-    top: 0.7rem;
-    right: 0.5rem;
+    .card__like-icon {
+        position: absolute;
+        top: 0.7rem;
+        right: 0.5rem;
+    }
 }
 
 /* Styles for tablet size */
 @media (width >= 768px) {
+    .single-column.card__background-image {
+        height: 31.5rem;
+
+        .card__like-icon {
+            top: 1.6rem;
+            right: 1.6rem;
+            width: 4rem;
+        }
+    }
 }
 
 /* Styles for desktop size */

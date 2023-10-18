@@ -16,6 +16,11 @@
         max-width: 38rem;
         min-height: 32rem;
     }
+
+    .card.single-column {
+        height: 51.6rem;
+        min-width: 90vw;
+    }
 }
 
 /* Styles for desktop size */

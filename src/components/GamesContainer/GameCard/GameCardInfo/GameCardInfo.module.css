@@ -3,87 +3,114 @@
     width: 100%;
     padding-left: 4.41%;
     padding-right: 4.41%;
-}
 
-.card__title-and-ranking {
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 0.8rem;
-}
+    .card__title-and-ranking {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 0.8rem;
+    }
 
-.card__title {
-    font-size: 2.4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 2.8rem;
-    overflow: hidden;
-    white-space: rap;
-    text-overflow: ellipsis;
-    width: 80%;
-}
+    .card__title {
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.8rem;
+        overflow: hidden;
+        white-space: rap;
+        text-overflow: ellipsis;
+        width: 80%;
+    }
 
-.card__renking {
-    font-family: 'Exo';
-    font-size: 1.8rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 3.3rem;
-    text-align: right;
-    justify-content: right;
-    color: #bf5fe1;
-}
+    .card__ranking {
+        font-family: 'Exo';
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3.3rem;
+        text-align: right;
+        justify-content: right;
+        color: #bf5fe1;
+    }
 
-.card__game-details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    font-style: normal;
-    font-size: 1.4rem;
-    align-items: start;
-    flex-direction: column;
-    margin-top: 0.6rem;
-}
+    .card__game-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        font-style: normal;
+        font-size: 1.4rem;
+        align-items: start;
+        flex-direction: column;
+        margin-top: 0.6rem;
+    }
 
-.card__game-details-atributes {
-    display: flex;
-    flex-direction: column;
-    line-height: 0;
-    width: 100%;
-}
+    .card__game-details-atributes {
+        display: flex;
+        flex-direction: column;
+        line-height: 0;
+        width: 100%;
+    }
 
-.card__game-details-atributes div {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.4rem;
-    margin-top: 0.4rem;
+    .card__game-details-atributes div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.4rem;
+        margin-top: 0.4rem;
+    }
 }
 
 /* Styles for tablet size */
 @media (width >= 768px) {
     .card__game-info {
         margin-top: 1.6rem;
+
+        .card__title {
+            font-size: 2.4rem;
+        }
+
+        .card__game-details {
+            flex-direction: row;
+            margin-top: 0.6rem;
+        }
+
+        .card__game-details-atributes {
+        }
+
+        .card__game-details-atributes div {
+            justify-content: left;
+        }
     }
 
-    .card__title-and-ranking {
-        min-height: 4.5rem;
-    }
+    .single-column.card__game-info {
+        .card__title-and-ranking {
+            min-height: 4.5rem;
+        }
 
-    .card__game-details {
-        flex-direction: row;
-        margin-top: 0.6rem;
-    }
+        .card__title {
+            font-size: 3.2rem;
+        }
 
-    .card__game-details-atributes {
-    }
+        .card__game-details {
+            flex-direction: row;
+            margin-top: 0.6rem;
+        }
 
-    .card__game-details-atributes div {
-        justify-content: left;
+        .card__ranking {
+            font-size: 3.2rem;
+        }
+
+        .card__game-details-atributes {
+            flex-direction: row;
+        }
+
+        .card__game-details-atributes div {
+            justify-content: left;
+        }
     }
 }
 
