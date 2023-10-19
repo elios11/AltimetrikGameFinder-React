@@ -1,9 +1,12 @@
 import { useContext, useEffect } from 'react';
+
 import fetchGames from '@api/fetchGames';
-import GameCard from './GameCard/GameCard';
-import styles from './gamesContainer.module.css';
+import Skeleton from '@components/Skeleton/Skeleton';
 import RequestsContext from '@context/RequestsContext';
 import SingleColumnContext from '@context/SingleColumnContext';
+
+import GameCard from './GameCard/GameCard';
+import styles from './gamesContainer.module.css';
 
 export default function GamesContainer() {
     const { result, setResult } = useContext(RequestsContext);
@@ -18,8 +21,11 @@ export default function GamesContainer() {
 
     const gameCards = result?.data?.results?.map((game, index) => <GameCard game={game} key={index} />);
 
+    const skeletons = Array.from({ length: 20 }, (_, i) => <Skeleton key={i} />);
+
     return (
         <div className={styles[singleColumn ? 'games-container' : 'games-container']}>
+            {result.loading && skeletons}
             {!result.loading && gameCards}
         </div>
     );
