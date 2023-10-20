@@ -8,6 +8,10 @@
     min-height: 33.2rem;
 }
 
+.card:hover {
+    opacity: 0.85;
+}
+
 /* Styles for tablet size */
 @media (width >= 768px) {
     .card {
