@@ -4,8 +4,8 @@ import GameCardInfoAtributes from './GameCardInfoAtributes/GameCardInfoAtributes
 import GameCardPlatformIcons from './GameCardPlatformIcons/GameCardPlatformIcons';
 
 export default function GameCardInfo({ game }) {
-    function parseDate(dateStrig) {
-        const date = new Date(dateStrig);
+    function parseDate(dateString) {
+        const date = new Date(dateString);
         return `${date.toLocaleString('en-US', {
             month: 'short',
         })} ${date.getDate()}, ${date.getFullYear()}`;
@@ -17,7 +17,7 @@ export default function GameCardInfo({ game }) {
         <div className={styles['card__game-info']}>
             <div className={styles['card__title-and-ranking']}>
                 <h3 className={styles['card__title']}>{game.name}</h3>
-                <p className={styles['card__renking']}>#{game.id}</p>
+                <p className={styles['card__ranking']}>#{game.id}</p>
             </div>
             <div className={styles['card__game-details']}>
                 <div className={styles['card__game-details-atributes']}>
