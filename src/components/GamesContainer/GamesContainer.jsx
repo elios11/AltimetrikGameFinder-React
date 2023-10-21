@@ -46,10 +46,14 @@ export default function GamesContainer({ setModalGameId }) {
         <GameCard game={game} key={index} id={game.id} onClick={updateGameModalId} />
     ));
 
+    const gamesContainerStyles = singleColumn
+        ? styles['games-container'] + ' ' + styles['single-column']
+        : styles['games-container'];
+
     const skeletons = Array.from({ length: 20 }, (_, i) => <Skeleton key={i} />);
 
     return (
-        <div className={styles[singleColumn ? 'games-container' : 'games-container']}>
+        <div className={gamesContainerStyles}>
             {result.loading && skeletons}
             {!result.loading && gameCards}
         </div>
