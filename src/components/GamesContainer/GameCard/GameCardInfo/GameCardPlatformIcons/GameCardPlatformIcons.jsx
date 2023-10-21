@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './GameCardPlatformIcons.module.css';
+import { useContext } from 'react';
+import SingleColumnContext from '@context/SingleColumnContext';
 
 import icon1 from '@/assets/GameCard/platforms/dark/icon-01.svg';
 import icon2 from '@/assets/GameCard/platforms/dark/icon-02.svg';
@@ -36,8 +38,14 @@ export default function GameCardPlatformIcons({ parentPlatforms }) {
         icon14,
     ];
 
+    const { singleColumn } = useContext(SingleColumnContext);
+
+    const gamePlatformIconsStyles = singleColumn
+        ? styles['card__game-platforms-icons'] + ' ' + styles['single-column']
+        : styles['card__game-platforms-icons'];
+
     return (
-        <div className={styles['card__game-platforms-icons']}>
+        <div className={gamePlatformIconsStyles}>
             {parentPlatforms?.slice(0, 4).map((parentPlatform) => (
                 <img
                     key={parentPlatform.platform.id}
