@@ -3,6 +3,7 @@
     width: 100%;
     padding-left: 4.41%;
     padding-right: 4.41%;
+    min-height: 15.3rem;
 
     .card__title-and-ranking {
         display: flex;
@@ -84,6 +85,8 @@
     }
 
     .single-column.card__game-info {
+        min-height: 20.1rem;
+
         .card__title-and-ranking {
             min-height: 4.5rem;
         }

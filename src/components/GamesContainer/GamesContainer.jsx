@@ -11,7 +11,7 @@ import styles from './gamesContainer.module.css';
 import fetchGamesDescription from '@api/fetchGamesDescription';
 
 export default function GamesContainer({ setModalGameId }) {
-    const { result, setResult, setGamesDescription } = useContext(RequestsContext);
+    const { result, setResult, gamesDescription, setGamesDescription } = useContext(RequestsContext);
     const { singleColumn } = useContext(SingleColumnContext);
 
     /* Fetches games data and set the result to state */
@@ -43,7 +43,13 @@ export default function GamesContainer({ setModalGameId }) {
     }
 
     const gameCards = result?.data?.results?.map((game, index) => (
-        <GameCard game={game} key={index} id={game.id} onClick={updateGameModalId} />
+        <GameCard
+            game={game}
+            key={index}
+            id={game.id}
+            onClick={updateGameModalId}
+            description={gamesDescription[game.id]?.description_raw}
+        />
     ));
 
     const gamesContainerStyles = singleColumn

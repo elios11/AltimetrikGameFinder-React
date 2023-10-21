@@ -5,7 +5,7 @@ import GameCardPlatformIcons from './GameCardPlatformIcons/GameCardPlatformIcons
 import { useContext } from 'react';
 import SingleColumnContext from '@context/SingleColumnContext';
 
-export default function GameCardInfo({ game }) {
+export default function GameCardInfo({ game, description }) {
     function parseDate(dateString) {
         const date = new Date(dateString);
         return `${date.toLocaleString('en-US', {
@@ -35,7 +35,7 @@ export default function GameCardInfo({ game }) {
                 <GameCardPlatformIcons parentPlatforms={game.parent_platforms} />
             </div>
             <div className={styles.description}>
-                <p className={styles.descriptionText}></p>
+                <p className={styles.descriptionText}>{description ? description : 'Loading description...'}</p>
             </div>
         </div>
     );
@@ -49,4 +49,5 @@ GameCardInfo.propTypes = {
         released: PropTypes.string,
         parent_platforms: PropTypes.array,
     }),
+    description: PropTypes.string,
 };
