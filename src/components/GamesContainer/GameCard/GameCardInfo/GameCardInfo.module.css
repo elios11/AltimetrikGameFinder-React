@@ -1,9 +1,8 @@
 .card__game-info {
     position: relative;
     width: 100%;
-    padding-left: 4.41%;
-    padding-right: 4.41%;
-    min-height: 15.3rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
 
     .card__title-and-ranking {
         display: flex;
@@ -22,6 +21,7 @@
         white-space: rap;
         text-overflow: ellipsis;
         width: 80%;
+        text-align: left;
     }
 
     .card__ranking {
@@ -62,6 +62,10 @@
         justify-content: space-between;
         margin-bottom: 0.4rem;
         margin-top: 0.4rem;
+    }
+
+    .card__game-description {
+        display: none;
     }
 }
 
@@ -111,6 +115,23 @@
         .card__game-details-atributes div {
             justify-content: left;
             max-width: 22rem;
+        }
+
+        .card__game-description {
+            display: block;
+            text-align: left;
+            margin-top: 2.3rem;
+        }
+
+        .card__game-description-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            height: 6.4rem;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
         }
     }
 }

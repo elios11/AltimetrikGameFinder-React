@@ -34,8 +34,10 @@ export default function GameCardInfo({ game, description }) {
                 </div>
                 <GameCardPlatformIcons parentPlatforms={game.parent_platforms} />
             </div>
-            <div className={styles.description}>
-                <p className={styles.descriptionText}>{description ? description : 'Loading description...'}</p>
+            <div className={styles['card__game-description']}>
+                <p className={styles['card__game-description-text']}>
+                    {description ? description : 'Loading description...'}
+                </p>
             </div>
         </div>
     );

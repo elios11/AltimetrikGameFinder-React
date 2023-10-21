@@ -17,6 +17,7 @@
 @media (width >= 768px) {
     .card__game-details-atributes-name {
         width: 10.6rem;
+        text-align: left;
     }
 
     .single-column.card__game-details-atributes-name {
