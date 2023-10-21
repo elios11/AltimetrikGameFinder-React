@@ -18,9 +18,10 @@
         font-weight: 700;
         line-height: 2.8rem;
         overflow: hidden;
-        white-space: rap;
+        white-space: wrap;
         text-overflow: ellipsis;
         width: 80%;
+        text-align: start;
     }
 
     .card__ranking {

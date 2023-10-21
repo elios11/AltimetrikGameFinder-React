@@ -5,8 +5,13 @@ const RequestsContext = createContext(null);
 
 export function RequestsContextProvider({ children }) {
     const [result, setResult] = useState({ loading: true, data: {}, error: null });
+    const [gamesDescription, setGamesDescription] = useState({});
 
-    return <RequestsContext.Provider value={{ result, setResult }}>{children}</RequestsContext.Provider>;
+    return (
+        <RequestsContext.Provider value={{ result, setResult, gamesDescription, setGamesDescription }}>
+            {children}
+        </RequestsContext.Provider>
+    );
 }
 
 RequestsContextProvider.propTypes = {

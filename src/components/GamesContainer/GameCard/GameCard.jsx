@@ -3,15 +3,16 @@ import styles from './GameCard.module.css';
 import GameCardImage from './GameCardImage/GameCardImage';
 import GameCardInfo from './GameCardInfo/GameCardInfo';
 
-export default function GameCard({ game }) {
+export default function GameCard({ game, onClick }) {
     return (
-        <div className={styles.card}>
+        <button className={styles.card} aria-label={`Show ${game.name} data`} onClick={onClick} id={game.id}>
             <GameCardImage image={game.background_image} />
             <GameCardInfo game={game} />
-        </div>
+        </button>
     );
 }
 
 GameCard.propTypes = {
     game: PropTypes.object,
+    onClick: PropTypes.func,
 };
