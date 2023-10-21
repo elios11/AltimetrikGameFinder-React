@@ -6,10 +6,6 @@
     row-gap: 1.6rem;
 }
 
-.games-container.single-column {
-    background-color: aquamarine;
-}
-
 /* Styles for tablet size */
 @media (width >= 768px) {
     .games-container {

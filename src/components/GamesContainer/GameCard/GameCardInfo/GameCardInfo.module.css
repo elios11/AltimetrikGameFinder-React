@@ -18,10 +18,9 @@
         font-weight: 700;
         line-height: 2.8rem;
         overflow: hidden;
-        white-space: wrap;
+        white-space: rap;
         text-overflow: ellipsis;
         width: 80%;
-        text-align: start;
     }
 
     .card__ranking {
@@ -108,6 +107,7 @@
 
         .card__game-details-atributes div {
             justify-content: left;
+            max-width: 22rem;
         }
     }
 }
