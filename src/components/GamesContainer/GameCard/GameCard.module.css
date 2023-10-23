@@ -1,4 +1,6 @@
 .card {
+    display: flex;
+    flex-direction: column;
     background-color: #303030;
     border-radius: 1.2rem;
 
@@ -6,10 +8,6 @@
     min-width: 24rem;
     width: 90vw;
     min-height: 33.2rem;
-}
-
-.card:hover {
-    opacity: 0.85;
 }
 
 /* Styles for tablet size */
@@ -22,8 +20,7 @@
     }
 
     .card.single-column {
-        height: 51.6rem;
-        min-width: 90vw;
+        min-width: 69.7rem;
     }
 }
 

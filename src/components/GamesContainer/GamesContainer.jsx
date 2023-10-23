@@ -11,7 +11,7 @@ import styles from './gamesContainer.module.css';
 import fetchGamesDescription from '@api/fetchGamesDescription';
 
 export default function GamesContainer({ setModalGameId }) {
-    const { result, setResult, setGamesDescription } = useContext(RequestsContext);
+    const { result, setResult, gamesDescription, setGamesDescription } = useContext(RequestsContext);
     const { singleColumn } = useContext(SingleColumnContext);
 
     /* Fetches games data and set the result to state */
@@ -43,13 +43,23 @@ export default function GamesContainer({ setModalGameId }) {
     }
 
     const gameCards = result?.data?.results?.map((game, index) => (
-        <GameCard game={game} key={index} id={game.id} onClick={updateGameModalId} />
+        <GameCard
+            game={game}
+            key={index}
+            id={game.id}
+            onClick={updateGameModalId}
+            description={gamesDescription[game.id]?.description_raw}
+        />
     ));
+
+    const gamesContainerStyles = singleColumn
+        ? styles['games-container'] + ' ' + styles['single-column']
+        : styles['games-container'];
 
     const skeletons = Array.from({ length: 20 }, (_, i) => <Skeleton key={i} />);
 
     return (
-        <div className={styles[singleColumn ? 'games-container' : 'games-container']}>
+        <div className={gamesContainerStyles}>
             {result.loading && skeletons}
             {!result.loading && gameCards}
         </div>

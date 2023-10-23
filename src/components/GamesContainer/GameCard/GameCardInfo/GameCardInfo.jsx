@@ -2,8 +2,10 @@ import PropTypes from 'prop-types';
 import styles from './GameCardInfo.module.css';
 import GameCardInfoAtributes from './GameCardInfoAtributes/GameCardInfoAtributes';
 import GameCardPlatformIcons from './GameCardPlatformIcons/GameCardPlatformIcons';
+import { useContext } from 'react';
+import SingleColumnContext from '@context/SingleColumnContext';
 
-export default function GameCardInfo({ game }) {
+export default function GameCardInfo({ game, description }) {
     function parseDate(dateString) {
         const date = new Date(dateString);
         return `${date.toLocaleString('en-US', {
@@ -13,8 +15,14 @@ export default function GameCardInfo({ game }) {
 
     const genreNames = game.genres.map((genre) => genre.name);
 
+    const { singleColumn } = useContext(SingleColumnContext);
+
+    const gameInfoStyles = singleColumn
+        ? styles['card__game-info'] + ' ' + styles['single-column']
+        : styles['card__game-info'];
+
     return (
-        <div className={styles['card__game-info']}>
+        <div className={gameInfoStyles}>
             <div className={styles['card__title-and-ranking']}>
                 <h3 className={styles['card__title']}>{game.name}</h3>
                 <p className={styles['card__ranking']}>#{game.id}</p>
@@ -26,8 +34,10 @@ export default function GameCardInfo({ game }) {
                 </div>
                 <GameCardPlatformIcons parentPlatforms={game.parent_platforms} />
             </div>
-            <div className={styles.description}>
-                <p className={styles.descriptionText}></p>
+            <div className={styles['card__game-description']}>
+                <p className={styles['card__game-description-text']}>
+                    {description ? description : 'Loading description...'}
+                </p>
             </div>
         </div>
     );
@@ -41,4 +51,5 @@ GameCardInfo.propTypes = {
         released: PropTypes.string,
         parent_platforms: PropTypes.array,
     }),
+    description: PropTypes.string,
 };
