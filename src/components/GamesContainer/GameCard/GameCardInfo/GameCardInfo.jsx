@@ -18,7 +18,7 @@ export default function GameCardInfo({ game, description }) {
     const { singleColumn } = useContext(SingleColumnContext);
 
     const gameInfoStyles = singleColumn
-        ? styles['card__game-info'] + ' ' + styles['single-column']
+        ? `${styles['card__game-info']} ${styles['single-column']}`
         : styles['card__game-info'];
 
     return (
@@ -32,7 +32,11 @@ export default function GameCardInfo({ game, description }) {
                     <GameCardInfoAtributes tag="Release date: " info={parseDate(game.released)} />
                     <GameCardInfoAtributes tag="Genres: " info={genreNames.join(', ')} />
                 </div>
-                <GameCardPlatformIcons parentPlatforms={game.parent_platforms} />
+                <GameCardPlatformIcons
+                    parentPlatforms={game.parent_platforms}
+                    containerStylesClass={styles['card__platforms']}
+                    iconStylesClass={styles['card__platforms__icons']}
+                />
             </div>
             <div className={styles['card__game-description']}>
                 <p className={styles['card__game-description-text']}>
