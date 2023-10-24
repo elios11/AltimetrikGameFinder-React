@@ -1,14 +1,20 @@
 import styles from './Header.module.css';
+import Sidebar from '@components/Sidebar/Sidebar';
 import HamburgerMenuIcon from './HamburgerMenuIcon/HamburgerMenuIcon';
 import SearchBar from './SearchBar/SearchBar';
 import pageLogo from '@assets/brand/dark-logo.svg';
+import { useState } from 'react';
 
 export default function Header() {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
     return (
         <nav className={styles.header}>
             <div className={styles['header__menu']}>
-                <HamburgerMenuIcon />
+                <HamburgerMenuIcon isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
             </div>
+            <Sidebar isSidebarOpen={isSidebarOpen} />
+
             <a href="/">
                 <img className={styles['header__logo']} src={pageLogo} alt="Page logo" />
             </a>
