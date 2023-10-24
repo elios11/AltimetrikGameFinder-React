@@ -27,14 +27,9 @@ const router = createBrowserRouter(
                     <Route path="/last-searches" element={<LastSearches />} />
                 </Route>
             </Route>
-            <Route path="/" element={<Layout />}>
-                <Route path="*" element={<PageNotFound />} />
-            </Route>
-        </>
-    )
+            <Route path="*" element={<PageNotFound />} />
         </>,
     ),
-
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(

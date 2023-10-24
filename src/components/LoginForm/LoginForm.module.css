@@ -90,7 +90,7 @@
 /* Styles for tablet size */
 @media (width >= 768px) {
     .form__password-container {
-        margin-bottom: 0;
+        margin-bottom: 0.1rem;
     }
 
     .form__checkbox-icon {
@@ -106,7 +106,7 @@
 /* Styles for desktop size */
 @media (width >= 1200px) {
     .form__password-details-container {
-        margin-top: 1.4rem;
+        margin-top: 1rem;
         margin-bottom: 2.3rem;
     }
 }

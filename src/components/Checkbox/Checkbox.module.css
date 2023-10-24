@@ -1,0 +1,28 @@
+.checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 1px 15px 0 0;
+    appearance: none;
+    border-radius: 4px;
+    border: 1.5px solid var(--neutral-color-5);
+    cursor: pointer;
+}
+.checkbox:after {
+    font-family: 'Font Awesome 5 free';
+    font-weight: 900;
+    color: var(--neutral-color-5);
+    display: none;
+}
+.checkbox:checked {
+    background-color: var(--primary-color-1);
+    content: url(../../assets/login/check.svg);
+    border: none;
+    padding: 5.33px 4px 4.67px 4.67px;
+}
+.checkbox:checked:after {
+    display: block;
+}
+
+input[type='checkbox'] {
+    accent-color: red;
+}

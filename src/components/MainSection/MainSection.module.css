@@ -1,0 +1,79 @@
+.main-section {
+    /* Styles for main section */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'title'
+        'subtitle';
+}
+
+.main-section__title {
+    /* Styles for homepage title */
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    font-weight: 800;
+    grid-area: title;
+}
+
+.main-section__subtitle {
+    /* Styles for homepage subtitle */
+    font-size: 1.4rem;
+    margin-top: 0.3rem;
+    color: var(--neutral-color-4);
+    grid-area: subtitle;
+}
+
+.main-section__columns {
+    /* Styles for homepage columns */
+    display: none;
+    grid-area: columns;
+}
+
+.main-section__switchTheme {
+    /* Styles for theme switch button */
+    display: none;
+    grid-area: switchTheme;
+}
+
+.main-section__switchTheme img {
+    width: 4.4rem;
+}
+
+@media (width >= 768px) {
+    .main-section {
+        grid-template-areas:
+            'title switchTheme'
+            'subtitle columns';
+    }
+
+    .main-section__switchTheme {
+        display: flex;
+        align-items: start;
+        margin-top: 0.7rem;
+        gap: 1.3rem;
+        font-size: 1.5rem;
+    }
+
+    .main-section__columns {
+        display: flex;
+        gap: 2.4rem;
+        justify-self: end;
+    }
+
+    .main-section__title {
+        font-size: 4.8rem;
+        line-height: 4.8rem;
+    }
+
+    .main-section__subtitle {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+}
+
+@media (width >= 1200px) {
+    .main-section__columns {
+        align-self: end;
+    }
+}

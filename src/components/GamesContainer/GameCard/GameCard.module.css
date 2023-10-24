@@ -4,7 +4,25 @@
 
     color: #fff;
     min-width: 24rem;
-    width: 28.8rem;
-    margin: 1.6rem;
+    width: 90vw;
     min-height: 33.2rem;
+}
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+    .card {
+        width: 45.7vw;
+        min-width: 32rem;
+        max-width: 38rem;
+        min-height: 32rem;
+    }
+
+    .card.single-column {
+        height: 51.6rem;
+        min-width: 90vw;
+    }
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
 }

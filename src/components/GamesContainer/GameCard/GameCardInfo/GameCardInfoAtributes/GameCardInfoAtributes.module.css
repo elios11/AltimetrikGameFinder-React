@@ -10,4 +10,20 @@
     overflow: hidden;
     line-height: 1.2;
     justify-content: right;
+    max-width: 12rem;
+}
+
+/* Styles for tablet size */
+@media (width >= 768px) {
+    .card__game-details-atributes-name {
+        width: 10.6rem;
+    }
+
+    .card__game-details-atributes-value {
+        justify-content: left;
+    }
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
 }

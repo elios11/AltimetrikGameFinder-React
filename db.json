@@ -5,12 +5,17 @@
             "password": "$2a$10$TGKU6SrJOdsGJgEXg4ZCvu6IcYlWlFGmD/MFPw9CFeWWRuX3nldoO",
             "id": 1
         },
-
         {
             "email": "wewe@hello.com",
             "password": "$2a$10$YtnUfYpm0mMOwy./EU/NpeX0FJx7ooxSYyyPhG1DxSgChVm0vufgS",
             "user": "Churlo",
             "id": 2
+        },
+        {
+            "email": "valeriaselviz@gmail.com",
+            "password": "$2a$10$MOCuZq7pygx8/waCvSv8JuEMjYyJyItOIcAs8OUCfQXf2xPrQKlla",
+            "user": "valeria",
+            "id": 3
         }
     ]
 }
