@@ -1,4 +1,4 @@
-export default async function fetchGames(url, searchQuery, page, gameId) {
+export default async function fetchGames(url, searchQuery, page, gameId, gameParam) {
     const apiKey = import.meta.env.VITE_API_KEY;
     const corsProxy = import.meta.env.VITE_CORS_PROXY;
     const result = { loading: true, data: {}, error: null };
@@ -7,6 +7,7 @@ export default async function fetchGames(url, searchQuery, page, gameId) {
     route = searchQuery ? `${corsProxy}${url}?key=${apiKey}&search=${searchQuery}` : route;
     route = page ? `${route}&page=${page}` : route;
     route = gameId ? `${corsProxy}${url}${gameId}?key=${apiKey}` : route;
+    route = gameParam ? `${corsProxy}${url}${gameId}/${gameParam}?key=${apiKey}` : route;
 
     try {
         const response = await fetch(route);
