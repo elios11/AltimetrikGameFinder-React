@@ -64,6 +64,18 @@
         margin-top: 0.4rem;
     }
 
+    .card__platforms {
+        display: flex;
+        justify-content: right;
+        margin-top: 1.2rem;
+        margin-bottom: 1.6rem;
+        gap: 1.6rem;
+    }
+
+    .card__platforms__icons {
+        width: 2rem;
+    }
+
     .card__game-description {
         display: none;
     }
@@ -85,6 +97,16 @@
 
         .card__game-details-atributes div {
             justify-content: left;
+        }
+
+        .card__platforms {
+            width: 11.2rem;
+            margin-top: 0.3rem;
+            gap: 1.2rem;
+        }
+
+        .card__platforms__icons {
+            width: 1.6rem;
         }
     }
 
@@ -118,7 +140,7 @@
         .card__game-description {
             display: block;
             text-align: left;
-            margin: 2.3rem 0 2rem 0;
+            margin: 1rem 0 2rem 0;
         }
 
         .card__game-description-text {
@@ -130,6 +152,13 @@
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             display: -webkit-box;
+        }
+
+        .card__platforms {
+            gap: 1.6rem;
+        }
+        .card__platforms__icons {
+            width: 2rem;
         }
     }
 }
