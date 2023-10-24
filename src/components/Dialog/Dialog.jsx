@@ -1,8 +1,34 @@
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-export default function Dialog({ children, closeModal, isModalOpen, type }) {
-    const modalRef = useRef(true);
+/**
+ * Dialog Component
+ *
+ * A versatile component for displaying dialogs or modals.
+ *
+ * @component
+ *
+ * @param {object} props - The component's props.
+ * @param {ReactNode} props.children - The content to be displayed within the dialog.
+ * @param {boolean} props.isModalOpen - Determines if the dialog/modal is open.
+ * @param {Function} props.onClose - A function to be called when the dialog/modal is closed.
+ * @param {string} props.type - The type of dialog, either 'dialog' or 'modal'.
+ * @param {string} props.customStyles - A CSS class name to apply custom styles to the dialog element.
+ *
+ * @example
+ * // To use this component, you can do:
+ * <Dialog
+ *   isModalOpen={true}
+ *   onClose={handleClose}
+ *   type="modal"
+ *   customStyles="my-custom-dialog"
+ * >
+ *   This is the content of the dialog/modal.
+ * </Dialog>
+ */
+
+export default function Dialog({ children, isModalOpen, onClose, type, customStyles }) {
+    const modalRef = useRef();
 
     function handleDialogType() {
         if (type === 'modal') {
@@ -21,7 +47,7 @@ export default function Dialog({ children, closeModal, isModalOpen, type }) {
     }, [isModalOpen, type]);
 
     return (
-        <dialog ref={modalRef} onClose={closeModal}>
+        <dialog className={customStyles} ref={modalRef} onClose={onClose}>
             {children}
         </dialog>
     );
@@ -29,7 +55,8 @@ export default function Dialog({ children, closeModal, isModalOpen, type }) {
 
 Dialog.propTypes = {
     children: PropTypes.node.isRequired,
-    closeModal: PropTypes.func.isRequired,
     isModalOpen: PropTypes.bool.isRequired,
-    type: PropTypes.string.isRequired,
+    onClose: PropTypes.func.isRequired,
+    type: PropTypes.oneOf(['dialog', 'modal']).isRequired,
+    customStyles: PropTypes.string,
 };
