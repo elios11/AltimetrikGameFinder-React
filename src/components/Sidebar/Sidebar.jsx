@@ -1,76 +1,76 @@
-import './Sidebar.css';
-import desktopAvatarCustom from '../Sidebar/img/desktopavatarcustom.svg';
-import desktopSwitchon from '../Sidebar/img/desktopswitchon.svg';
-import clock from '../Sidebar/img/clock.svg';
-import calendar from '../Sidebar/img/calendar.svg';
-import star from '../Sidebar/img/star.svg';
-import thumbsUp from '../Sidebar/img/thumbs-up.svg';
-import search from '../Sidebar/img/search.svg';
-import x from '../Sidebar/img/x.svg';
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styles from './Sidebar.module.css';
+import desktopAvatarCustom from '@assets/sidebar/desktopavatarcustom.svg';
+import clock from '@assets/sidebar/clock.svg';
+import calendar from '@assets/sidebar/calendar.svg';
+import star from '@assets/sidebar/star.svg';
+import thumbsUp from '@assets/sidebar/thumbs-up.svg';
+import search from '@assets/sidebar/search.svg';
+import Toggle from '@components/Toggle';
 
-const Sidebar = () => {
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
+export default function Sidebar({ isSidebarOpen }) {
+    const sidebarClosedClass = isSidebarOpen ? '' : styles['closed'];
 
     return (
-        <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-            
-            {!isSidebarOpen ? (
-                <button className="hamburger-menu" 
-                    onClick={() => setSidebarOpen(true)}
-                >☰</button>
-            ) : (
-                <>
-                    <div className="header">
-                        <button className="close-icon " onClick={() => setSidebarOpen(false)}>
-                            <img src={x} alt="Close" />
-                        </button>
-                        <img src={desktopAvatarCustom} alt="Avatar" className="avatar"/>
-                        <div className="title">
-                            <h2>Jane Doe</h2>
-                            <p>@janedoe</p>
-                        </div>
+        <div className={`${styles.sidebar} ${sidebarClosedClass}`}>
+            <div className={styles.sidebar__header}>
+                <img src={desktopAvatarCustom} alt="Avatar" className={styles['sidebar__avatar']} />
+                <div className={styles['sidebar__title']}>
+                    <h2>User</h2>
+                    <p>@user</p>
+                </div>
+            </div>
+            <div className={styles['sidebar__line-div']}></div>
+            <nav className={styles['sidebar__nav']}>
+                <div className={styles['sidebar__nav__links']}>
+                    <a className={styles['sidebar__nav-item']} href="/">
+                        Home
+                    </a>
+                    <a className={styles['sidebar__nav-item']} href="/">
+                        Reviews
+                    </a>
+                    <a className={styles['sidebar__nav-item']} href="/">
+                        New Releases
+                    </a>
+                </div>
+                <div className={styles['sidebar__nav__trending']}>
+                    <div className={styles['sidebar__nav-item-with-icon']}>
+                        <img src={star} alt="This week icon" />
+                        <a href="/">This week</a>
                     </div>
-                    <div className="line-div"></div>
-                    <nav>
-                        <a className="nav-item" href="#">Home</a>
-                        <a className="nav-item" href="#">Reviews</a>
-                        <a className="nav-item" href="#">New Releases</a>
-
-                        <div className="nav-item-with-icon">
-                            <img src={star} alt="This week icon"/>
-                            <a href="#">This week</a>
-                        </div>
-                        <div className="nav-item-with-icon">
-                            <img src={calendar} alt="This month icon"/>
-                            <a href="#">This month</a>
-                        </div>
-                        <div className="nav-item-with-icon">
-                            <img src={clock} alt="Coming soon icon"/>
-                            <a href="#">Coming soon</a>
-                        </div>
-
-                        <h2 className="nav-section-title">Popular</h2>
-                        <div className="nav-item-with-icon">
-                            <img src={search} alt="Last searches icon"/>
-                            <a href="#" className="last-search">Last searches</a>
-                        </div>
-                        <div className="nav-item-with-icon">
-                            <img src={thumbsUp} alt="Best of the year icon"/>
-                            <a href="#">Best of the year</a>
-                        </div>
-                    </nav>
-                    <div className="line-div"></div>
-                    <div className="dark-mode">
-                        <span className="logout">Dark mode</span> 
-                        <img src={desktopSwitchon} alt="Dark Mode Icon" className="dark-mode-icon"/>
+                    <div className={styles['sidebar__nav-item-with-icon']}>
+                        <img src={calendar} alt="This month icon" />
+                        <a href="/">This month</a>
                     </div>
-                    <div className="line-div"></div>
-                    <div className="logout">Logout</div>
-                </>
-            )}
+                    <div className={styles['sidebar__nav-item-with-icon']}>
+                        <img src={clock} alt="Coming soon icon" />
+                        <a href="/">Coming soon</a>
+                    </div>
+                </div>
+
+                <div className={styles['sidebar__nav__popular']}>
+                    <h2 className={styles['sidebar__nav-section-title']}>Popular</h2>
+                    <div className={styles['sidebar__nav-item-with-icon']}>
+                        <img src={search} alt="Last searches icon" />
+                        <a href="/" className={styles['sidebar__nav-item-with-icon__last-search']}>
+                            Last searches
+                        </a>
+                    </div>
+                    <div className={styles['sidebar__nav-item-with-icon']}>
+                        <img src={thumbsUp} alt="Best of the year icon" />
+                        <a href="/">Best of the year</a>
+                    </div>
+                </div>
+            </nav>
+            <div className={styles['sidebar__line-div']}></div>
+            <div className={styles['sidebar__dark-mode']}>
+                <span className={styles['sidebar__dark-mode__text']}>Dark mode</span>
+                <Toggle />
+            </div>
+            <div className={styles['sidebar__line-div']}></div>
+            <div className={styles['sidebar__logout']}>Logout</div>
         </div>
     );
-};
+}
 
-export default Sidebar;
+Sidebar.propTypes = { isSidebarOpen: PropTypes.bool };
