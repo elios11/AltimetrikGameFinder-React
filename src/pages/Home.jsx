@@ -16,6 +16,7 @@ export default function Home() {
                 isModalOpen={isModalOpen}
                 openModal={openModal}
                 closeModal={closeModal}
+                setModalGameId={setModalGameId}
                 modalGameId={modalGameId}
             />
         </>
