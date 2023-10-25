@@ -96,7 +96,7 @@ export default function GameDataModalInfo({ gameData, gameAssets }) {
                     </div>
                 </div>
                 <div className={`${styles['game-modal-data__assets']} ${styles['']}`}>
-                    {(gameAssets?.videos?.[0].data.max && (
+                    {(gameAssets?.videos?.[0]?.data.max && (
                         <video controls>
                             <source src={gameAssets.videos[0].data[480]} type="video/mp4" />
                             <source src={gameAssets.videos[0].data.max} type="video/mp4" />
