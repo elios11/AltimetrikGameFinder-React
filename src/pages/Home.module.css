@@ -1,0 +1,23 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.home__sidebar {
+    display: none;
+    width: 15.4%;
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
+    .home__sidebar {
+        display: block;
+    }
+
+    .home__games-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}

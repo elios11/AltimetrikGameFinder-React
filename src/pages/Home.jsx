@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import GamesContainer from '@components/GamesContainer/GamesContainer';
 import GameDataModal from '@components/GameDataModal';
+import SidebarNav from '../components/SidebarNav/SidebarNav';
+import styles from './Home.module.css';
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,8 +12,13 @@ export default function Home() {
     const openModal = () => setIsModalOpen(true);
 
     return (
-        <>
-            <GamesContainer setModalGameId={setModalGameId} />
+        <div className={styles['home']}>
+            <div className={styles['home__sidebar']}>
+                <SidebarNav />
+            </div>
+            <div className={styles['home__games-container']}>
+                <GamesContainer setModalGameId={setModalGameId} />
+            </div>
             <GameDataModal
                 isModalOpen={isModalOpen}
                 openModal={openModal}
@@ -19,6 +26,6 @@ export default function Home() {
                 setModalGameId={setModalGameId}
                 modalGameId={modalGameId}
             />
-        </>
+        </div>
     );
 }
