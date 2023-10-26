@@ -1,14 +1,10 @@
-.latestSearchesContainer {
+.latest_searches__container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.titles.latestSearchesTitles {
-    display: flex;
-    margin-left: 15px;
-    margin-right: auto;
-}
-.searchedItem {
+
+.searched_item {
     display: flex;
     flex-direction: column;
     margin-left: 330px;
@@ -17,21 +13,24 @@
     margin-top: 60px;
     margin-bottom: 5px;
 }
-.searchedItem > div {
+
+.searched_item > div {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
-.searchedItem > div > p {
-    color: var(--neutrals5);
+
+.searched_item > div > p {
+    color: var(--neutral-color-5);
 }
-.clearSearchesBtn {
-    color: var(--neutrals5);
-    background-color: var(--neutrals1);
-    border: 1px solid var(--primaryLightViolet);
+
+.clear_searches__btn {
+    color: var(--neutral-color-5);
+    background-color: var(--neutral-color-1);
+    border: 1px solid var(--primary-color-1);
     padding: 10px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.92rem;
     margin-top: 50px;
     cursor: pointer;
 }

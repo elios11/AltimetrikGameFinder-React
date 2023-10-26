@@ -5,6 +5,7 @@ import { getCookie, removeCookie } from '@utils/cookies';
 
 import styles from './LastSearches.module.css';
 
+
 export default function LastSearches() {
     const [lastSearches, setLastSearches] = useState([]);
 
@@ -20,11 +21,8 @@ export default function LastSearches() {
     };
 
     return (
-        <div className={styles['latestSearchesContainer']}>
-            <div className={`${styles['titles']} ${styles['latestSearchesTitles']}`}>
-                <h1>Latest searches</h1>
-            </div>
-            <div className={styles['searchedItem']}>
+        <div className={styles['latest_searches__container']}>
+            <div className={styles['searched_item']}>
                 {lastSearches.length > 0 ? (
                     lastSearches.map((item, index) => (
                         <div key={index}>
@@ -39,7 +37,7 @@ export default function LastSearches() {
                 )}
             </div>
             <div>
-                <button className={styles['clearSearchesBtn']} onClick={handleClear}>
+                <button className={styles['clear_searches__btn']} onClick={handleClear}>
                     Clear searches
                 </button>
             </div>
