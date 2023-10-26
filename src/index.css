@@ -141,9 +141,10 @@ body:has(dialog[open]) {
     font-size: 1.8rem;
     padding: 1rem 1.8rem;
 }
-
+/* 
 @media (992px <= width < 1200px) {
     html {
         font-size: 50%;
     }
 }
+*/
