@@ -1,11 +1,12 @@
-import PropTypes from 'prop-types';
-
-import Toggle from '@components/Toggle';
-
 import { MultipleColumnsBtn, SingleColumnBtn } from './Columns';
 import styles from './MainSection.module.css';
+import Toggle from '@components/Toggle';
+import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
 export default function MainSection({ title, subtitle }) {
+    const location = useLocation();
+
     return (
         <main className={styles['main-section']}>
             <h1 className={styles['main-section__title']}>{title}</h1>
@@ -14,10 +15,12 @@ export default function MainSection({ title, subtitle }) {
                 <p>Dark mode</p>
                 <Toggle />
             </div>
-            <div className={styles['main-section__columns']}>
-                <MultipleColumnsBtn />
-                <SingleColumnBtn />
-            </div>
+            {location.pathname !== '/last-searches' && (
+                <div className={styles['main-section__columns']}>
+                    <MultipleColumnsBtn />
+                    <SingleColumnBtn />
+                </div>
+            )}
         </main>
     );
 }
