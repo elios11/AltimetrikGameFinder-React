@@ -56,7 +56,7 @@ export default function GameDataModal({ isModalOpen, closeModal, openModal, setM
     return (
         modalGameId && (
             <Dialog type="modal" isModalOpen={isModalOpen} onClose={onDialogClose} customStyles={styles.dialog}>
-                <GameDataModalInfo gameData={gameData} gameAssets={gameAssets} />
+                <GameDataModalInfo gameData={gameData} gameAssets={gameAssets} closeModal={closeModal} />
             </Dialog>
         )
     );
