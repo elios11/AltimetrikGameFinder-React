@@ -1,14 +1,14 @@
-.latestSearchesContainer {
+.latest_searches__container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.titles.latestSearchesTitles {
+.titles.latest_searches__titles {
     display: flex;
     margin-left: 15px;
     margin-right: auto;
 }
-.searchedItem {
+.searched_item {
     display: flex;
     flex-direction: column;
     margin-left: 330px;
@@ -17,15 +17,15 @@
     margin-top: 60px;
     margin-bottom: 5px;
 }
-.searchedItem > div {
+.searched_item > div {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
-.searchedItem > div > p {
+.searched_item > div > p {
     color: var(--neutral-color-5);
 }
-.clearSearchesBtn {
+.clear_searches__btn {
     color: var(--neutral-color-5);
     background-color: var(--neutral-color-1);
     border: 1px solid var(--primary-color-1);
