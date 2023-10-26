@@ -1,10 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
-import RequestsContext from '@context/RequestsContext';
-import styles from './SearchBar.module.css';
-import searchBarIcon from '@assets/icons/search.svg';
-import clearSearchBtn from '@assets/icons/close-x-btn.svg';
+
 import fetchGames from '@api/fetchGames';
-import useDebounce from '@hooks/useDebouce';
+import clearSearchBtn from '@assets/icons/close-x-btn.svg';
+import searchBarIcon from '@assets/icons/search.svg';
+import RequestsContext from '@context/RequestsContext';
+import useDebounce from '@hooks/useDebounce';
+import { setCookie, getCookie } from '@utils/cookies';
+
+import styles from './SearchBar.module.css';
 
 export default function SearchBar() {
     const [search, setSearch] = useState(null);
@@ -16,6 +19,21 @@ export default function SearchBar() {
             fetchGames('https://rawg.io/api/games/', debouncedSearch)
                 .then((result) => setResult(result))
                 .catch((e) => setResult(e));
+
+            if (debouncedSearch !== '') {
+                const lastSearchesJson = getCookie('lastSearches');
+                const lastSearchesArray = lastSearchesJson ? JSON.parse(lastSearchesJson) : null;
+
+                if (lastSearchesJson) {
+                    const lastSearchesNewArray = [...lastSearchesArray, debouncedSearch];
+                    const lastSearchesNewJson = JSON.stringify(lastSearchesNewArray);
+                    setCookie('lastSearches', lastSearchesNewJson);
+                } else {
+                    const lastSearchesNewArray = [debouncedSearch];
+                    const lastSearchesNewJson = JSON.stringify(lastSearchesNewArray);
+                    setCookie('lastSearches', lastSearchesNewJson);
+                }
+            }
         }
     }, [debouncedSearch]);
 

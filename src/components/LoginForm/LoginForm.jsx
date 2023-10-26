@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import { loginFormEmailValidation, loginFormPasswordValidation } from '@/utils/authFormValidations';
-import { handleRegisterAndLogin } from '@/utils/loginHandlers';
 import Checkbox from '@components/Checkbox';
 import FormInput from '@components/FormInput';
+
+import { loginFormEmailValidation, loginFormPasswordValidation } from '@/utils/authFormValidations';
+import { handleRegisterAndLogin } from '@/utils/loginHandlers';
 
 import styles from './LoginForm.module.css';
 

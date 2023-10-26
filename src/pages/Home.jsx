@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import GamesContainer from '@components/GamesContainer/GamesContainer';
+
 import GameDataModal from '@components/GameDataModal';
+import GamesContainer from '@components/GamesContainer/GamesContainer';
 import SidebarNav from '@components/SidebarNav/SidebarNav';
 import styles from './Home.module.css';
 

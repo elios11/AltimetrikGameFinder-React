@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
+
+import PropTypes from 'prop-types';
 
 import styles from '../LoginForm/LoginForm.module.css';
 

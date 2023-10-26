@@ -1,7 +1,9 @@
-import PropTypes from 'prop-types';
-import styles from './GameCardInfoAtributes.module.css';
 import { useContext } from 'react';
+
 import SingleColumnContext from '@context/SingleColumnContext';
+import PropTypes from 'prop-types';
+
+import styles from './GameCardInfoAtributes.module.css';
 
 export default function GameCardInfoAtributes({ tag, info }) {
     const { singleColumn } = useContext(SingleColumnContext);

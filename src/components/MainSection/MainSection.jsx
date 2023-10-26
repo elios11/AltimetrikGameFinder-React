@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
-
 import Toggle from '@components/Toggle';
+import PropTypes from 'prop-types';
 
 import { MultipleColumnsBtn, SingleColumnBtn } from './Columns';
 import styles from './MainSection.module.css';

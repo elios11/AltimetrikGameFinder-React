@@ -1,0 +1,37 @@
+.latestSearchesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titles.latestSearchesTitles {
+    display: flex;
+    margin-left: 15px;
+    margin-right: auto;
+}
+.searchedItem {
+    display: flex;
+    flex-direction: column;
+    margin-left: 330px;
+    margin-right: auto;
+    padding-left: 5vw;
+    margin-top: 60px;
+    margin-bottom: 5px;
+}
+.searchedItem > div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.searchedItem > div > p {
+    color: var(--neutrals5);
+}
+.clearSearchesBtn {
+    color: var(--neutrals5);
+    background-color: var(--neutrals1);
+    border: 1px solid var(--primaryLightViolet);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 50px;
+    cursor: pointer;
+}

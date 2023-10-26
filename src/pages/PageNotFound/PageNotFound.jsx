@@ -1,8 +1,9 @@
-import styles from './PageNotFound.module.css';
 import darkLogo from '@assets/brand/single-logo-dark.svg';
 import homeLogo from '@assets/pageNotFound/home-icon.svg';
 import loginLogo from '@assets/pageNotFound/login-icon.svg';
 import registerLogo from '@assets/pageNotFound/register-icon.svg';
+
+import styles from './PageNotFound.module.css';
 
 export default function PageNotFound() {
     return (

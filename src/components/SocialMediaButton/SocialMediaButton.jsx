@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import styles from './SocialMediaButton.module.css';
 import ICONS_D_PATH from './socialMediaLogosSVGPath';
 
