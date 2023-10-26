@@ -23,15 +23,15 @@
     gap: 10px;
 }
 .searchedItem > div > p {
-    color: var(--neutrals5);
+    color: var(--neutral-color-5);
 }
 .clearSearchesBtn {
-    color: var(--neutrals5);
-    background-color: var(--neutrals1);
-    border: 1px solid var(--primaryLightViolet);
+    color: var(--neutral-color-5);
+    background-color: var(--neutral-color-1);
+    border: 1px solid var(--primary-color-1);
     padding: 10px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.92rem;
     margin-top: 50px;
     cursor: pointer;
 }
