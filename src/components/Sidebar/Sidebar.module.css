@@ -54,56 +54,6 @@
     margin: 1.25rem -2.3rem;
 }
 
-.sidebar__nav-item {
-    font-size: var(--font-size-medium);
-    font-weight: 600;
-    text-decoration: none;
-    display: block;
-}
-
-.sidebar__nav-item:hover {
-    color: var(--primary-color-1);
-}
-
-.sidebar__nav__links {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2.4rem;
-    gap: 1.42rem;
-}
-
-.sidebar__nav__trending {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3.27rem;
-    margin-bottom: 4.28rem;
-    gap: 1.6rem;
-}
-
-.sidebar__nav-item-with-icon {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    font-size: var(--font-size-mini);
-}
-
-.sidebar__nav-item-with-icon img {
-    width: 1.77rem;
-    height: 1.77rem;
-}
-
-.sidebar__nav__popular {
-    display: flex;
-    flex-direction: column;
-    gap: 1.62rem;
-    margin-bottom: 4rem;
-}
-
-.sidebar__nav-section-title {
-    font-weight: 600;
-    font-size: var(--font-size-medium);
-}
-
 .sidebar__dark-mode {
     display: flex;
     gap: 3rem;
@@ -148,10 +98,6 @@
         margin-right: 1rem;
     }
 
-    .sidebar__nav__links {
-        margin-top: 8rem;
-    }
-
     .sidebar__title h2 {
         font-weight: 600;
     }
@@ -160,39 +106,10 @@
         background-color: #515151;
     }
 
-    .sidebar__nav-item {
-        font-weight: 600;
-        text-decoration: none;
-        display: block;
-    }
-
-    .sidebar__nav-item:hover {
-        color: var(--primary-color-1);
-    }
-
-    .sidebar__nav-item-with-icon {
-        display: flex;
-        align-items: center;
-    }
-
-    .sidebar__nav-item-with-icon img {
-        width: 1.8rem;
-        height: 1.8rem;
-    }
-
-    .sidebar__nav-section-title {
-        font-weight: 600;
-        margin: 1.5rem 0 1rem;
-    }
-
     .sidebar__dark-mode-icon {
         margin-left: 7rem;
         margin-top: -1.8rem;
         width: 3.5rem;
-    }
-
-    .sidebar__nav {
-        margin-bottom: auto;
     }
 
     .sidebar__line-div {
@@ -202,5 +119,12 @@
     .sidebar__dark-mode,
     .sidebar__logout {
         padding: 1rem;
+    }
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
+    .sidebar {
+        display: none;
     }
 }
