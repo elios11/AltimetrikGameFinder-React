@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import GamesContainer from '@components/GamesContainer/GamesContainer';
+
 import GameDataModal from '@components/GameDataModal';
+import GamesContainer from '@components/GamesContainer/GamesContainer';
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false);

@@ -1,7 +1,9 @@
 import { Outlet, useLocation } from 'react-router-dom';
+
+import MainSection from '@components/MainSection/MainSection';
 import { RequestsContextProvider } from '@context/RequestsContext';
 import { SingleColumnContextProvider } from '@context/SingleColumnContext';
-import MainSection from '@components/MainSection/MainSection';
+
 import Header from '../Header/Header';
 import styles from './Layout.module.css';
 

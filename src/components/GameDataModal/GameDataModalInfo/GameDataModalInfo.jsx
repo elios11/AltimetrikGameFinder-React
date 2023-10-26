@@ -1,13 +1,16 @@
-import PropTypes from 'prop-types';
-import styles from './GameDataModalInfo.module.css';
-import GameCardPlatformIcons from '@components/GamesContainer/GameCard/GameCardInfo/GameCardPlatformIcons/GameCardPlatformIcons';
-import heartIcon from '@assets/icons/heart.svg';
-import chatBubbles from '@assets/icons/chat-bubbles.svg';
-import thumbsUp from '@assets/icons/thumbs-up.svg';
-import action from '@assets/icons/action.svg';
-import defaultImgSrc from '@assets/icons/default-img.png';
-import formatDate from '@utils/formatDate';
 import { useState } from 'react';
+
+import action from '@assets/icons/action.svg';
+import chatBubbles from '@assets/icons/chat-bubbles.svg';
+import defaultImgSrc from '@assets/icons/default-img.png';
+import heartIcon from '@assets/icons/heart.svg';
+import thumbsUp from '@assets/icons/thumbs-up.svg';
+import GameCardPlatformIcons from '@components/GamesContainer/GameCard/GameCardInfo/GameCardPlatformIcons/GameCardPlatformIcons';
+import formatDate from '@utils/formatDate';
+import PropTypes from 'prop-types';
+
+import styles from './GameDataModalInfo.module.css';
+
 export default function GameDataModalInfo({ gameData, gameAssets }) {
     const [descriptionOpen, setDescriptionOpen] = useState(false);
 

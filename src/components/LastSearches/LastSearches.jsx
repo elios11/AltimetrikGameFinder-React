@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import clock from '@assets/lastSearches/clock.svg';
+import clock from '@assets/icons/clock.svg';
 import { getCookie, removeCookie } from '@utils/cookies';
 
 import styles from './LastSearches.module.css';

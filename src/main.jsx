@@ -1,5 +1,3 @@
-import './index.css';
-
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
@@ -12,6 +10,8 @@ import LastSearches from '@pages/LastSearches';
 import Login from '@pages/Login';
 import PageNotFound from '@pages/PageNotFound/PageNotFound';
 import Register from '@pages/Register';
+
+import './index.css';
 
 const router = createBrowserRouter(
     createRoutesFromElements(

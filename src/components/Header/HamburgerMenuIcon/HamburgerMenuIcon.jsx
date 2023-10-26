@@ -1,5 +1,6 @@
-import styles from './HamburgerMenuIcon.module.css';
 import PropTypes from 'prop-types';
+
+import styles from './HamburgerMenuIcon.module.css';
 
 export default function HamburgerMenuIcon({ setIsSidebarOpen, isSidebarOpen }) {
     const sidebarOpen = isSidebarOpen ? styles['hamburger-menu-icon--open'] : '';
