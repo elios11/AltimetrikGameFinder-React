@@ -3,11 +3,6 @@
     flex-direction: column;
     align-items: center;
 }
-.titles.latest_searches__titles {
-    display: flex;
-    margin-left: 15px;
-    margin-right: auto;
-}
 .searched_item {
     display: flex;
     flex-direction: column;

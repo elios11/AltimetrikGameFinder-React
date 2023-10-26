@@ -19,9 +19,6 @@ export default function LastSearches() {
 
     return (
         <div className={styles['latest_searches__container']}>
-            <div className={`${styles['titles']} ${styles['latest_searches__titles']}`}>
-                <h1>Latest searches</h1>
-            </div>
             <div className={styles['searched_item']}>
                 {lastSearches.length > 0 ? (
                     lastSearches.map((item, index) => (
