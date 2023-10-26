@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import GamesContainer from '@components/GamesContainer/GamesContainer';
 import GameDataModal from '@components/GameDataModal';
-import SidebarNav from '../components/SidebarNav/SidebarNav';
+import SidebarNav from '@components/SidebarNav/SidebarNav';
 import styles from './Home.module.css';
 
 export default function Home() {

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styles from './Sidebar.module.css';
 import desktopAvatarCustom from '@assets/sidebar/desktopavatarcustom.svg';
 import Toggle from '@components/Toggle';
-import SidebarNav from '../SidebarNav/SidebarNav';
+import SidebarNav from '@components/SidebarNav/SidebarNav';
 
 export default function Sidebar({ isSidebarOpen }) {
     const sidebarClosedClass = isSidebarOpen ? '' : styles['closed'];
