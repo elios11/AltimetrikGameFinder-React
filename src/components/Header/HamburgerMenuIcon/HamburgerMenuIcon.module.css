@@ -17,8 +17,10 @@
 
 .hamburger-menu-icon--open {
     position: absolute;
+    height: 1.8rem;
     right: 1.6rem;
     top: 1.6rem;
+    gap: 0.45rem;
     z-index: 2;
 
     & > div:first-child {
@@ -38,11 +40,11 @@
     .hamburger-menu-icon {
         width: 2.1rem;
         height: 1.7rem;
-        gap: 0.5rem;
     }
 
     .hamburger-menu-icon--open {
         right: 2.3rem;
         top: 2.3rem;
+        gap: 0.6rem;
     }
 }
