@@ -1,7 +1,8 @@
-import { MultipleColumnsBtn, SingleColumnBtn } from './Columns';
-import styles from './MainSection.module.css';
 import Toggle from '@components/Toggle';
 import PropTypes from 'prop-types';
+
+import { MultipleColumnsBtn, SingleColumnBtn } from './Columns';
+import styles from './MainSection.module.css';
 import { useLocation } from 'react-router-dom';
 
 export default function MainSection({ title, subtitle }) {

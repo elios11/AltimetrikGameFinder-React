@@ -1,7 +1,10 @@
-import styles from './LastSearches.module.css';
-import clock from '@assets/lastSearches/clock.svg';
-import { getCookie, removeCookie } from '@utils/cookies';
 import { useEffect, useState } from 'react';
+
+import clock from '@assets/icons/clock.svg';
+import { getCookie, removeCookie } from '@utils/cookies';
+
+import styles from './LastSearches.module.css';
+
 
 export default function LastSearches() {
     const [lastSearches, setLastSearches] = useState([]);

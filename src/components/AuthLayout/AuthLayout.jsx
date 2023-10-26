@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import darkLogo from '@assets/brand/dark-logo.svg';
 import SocialMediaButton from '@components/SocialMediaButton/SocialMediaButton';
+import PropTypes from 'prop-types';
 
 import styles from './AuthLayout.module.css';
 

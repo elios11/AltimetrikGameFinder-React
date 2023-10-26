@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import styles from './GameDataModal.module.css';
 
+import fetchGameAssets from '@api/fetchGameAssets';
 import fetchGames from '@api/fetchGames';
 import Dialog from '@components/Dialog';
-import GameDataModalInfo from './GameDataModalInfo/GameDataModalInfo';
 import RequestsContext from '@context/RequestsContext';
-import fetchGameAssets from '@api/fetchGameAssets';
+import PropTypes from 'prop-types';
+
+import styles from './GameDataModal.module.css';
+import GameDataModalInfo from './GameDataModalInfo/GameDataModalInfo';
 
 export default function GameDataModal({ isModalOpen, closeModal, openModal, setModalGameId, modalGameId }) {
     const [gameData, setGameData] = useState(null);
@@ -56,7 +57,7 @@ export default function GameDataModal({ isModalOpen, closeModal, openModal, setM
     return (
         modalGameId && (
             <Dialog type="modal" isModalOpen={isModalOpen} onClose={onDialogClose} customStyles={styles.dialog}>
-                <GameDataModalInfo gameData={gameData} gameAssets={gameAssets} />
+                <GameDataModalInfo gameData={gameData} gameAssets={gameAssets} closeModal={closeModal} />
             </Dialog>
         )
     );

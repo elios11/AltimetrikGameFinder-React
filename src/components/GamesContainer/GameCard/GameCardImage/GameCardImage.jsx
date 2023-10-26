@@ -1,8 +1,10 @@
 import { useContext } from 'react';
-import PropTypes from 'prop-types';
-import styles from './GameCardImage.module.css';
-import notLiked from '../../../../assets/GameCard/like/not-liked.svg';
+
 import SingleColumnContext from '@context/SingleColumnContext';
+import PropTypes from 'prop-types';
+
+import notLiked from '../../../../assets/GameCard/like/not-liked.svg';
+import styles from './GameCardImage.module.css';
 
 export default function GameCardImage({ image }) {
     const { singleColumn } = useContext(SingleColumnContext);

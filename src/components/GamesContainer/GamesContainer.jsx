@@ -1,14 +1,14 @@
 import { useContext, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 import fetchGames from '@api/fetchGames';
+import fetchGamesDescription from '@api/fetchGamesDescription';
 import Skeleton from '@components/Skeleton/Skeleton';
 import RequestsContext from '@context/RequestsContext';
 import SingleColumnContext from '@context/SingleColumnContext';
+import PropTypes from 'prop-types';
 
 import GameCard from './GameCard/GameCard';
 import styles from './gamesContainer.module.css';
-import fetchGamesDescription from '@api/fetchGamesDescription';
 
 export default function GamesContainer({ setModalGameId }) {
     const { result, setResult, gamesDescription, setGamesDescription } = useContext(RequestsContext);

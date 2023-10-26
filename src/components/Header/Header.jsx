@@ -1,9 +1,11 @@
-import styles from './Header.module.css';
-import Sidebar from '@components/Sidebar/Sidebar';
-import HamburgerMenuIcon from './HamburgerMenuIcon/HamburgerMenuIcon';
-import SearchBar from './SearchBar/SearchBar';
-import pageLogo from '@assets/brand/dark-logo.svg';
 import { useState } from 'react';
+
+import pageLogo from '@assets/brand/dark-logo.svg';
+import Sidebar from '@components/Sidebar/Sidebar';
+
+import HamburgerMenuIcon from './HamburgerMenuIcon/HamburgerMenuIcon';
+import styles from './Header.module.css';
+import SearchBar from './SearchBar/SearchBar';
 
 export default function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);

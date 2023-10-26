@@ -1,9 +1,11 @@
+import { useContext } from 'react';
+
+import SingleColumnContext from '@context/SingleColumnContext';
 import PropTypes from 'prop-types';
+
 import styles from './GameCard.module.css';
 import GameCardImage from './GameCardImage/GameCardImage';
 import GameCardInfo from './GameCardInfo/GameCardInfo';
-import SingleColumnContext from '@context/SingleColumnContext';
-import { useContext } from 'react';
 
 export default function GameCard({ game, onClick, description }) {
     const { singleColumn } = useContext(SingleColumnContext);
