@@ -58,7 +58,11 @@ export default function SearchBar() {
                 placeholder="Search games..."
             />
 
-            <button className={styles['search-bar__clear-search-btn']} onClick={handleClearSearch} id="clearSearchBtn">
+            <button
+                className={`${styles['search-bar__clear-search-btn']} ${search === '' ? 'display-none' : ''}`}
+                onClick={handleClearSearch}
+                id="clearSearchBtn"
+            >
                 <img src={clearSearchBtn} alt="clear search button" />
             </button>
         </div>

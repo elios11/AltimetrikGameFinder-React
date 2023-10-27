@@ -1,0 +1,16 @@
+.game-data-back-modal {
+    padding: 3rem 3.3rem;
+    background: #303030;
+    transform: rotateY(180deg);
+}
+
+.game-data-back-modal__back-btn {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 5rem;
+}
+
+.game-modal-data-back__description {
+    -webkit-line-clamp: initial;
+    margin-top: 3rem;
+}

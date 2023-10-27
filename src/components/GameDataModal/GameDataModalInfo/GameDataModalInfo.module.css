@@ -53,22 +53,25 @@
 
 .game-modal-data__description-btn {
     grid-area: description;
+    cursor: default;
 }
 
 .game-modal-data__description {
     /* Styles for game description */
+    display: -webkit-box;
     margin-top: 1.6rem;
     margin-bottom: 3.3rem;
     font-size: 1.4rem;
-    display: -webkit-box;
     line-height: 130%;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 8;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: text;
 }
 
-.game-modal-data__description::selection {
+.game-modal-data__description::selection,
+.game-modal-data__title::selection {
     /* Styles for selected text on game description */
     background-color: #ef5da8;
 }
@@ -82,6 +85,14 @@
 .game-modal-data__button {
     /* Styles for modal buttons */
     min-width: 100%;
+}
+
+.game-modal-data__read-more-btn {
+    /* Styles for read more button */
+    display: none;
+    grid-area: read-more-btn;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
 .game-modal-data__wishlist_btn {
@@ -154,6 +165,7 @@
     object-fit: cover;
 }
 
+/* Styles for tablet size */
 @media (width >= 768px) {
     .game-modal-data {
         display: grid;
@@ -235,5 +247,128 @@
 
     .game-modal-data__critics-container {
         margin-bottom: 1.2rem;
+    }
+}
+
+/* Setting of grid areas */
+@media (width >= 1200px) {
+    .game-modal-data__platforms-name {
+        grid-area: platforms;
+    }
+
+    .game-modal-data__release {
+        grid-area: release;
+    }
+
+    .game-modal-data__publisher {
+        grid-area: publisher;
+    }
+
+    .game-modal-data__website {
+        grid-area: website;
+    }
+
+    .game-modal-data__genres {
+        grid-area: genres;
+    }
+
+    .game-modal-data__developer {
+        grid-area: developer;
+    }
+
+    .game-modal-data__age-rating {
+        grid-area: age-rating;
+    }
+}
+
+/* Styles for desktop size */
+@media (width >= 1200px) {
+    .game-modal-data {
+        padding: 12.6rem 3.2rem 0rem;
+        grid-template-columns: 22.9rem 35.1rem 1fr 1fr;
+        column-gap: 2.4rem;
+        grid-template-areas:
+            'platforms platforms platforms platforms'
+            'title title title title'
+            'labels labels labels labels'
+            'description description assets assets'
+            'read-more-btn . assets assets'
+            'wishlist-btn purchase-btn assets assets'
+            'properties properties assets assets';
+    }
+
+    .game-modal-data__read-more-btn {
+        display: block;
+    }
+
+    .game-modal-data__critics-container {
+        grid-area: 7 / 2 / 7 / 3;
+        align-self: end;
+        margin-left: 0;
+        margin-bottom: 3rem;
+    }
+
+    .game-modal-data__properties {
+        display: grid;
+        margin-top: 2rem;
+        grid-template-columns: 25rem;
+        grid-template-areas:
+            'platforms genres'
+            'release developer'
+            'publisher age-rating'
+            'website .';
+        column-gap: 0;
+    }
+
+    .game-modal-data__properties a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .game-modal-data__description {
+        margin-bottom: 0;
+    }
+
+    .game-modal-data__read-more-btn {
+        text-align: start;
+        margin-bottom: 2rem;
+    }
+
+    .game-modal-data__wishlist_btn button {
+        padding-right: 2.2rem;
+    }
+
+    .game-modal-data__wishlist_btn,
+    .game-modal-data__purchase-btn {
+        margin-top: 0.5rem;
+    }
+
+    .game-modal-data__purchase-btn {
+        min-width: 22.9rem;
+        max-width: 22.9rem;
+    }
+
+    .game-modal-data__wishlist_btn img {
+        right: 2.8rem;
+    }
+
+    .game-modal-data__description {
+        margin-top: 2.1rem;
+    }
+
+    .game-modal-data__assets {
+        margin-top: 1.8rem;
+        grid-template-rows: 21.7rem 10.4rem 10.4rem;
+        gap: 1.6rem;
+    }
+
+    .game-modal-data__assets :first-child {
+        height: 21.7rem;
+    }
+
+    .game-modal-data__assets img {
+        height: 10.4rem;
+        width: 100%;
+        object-fit: cover;
     }
 }

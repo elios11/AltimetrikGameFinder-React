@@ -11,8 +11,15 @@
     background-size: 200%;
     color: var(--neutral-color-5);
     border: none;
-    overflow: scroll;
+    overflow: auto;
     padding-bottom: 8rem;
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+}
+
+.dialog.show-description {
+    transform: rotateY(-180deg);
+    background: #303030 !important;
 }
 
 .dialog::backdrop {
@@ -20,7 +27,7 @@
     background: rgba(0, 0, 0, 0.6);
 }
 
-dialog:focus-visible {
+.dialog:focus-visible {
     outline: none;
 }
 
@@ -37,5 +44,15 @@ dialog:focus-visible {
 
     .dialog::backdrop {
         margin: 0;
+    }
+}
+
+@media (width >= 1200px) {
+    .dialog {
+        --background-img-height: 50rem;
+        margin: 10.9rem 18.2rem 12.2rem 18.2rem;
+        max-width: calc(100% - 18.2rem - 18.2rem);
+        max-height: calc(100% - 10rem - 12.2rem);
+        height: 100%;
     }
 }

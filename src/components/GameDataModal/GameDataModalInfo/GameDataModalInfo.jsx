@@ -10,8 +10,8 @@ import formatDate from '@utils/formatDate';
 
 import PropTypes from 'prop-types';
 import styles from './GameDataModalInfo.module.css';
-  
-export default function GameDataModalInfo({ gameData, gameAssets, closeModal }) {
+
+export default function GameDataModalInfo({ gameData, gameAssets, closeModal, setShowingDescription }) {
     const [descriptionOpen, setDescriptionOpen] = useState(false);
 
     const parentPlatforms = gameData?.parent_platforms.map((platform) => platform.platform.name);
@@ -28,6 +28,16 @@ export default function GameDataModalInfo({ gameData, gameAssets, closeModal }) 
     };
 
     gameAssets?.images?.map((image, index) => (images[index] = image.image));
+
+    function toggleDescription() {
+        if (window.innerWidth < 1200) {
+            setDescriptionOpen((prevDescriptionOpen) => !prevDescriptionOpen);
+        }
+    }
+
+    function showDescriptionDesktop() {
+        setShowingDescription(true);
+    }
 
     return (
         gameData && (
@@ -57,7 +67,7 @@ export default function GameDataModalInfo({ gameData, gameAssets, closeModal }) 
                 <button
                     className={`${styles['game-modal-data__description-btn']}`}
                     style={{ textAlign: 'start' }}
-                    onClick={() => setDescriptionOpen((prevState) => !prevState)}
+                    onClick={toggleDescription}
                 >
                     <p
                         className={`${styles['game-modal-data__description']} ${
@@ -66,6 +76,12 @@ export default function GameDataModalInfo({ gameData, gameAssets, closeModal }) 
                     >
                         {gameData?.description_raw || 'No description data available...'}
                     </p>
+                </button>
+                <button
+                    className={`text-primary ${styles['game-modal-data__read-more-btn']}`}
+                    onClick={showDescriptionDesktop}
+                >
+                    Read more
                 </button>
                 <div className={styles['game-modal-data__wishlist_btn']}>
                     <button className={`primary-button ${styles['game-modal-data__button']}`}>Add to wishlist</button>
@@ -77,43 +93,45 @@ export default function GameDataModalInfo({ gameData, gameAssets, closeModal }) 
                     Purchase
                 </button>
                 <div className={styles['game-modal-data__properties']}>
-                    <div className={`${styles['game-modal-data__property']} ${styles['platforms']}`}>
+                    <div
+                        className={`${styles['game-modal-data__property']} ${styles['game-modal-data__platforms-name']}`}
+                    >
                         <h3 className="text-muted">Platforms</h3>
                         <h4>{parentPlatforms.join(', ') || 'No platforms data available...'}</h4>
                     </div>
-                    <div className={`${styles['game-modal-data__property']} ${styles['']}`}>
+                    <div className={`${styles['game-modal-data__property']} ${styles['game-modal-data__release']}`}>
                         <h3 className="text-muted">Release date</h3>
                         <h4>{formattedDate || 'No release date data available...'}</h4>
                     </div>
-                    <div className={`${styles['game-modal-data__property']} ${styles['']}`}>
+                    <div className={`${styles['game-modal-data__property']} ${styles['game-modal-data__publisher']}`}>
                         <h3 className="text-muted">Publisher</h3>
                         <h4>{publishers.join(', ') || 'No publishers data available...'}</h4>
                     </div>
-                    <div className={`${styles['game-modal-data__property']} ${styles['']}`}>
+                    <div className={`${styles['game-modal-data__property']} ${styles['game-modal-data__website']}`}>
                         <h3 className="text-muted">Website</h3>
                         <a href={gameData?.website}>
                             <h4>{gameData?.website || 'No website data available...'}</h4>
                         </a>
                     </div>
-                    <div className={`${styles['game-modal-data__property']} ${styles['']}`}>
+                    <div className={`${styles['game-modal-data__property']} ${styles['game-modal-data__genres']}`}>
                         <h3 className="text-muted">Genre</h3>
                         <h4>{genres.join(', ') || 'No genres data available...'}</h4>
                     </div>
-                    <div className={`${styles['game-modal-data__property']} ${styles['']}`}>
+                    <div className={`${styles['game-modal-data__property']} ${styles['game-modal-data__developer']}`}>
                         <h3 className="text-muted">Developer</h3>
                         <h4>{developers.join(', ') || 'No developers data available...'}</h4>
                     </div>
-                    <div className={`${styles['game-modal-data__property']} ${styles['']}`}>
+                    <div className={`${styles['game-modal-data__property']} ${styles['game-modal-data__age-rating']}`}>
                         <h3 className="text-muted">Age rating</h3>
-                        <h4>{gameData?.esrb_rating.name || 'Not rated'}</h4>
+                        <h4>{gameData?.esrb_rating?.name || 'Not rated'}</h4>
                     </div>
                 </div>
-                <div className={`${styles['game-modal-data__critics-container']} ${styles['']}`}>
+                <div className={styles['game-modal-data__critics-container']}>
                     <img src={chatBubbles} alt="game reviews icon" />
                     <img src={thumbsUp} alt="thumbs up icon" />
                     <img src={action} alt="share game icon" />
                 </div>
-                <div className={`${styles['game-modal-data__assets']} ${styles['']}`}>
+                <div className={styles['game-modal-data__assets']}>
                     {(gameAssets?.videos?.[0]?.data.max && (
                         <video controls>
                             <source src={gameAssets.videos[0].data[480]} type="video/mp4" />
@@ -121,7 +139,7 @@ export default function GameDataModalInfo({ gameData, gameAssets, closeModal }) 
                             <track kind="metadata" label="Game trailer" />
                             <track kind="captions" label="No captions" src="" default />
                         </video>
-                    )) || <img src={images[4]} alt="Game trailer" />}
+                    )) || <img src={images[4]} alt="Game screenshot" />}
                     <img src={images[0]} alt="Game screenshot 1" />
                     <img src={images[1]} alt="Game screenshot 2" />
                     <img src={images[2]} alt="Game screenshot 3" />
@@ -136,4 +154,5 @@ GameDataModalInfo.propTypes = {
     gameData: PropTypes.object,
     gameAssets: PropTypes.shape({ images: PropTypes.array, videos: PropTypes.array }),
     closeModal: PropTypes.func.isRequired,
+    setShowingDescription: PropTypes.func,
 };

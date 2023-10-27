@@ -8,9 +8,11 @@ import PropTypes from 'prop-types';
 
 import styles from './GameDataModal.module.css';
 import GameDataModalInfo from './GameDataModalInfo/GameDataModalInfo';
+import GameDataModalBack from './GameDataModalBack/GameDataModalBack';
 
 export default function GameDataModal({ isModalOpen, closeModal, openModal, setModalGameId, modalGameId }) {
     const [gameData, setGameData] = useState(null);
+    const [showingDescription, setShowingDescription] = useState(false);
     const { gamesDescription, setGameAssets, gameAssets } = useContext(RequestsContext);
     const dialogElement = document.querySelector(`.${styles.dialog}`);
 
@@ -52,12 +54,31 @@ export default function GameDataModal({ isModalOpen, closeModal, openModal, setM
         closeModal();
         setModalGameId(null);
         setGameData(null);
+        setShowingDescription(false);
     }
 
     return (
         modalGameId && (
-            <Dialog type="modal" isModalOpen={isModalOpen} onClose={onDialogClose} customStyles={styles.dialog}>
-                <GameDataModalInfo gameData={gameData} gameAssets={gameAssets} closeModal={closeModal} />
+            <Dialog
+                type="modal"
+                isModalOpen={isModalOpen}
+                onClose={onDialogClose}
+                customStyles={`${styles.dialog} ${showingDescription ? styles['show-description'] : ''}`}
+            >
+                {showingDescription ? (
+                    <GameDataModalBack
+                        gameData={gameData}
+                        closeModal={closeModal}
+                        setShowingDescription={setShowingDescription}
+                    />
+                ) : (
+                    <GameDataModalInfo
+                        gameData={gameData}
+                        gameAssets={gameAssets}
+                        closeModal={closeModal}
+                        setShowingDescription={setShowingDescription}
+                    />
+                )}
             </Dialog>
         )
     );

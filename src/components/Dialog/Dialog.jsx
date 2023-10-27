@@ -39,6 +39,18 @@ export default function Dialog({ children, isModalOpen, onClose, type, customSty
         }
     }
 
+    function handleOutsideClick(e) {
+        const dialogDimensions = modalRef.current?.getBoundingClientRect();
+        if (
+            e.clientX < dialogDimensions.left ||
+            e.clientX > dialogDimensions.right ||
+            e.clientY < dialogDimensions.top ||
+            e.clientY > dialogDimensions.bottom
+        ) {
+            modalRef.current?.close();
+        }
+    }
+
     useEffect(() => {
         if (isModalOpen) {
             handleDialogType();
@@ -48,7 +60,13 @@ export default function Dialog({ children, isModalOpen, onClose, type, customSty
     }, [isModalOpen, type]);
 
     return (
-        <dialog className={customStyles} ref={modalRef} onClose={onClose}>
+        <dialog
+            className={customStyles}
+            ref={modalRef}
+            onClose={onClose}
+            aria-hidden="true"
+            onClick={handleOutsideClick}
+        >
             {children}
         </dialog>
     );
