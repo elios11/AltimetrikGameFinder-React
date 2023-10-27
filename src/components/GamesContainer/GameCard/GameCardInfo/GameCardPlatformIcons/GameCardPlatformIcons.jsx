@@ -51,7 +51,7 @@ export default function GameCardPlatformIcons({ parentPlatforms, containerStyles
 }
 
 GameCardPlatformIcons.propTypes = {
-    parentPlatforms: PropTypes.array.isRequired,
+    parentPlatforms: PropTypes.array,
     containerStylesClass: PropTypes.string,
     iconStylesClass: PropTypes.string,
 };
