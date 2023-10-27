@@ -35,7 +35,7 @@ export default function Dialog({ children, isModalOpen, onClose, type, customSty
         if (type === 'modal') {
             modalRef.current?.showModal();
         } else if (type === 'dialog') {
-            modalRef.current?.open();
+            modalRef.current?.show();
         }
     }
 
