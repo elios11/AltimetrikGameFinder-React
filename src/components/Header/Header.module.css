@@ -6,6 +6,14 @@
     padding: 0.7rem 1.6rem 0.6rem 1.9rem;
     background-color: var(--neutral-color-2);
     min-width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    transition: transform 0.3s;
+}
+
+.header.hide-navbar {
+    transform: translateY(-100%);
 }
 
 .header__logo {
@@ -35,6 +43,21 @@
     display: none;
 }
 
+.header__search-icon {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+    outline: none !important;
+    line-height: 0;
+}
+
+.header.show-search-bar .header__search-bar {
+    display: block;
+    position: absolute;
+    top: 5.8rem;
+    left: 1rem;
+    right: 1rem;
+}
+
 @media (width >= 768px) {
     .header {
         justify-content: end;
@@ -61,6 +84,15 @@
 
     .header__search-icon {
         margin-left: auto;
+    }
+
+    .header.show-search-bar .header__search-bar {
+        position: initial;
+        margin-left: auto;
+    }
+
+    .header.show-search-bar .header__search-icon {
+        display: none;
     }
 }
 
