@@ -34,3 +34,10 @@
         margin-bottom: 3.5rem;
     }
 }
+
+@media (width >= 768px) {
+    .main {
+        margin-top: 11rem;
+        margin-bottom: 2.4rem;
+    }
+}
