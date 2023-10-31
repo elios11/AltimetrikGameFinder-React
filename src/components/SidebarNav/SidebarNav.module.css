@@ -3,6 +3,7 @@
     font-weight: 600;
     text-decoration: none;
     display: block;
+    cursor: pointer;
 }
 
 .sidebar__nav-item:hover {
@@ -29,6 +30,7 @@
     align-items: center;
     gap: 0.7rem;
     font-size: var(--font-size-mini);
+    cursor: pointer;
 }
 
 .sidebar__nav-item-with-icon img {
