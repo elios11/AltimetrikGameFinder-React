@@ -8,6 +8,11 @@ export default function useSearch(debouncedSearch) {
 
     useEffect(() => {
         if (debouncedSearch !== null) {
+            if (debouncedSearch.trim().length === 0) {
+                return;
+            }
+            setResult({ loading: true, data: {} });
+
             fetchGames('https://rawg.io/api/games/', debouncedSearch)
                 .then((result) => setResult(result))
                 .catch((e) => setResult(e));
