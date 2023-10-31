@@ -1,10 +1,10 @@
 /* Dialog component styles */
 .dialog {
     --background-img-height: 32rem;
-    margin-top: 5rem;
     width: 100%;
     max-width: 100%;
-    max-height: 100%;
+    max-height: calc(100% - 5rem);
+    margin-top: calc(5rem - 2px);
     background-color: #303030;
     background-repeat: no-repeat;
     background-position: top center;
@@ -23,8 +23,7 @@
 }
 
 .dialog::backdrop {
-    margin-top: 5rem;
-    background: rgba(0, 0, 0, 0.6);
+    background: transparent;
 }
 
 .dialog:focus-visible {
