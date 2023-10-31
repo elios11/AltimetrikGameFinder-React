@@ -1,0 +1,45 @@
+.logout_modal[open] {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    margin: auto;
+    width: 38.6rem;
+}
+
+.logout_modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.logout_modal__logout-btn,
+.logout_modal__cancel-btn {
+    min-width: 100%;
+}
+
+.logout_modal__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.logout_modal__description {
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-bottom: 2rem;
+}
+
+.logout_modal__close-btn {
+    align-self: end;
+    cursor: pointer;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.logout_modal__logout-btn {
+    margin-bottom: 1rem;
+}
