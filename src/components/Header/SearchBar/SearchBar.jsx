@@ -16,6 +16,10 @@ export default function SearchBar() {
 
     useEffect(() => {
         if (debouncedSearch !== null) {
+            setResult((prevState) => ({
+                ...prevState,
+                loading: true,
+            }));
             fetchGames('https://rawg.io/api/games/', debouncedSearch)
                 .then((result) => setResult(result))
                 .catch((e) => setResult(e));

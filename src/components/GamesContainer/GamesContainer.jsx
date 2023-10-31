@@ -58,7 +58,7 @@ export default function GamesContainer({ setModalGameId }) {
 
     const skeletons = Array.from({ length: 20 }, (_, i) => <Skeleton key={i} />);
 
-    return <div className={gamesContainerStyles}>{(result.loading && skeletons) || gameCards}</div>;
+    return <div className={gamesContainerStyles}>{result.loading ? skeletons : gameCards}</div>;
 }
 
 GamesContainer.propTypes = {
