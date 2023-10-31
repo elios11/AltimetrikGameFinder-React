@@ -1,41 +1,26 @@
-import { useContext, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import styles from './SearchBar.module.css';
+import { useContext, useEffect, useRef, useState } from 'react';
+import RequestsContext from '@context/RequestsContext';
 
-import fetchGames from '@api/fetchGames';
 import clearSearchBtn from '@assets/icons/close-x-btn.svg';
 import searchBarIcon from '@assets/icons/search.svg';
-import RequestsContext from '@context/RequestsContext';
 import useDebounce from '@hooks/useDebounce';
-import { setCookie, getCookie } from '@utils/cookies';
+import useOutsideClick from '@hooks/useOutsideClick';
+import useSearch from './useSearch';
 
-import styles from './SearchBar.module.css';
-
-export default function SearchBar() {
+export default function SearchBar({ closeSearchBar, searchBarIconRef }) {
     const [search, setSearch] = useState(null);
+    const searchBarRef = useRef(null);
     const debouncedSearch = useDebounce(search, 250);
+    const results = useSearch(debouncedSearch);
     const { setResult } = useContext(RequestsContext);
 
     useEffect(() => {
-        if (debouncedSearch !== null) {
-            fetchGames('https://rawg.io/api/games/', debouncedSearch)
-                .then((result) => setResult(result))
-                .catch((e) => setResult(e));
-
-            if (debouncedSearch !== '') {
-                const lastSearchesJson = getCookie('lastSearches');
-                const lastSearchesArray = lastSearchesJson ? JSON.parse(lastSearchesJson) : null;
-
-                if (lastSearchesJson) {
-                    const lastSearchesNewArray = [...lastSearchesArray, debouncedSearch];
-                    const lastSearchesNewJson = JSON.stringify(lastSearchesNewArray);
-                    setCookie('lastSearches', lastSearchesNewJson);
-                } else {
-                    const lastSearchesNewArray = [debouncedSearch];
-                    const lastSearchesNewJson = JSON.stringify(lastSearchesNewArray);
-                    setCookie('lastSearches', lastSearchesNewJson);
-                }
-            }
+        if (results) {
+            setResult(results);
         }
-    }, [debouncedSearch]);
+    }, [results]);
 
     const handleSetSearch = (e) => {
         setSearch(e.target.value);
@@ -47,6 +32,14 @@ export default function SearchBar() {
         setSearch('');
     };
 
+    const handleOutsideClick = (e) => {
+        if (searchBarIconRef?.current?.contains(e.target)) {
+            return;
+        }
+        closeSearchBar();
+    };
+    useOutsideClick(searchBarRef, handleOutsideClick);
+
     return (
         <div className={styles['search-bar']}>
             <img className={styles['search-bar__icon']} src={searchBarIcon} alt="search bar icon" />
@@ -56,10 +49,13 @@ export default function SearchBar() {
                 id="searchBar"
                 type="text"
                 placeholder="Search games..."
+                ref={searchBarRef}
             />
 
             <button
-                className={`${styles['search-bar__clear-search-btn']} ${search === '' ? 'display-none' : ''}`}
+                className={`${styles['search-bar__clear-search-btn']} ${
+                    search === '' || search === null ? 'display-none' : 'display-block'
+                }`}
                 onClick={handleClearSearch}
                 id="clearSearchBtn"
             >
@@ -68,3 +64,8 @@ export default function SearchBar() {
         </div>
     );
 }
+
+SearchBar.propTypes = {
+    closeSearchBar: PropTypes.func.isRequired,
+    searchBarIconRef: PropTypes.object,
+};
