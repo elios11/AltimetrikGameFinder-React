@@ -3,8 +3,8 @@
     --background-img-height: 32rem;
     width: 100%;
     max-width: 100%;
-    max-height: calc(100% - 5rem);
-    margin-top: calc(5rem - 2px);
+    max-height: 100%;
+    margin-top: 5rem;
     background-color: #303030;
     background-repeat: no-repeat;
     background-position: top center;

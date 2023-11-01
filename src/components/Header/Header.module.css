@@ -16,6 +16,11 @@
     transform: translateY(-100%);
 }
 
+:global(body.game-modal-open) .header.hide-navbar {
+    transition: none;
+    transform: none;
+}
+
 .header__logo {
     /* Styles for page logo */
     width: 9.72rem;
