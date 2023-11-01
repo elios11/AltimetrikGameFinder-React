@@ -57,6 +57,14 @@ export default function GameDataModal({ isModalOpen, closeModal, openModal, setM
         setShowingDescription(false);
     }
 
+    if (isModalOpen) {
+        document.body.classList.add('overflow-hidden');
+        document.body.classList.add('game-modal-open');
+    } else {
+        document.body.classList.remove('overflow-hidden');
+        document.body.classList.remove('game-modal-open');
+    }
+
     return (
         modalGameId && (
             <Dialog
