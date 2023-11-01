@@ -42,7 +42,7 @@ export default function LoginForm() {
     }
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit((registerFormData) => logUser(registerFormData))}>
+        <form className={styles.form} onSubmit={handleSubmit((loginFormData) => logUser(loginFormData))}>
             <FormInput
                 register={register}
                 validationName={'email'}
@@ -68,9 +68,9 @@ export default function LoginForm() {
             <div className={styles['form__password-details-container']}>
                 <input className={styles['form__checkbox']} type="checkbox" name="rememberPwd" id="rememberPwd" />
                 <label className={styles['form__checkbox-label']} id="remember-info-label" htmlFor="rememberPwd">
-                    <Checkbox />
+                    <Checkbox register={register} name="remember_me" />
                     <span>Remember me</span>
-                </label>{' '}
+                </label>
                 <a className={`text-primary ${styles['form__forgot-password-link']}`} href="/forgot-password">
                     Forgot password?
                 </a>
