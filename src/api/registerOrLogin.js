@@ -34,8 +34,13 @@ const registerOrLogin = async (authFormData, route, navigate) => {
         }
 
         if (data?.accessToken) {
-            setCookie('authToken', data?.accessToken);
-            setCookie('user', data?.user?.email);
+            if (authFormData?.remember_me) {
+                setCookie('authToken', data?.accessToken, 7);
+                setCookie('user', data?.user?.email, 7);
+            } else {
+                setCookie('authToken', data?.accessToken, null);
+                setCookie('user', data?.user?.email);
+            }
         }
 
         if (!data.accessToken) {
