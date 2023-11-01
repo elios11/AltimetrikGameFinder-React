@@ -1,8 +1,8 @@
 import Cookies from 'js-cookie';
 
-export const setCookie = (name, value) => {
+export const setCookie = (name, value, expiration) => {
     Cookies.set(name, value, {
-        expires: 1,
+        expires: expiration,
         secure: true,
         sameSite: 'strict',
         path: '/',
