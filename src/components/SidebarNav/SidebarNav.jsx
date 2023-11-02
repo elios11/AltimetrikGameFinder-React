@@ -1,36 +1,35 @@
-import styles from './SidebarNav.module.css';
-import clock from '@assets/sidebar/clock.svg';
+import { Link } from 'react-router-dom';
+
 import calendar from '@assets/sidebar/calendar.svg';
+import clock from '@assets/sidebar/clock.svg';
+import search from '@assets/sidebar/search.svg';
 import star from '@assets/sidebar/star.svg';
 import thumbsUp from '@assets/sidebar/thumbs-up.svg';
-import search from '@assets/sidebar/search.svg';
+
+import styles from './SidebarNav.module.css';
 
 export default function SidebarNav() {
     return (
         <nav className={styles['sidebar__nav']}>
             <div className={styles['sidebar__nav__links']}>
-                <a className={styles['sidebar__nav-item']} href="/">
+                <Link className={styles['sidebar__nav-item']} to="/">
                     Home
-                </a>
-                <a className={styles['sidebar__nav-item']} href="/">
-                    Reviews
-                </a>
-                <a className={styles['sidebar__nav-item']} href="/">
-                    New Releases
-                </a>
+                </Link>
+                <p className={styles['sidebar__nav-item']}>Reviews</p>
+                <p className={styles['sidebar__nav-item']}>New Releases</p>
             </div>
             <div className={styles['sidebar__nav__trending']}>
                 <div className={styles['sidebar__nav-item-with-icon']}>
                     <img src={star} alt="This week icon" />
-                    <a href="/">This week</a>
+                    <p>This week</p>
                 </div>
                 <div className={styles['sidebar__nav-item-with-icon']}>
                     <img src={calendar} alt="This month icon" />
-                    <a href="/">This month</a>
+                    <p>This month</p>
                 </div>
                 <div className={styles['sidebar__nav-item-with-icon']}>
                     <img src={clock} alt="Coming soon icon" />
-                    <a href="/">Coming soon</a>
+                    <p>Coming soon</p>
                 </div>
             </div>
 
@@ -38,13 +37,13 @@ export default function SidebarNav() {
                 <h2 className={styles['sidebar__nav-section-title']}>Popular</h2>
                 <div className={styles['sidebar__nav-item-with-icon']}>
                     <img src={search} alt="Last searches icon" />
-                    <a href="/" className={styles['sidebar__nav-item-with-icon__last-search']}>
+                    <Link to="/last_searches" className={styles['sidebar__nav-item-with-icon__last-search']}>
                         Last searches
-                    </a>
+                    </Link>
                 </div>
                 <div className={styles['sidebar__nav-item-with-icon']}>
                     <img src={thumbsUp} alt="Best of the year icon" />
-                    <a href="/">Best of the year</a>
+                    <p>Best of the year</p>
                 </div>
             </div>
         </nav>

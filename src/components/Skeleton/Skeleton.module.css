@@ -105,6 +105,7 @@
 
 .skeleton-description.skeleton-row {
     width: 85%;
+    margin-left: 0px;
 }
 
 @keyframes skeleton {
@@ -131,6 +132,10 @@ img.skeleton-image {
 }
 .skeleton-container {
     padding-bottom: 1px;
+}
+.skeleton-container2 {
+    margin-top: 20px;
+    margin-left: -14px;
 }
 
 @media all and (min-width: 768px) {

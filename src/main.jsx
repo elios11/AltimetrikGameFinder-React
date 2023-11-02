@@ -24,7 +24,7 @@ const router = createBrowserRouter(
             <Route element={<UseIsLoggedIn needAccess={true} />}>
                 <Route path="/" element={<Layout />}>
                     <Route path="/" element={<Home />} />
-                    <Route path="/last-searches" element={<LastSearches />} />
+                    <Route path="/last_searches" element={<LastSearches />} />
                 </Route>
             </Route>
             <Route path="*" element={<PageNotFound />} />
