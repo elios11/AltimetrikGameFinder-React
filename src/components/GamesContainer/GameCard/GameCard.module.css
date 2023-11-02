@@ -18,17 +18,13 @@
 /* Styles for tablet size */
 @media (width >= 768px) {
     .card {
-        width: 45.7vw;
+        width: 35.1rem;
         min-width: 32rem;
         max-width: 36.3rem;
-        min-height: 32rem;
+        min-height: 31.4rem;
     }
 
     .card.single-column {
         min-width: 69.7rem;
     }
-}
-
-/* Styles for desktop size */
-@media (width >= 1200px) {
 }
