@@ -25,7 +25,7 @@ export default function GameCardInfo({ game, description }) {
         <div className={gameInfoStyles}>
             <div className={styles['card__title-and-ranking']}>
                 <h3 className={styles['card__title']}>{game.name}</h3>
-                <p className={styles['card__ranking']}>#{game.id}</p>
+                <p className={`${styles['card__ranking']} text-primary`}>#{game.id}</p>
             </div>
             <div className={styles['card__game-details']}>
                 <div className={styles['card__game-details-atributes']}>

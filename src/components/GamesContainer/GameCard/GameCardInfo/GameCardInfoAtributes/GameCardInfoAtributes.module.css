@@ -16,7 +16,7 @@
 /* Styles for tablet size */
 @media (width >= 768px) {
     .card__game-details-atributes-name {
-        width: 10.6rem;
+        width: 9.7rem;
         text-align: left;
     }
 
@@ -32,8 +32,4 @@
     .single-column.card__game-details-atributes-value {
         justify-content: right;
     }
-}
-
-/* Styles for desktop size */
-@media (width >= 1200px) {
 }
