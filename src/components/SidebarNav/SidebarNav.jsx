@@ -1,3 +1,4 @@
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import calendar from '@assets/sidebar/calendar.svg';
@@ -5,10 +6,56 @@ import clock from '@assets/sidebar/clock.svg';
 import search from '@assets/sidebar/search.svg';
 import star from '@assets/sidebar/star.svg';
 import thumbsUp from '@assets/sidebar/thumbs-up.svg';
+import RequestsContext from '@context/RequestsContext';
+import useDebounce from '@hooks/useDebounce';
 
 import styles from './SidebarNav.module.css';
+import useComplexSearch from './useComplexSearch';
 
 export default function SidebarNav() {
+    const [complexSearch, setComplexSearch] = useState(null);
+    const debouncedComplexSearch = useDebounce(complexSearch, 250);
+    const results = useComplexSearch(debouncedComplexSearch);
+    const { setResult } = useContext(RequestsContext);
+
+    useEffect(() => {
+        if (results) {
+            setResult(results);
+        }
+    }, [results]);
+
+    const formatDate = (date) => {
+        return date.toISOString().split('T')[0];
+    };
+
+    const thisWeekSearch = () => {
+        const currentDate = new Date();
+        const otherDate = new Date();
+        otherDate.setDate(otherDate.getDate() - 7);
+        setComplexSearch({ dates: `${formatDate(otherDate)},${formatDate(currentDate)}` });
+    };
+
+    const thisMonthSearch = () => {
+        const currentDate = new Date();
+        const otherDate = new Date();
+        otherDate.setMonth(otherDate.getMonth() - 1);
+        setComplexSearch({ dates: `${formatDate(otherDate)},${formatDate(currentDate)}` });
+    };
+
+    const comingSoonSearch = () => {
+        const currentDate = new Date();
+        const otherDate = new Date();
+        otherDate.setMonth(otherDate.getMonth() + 3);
+        setComplexSearch({ dates: `${formatDate(currentDate)},${formatDate(otherDate)}` });
+    };
+
+    const bestOfTheYearSearch = () => {
+        const currentDate = new Date();
+        const currentYear = new Date().getFullYear();
+        const firstDay = new Date(currentYear, 0, 1);
+        setComplexSearch({ dates: `${formatDate(firstDay)},${formatDate(currentDate)}`, ordering: `-rating` });
+    };
+
     return (
         <nav className={styles['sidebar__nav']}>
             <div className={styles['sidebar__nav__links']}>
@@ -19,18 +66,18 @@ export default function SidebarNav() {
                 <p className={styles['sidebar__nav-item']}>New Releases</p>
             </div>
             <div className={styles['sidebar__nav__trending']}>
-                <div className={styles['sidebar__nav-item-with-icon']}>
+                <button className={styles['sidebar__nav-item-with-icon']} onClick={thisWeekSearch}>
                     <img src={star} alt="This week icon" />
                     <p>This week</p>
-                </div>
-                <div className={styles['sidebar__nav-item-with-icon']}>
+                </button>
+                <button className={styles['sidebar__nav-item-with-icon']} onClick={thisMonthSearch}>
                     <img src={calendar} alt="This month icon" />
                     <p>This month</p>
-                </div>
-                <div className={styles['sidebar__nav-item-with-icon']}>
+                </button>
+                <button className={styles['sidebar__nav-item-with-icon']} onClick={comingSoonSearch}>
                     <img src={clock} alt="Coming soon icon" />
                     <p>Coming soon</p>
-                </div>
+                </button>
             </div>
 
             <div className={styles['sidebar__nav__popular']}>
@@ -41,10 +88,10 @@ export default function SidebarNav() {
                         Last searches
                     </Link>
                 </div>
-                <div className={styles['sidebar__nav-item-with-icon']}>
+                <button className={styles['sidebar__nav-item-with-icon']} onClick={bestOfTheYearSearch}>
                     <img src={thumbsUp} alt="Best of the year icon" />
                     <p>Best of the year</p>
-                </div>
+                </button>
             </div>
         </nav>
     );
