@@ -8,11 +8,12 @@ import star from '@assets/sidebar/star.svg';
 import thumbsUp from '@assets/sidebar/thumbs-up.svg';
 import RequestsContext from '@context/RequestsContext';
 import useDebounce from '@hooks/useDebounce';
+import PropTypes from 'prop-types';
 
 import styles from './SidebarNav.module.css';
 import useComplexSearch from './useComplexSearch';
 
-export default function SidebarNav() {
+export default function SidebarNav({ setIsSidebarOpen }) {
     const [complexSearch, setComplexSearch] = useState(null);
     const debouncedComplexSearch = useDebounce(complexSearch, 250);
     const results = useComplexSearch(debouncedComplexSearch);
@@ -33,6 +34,7 @@ export default function SidebarNav() {
         const otherDate = new Date();
         otherDate.setDate(otherDate.getDate() - 7);
         setComplexSearch({ dates: `${formatDate(otherDate)},${formatDate(currentDate)}` });
+        setIsSidebarOpen(false);
     };
 
     const thisMonthSearch = () => {
@@ -40,6 +42,7 @@ export default function SidebarNav() {
         const otherDate = new Date();
         otherDate.setMonth(otherDate.getMonth() - 1);
         setComplexSearch({ dates: `${formatDate(otherDate)},${formatDate(currentDate)}` });
+        setIsSidebarOpen(false);
     };
 
     const comingSoonSearch = () => {
@@ -47,6 +50,7 @@ export default function SidebarNav() {
         const otherDate = new Date();
         otherDate.setMonth(otherDate.getMonth() + 3);
         setComplexSearch({ dates: `${formatDate(currentDate)},${formatDate(otherDate)}` });
+        setIsSidebarOpen(false);
     };
 
     const bestOfTheYearSearch = () => {
@@ -54,6 +58,7 @@ export default function SidebarNav() {
         const currentYear = new Date().getFullYear();
         const firstDay = new Date(currentYear, 0, 1);
         setComplexSearch({ dates: `${formatDate(firstDay)},${formatDate(currentDate)}`, ordering: `-rating` });
+        setIsSidebarOpen(false);
     };
 
     return (
@@ -84,7 +89,11 @@ export default function SidebarNav() {
                 <h2 className={styles['sidebar__nav-section-title']}>Popular</h2>
                 <div className={styles['sidebar__nav-item-with-icon']}>
                     <img src={search} alt="Last searches icon" />
-                    <Link to="/last_searches" className={styles['sidebar__nav-item-with-icon__last-search']}>
+                    <Link
+                        to="/last_searches"
+                        className={styles['sidebar__nav-item-with-icon__last-search']}
+                        onClick={() => setIsSidebarOpen(false)}
+                    >
                         Last searches
                     </Link>
                 </div>
@@ -96,3 +105,5 @@ export default function SidebarNav() {
         </nav>
     );
 }
+
+SidebarNav.propTypes = { setIsSidebarOpen: PropTypes.func };
