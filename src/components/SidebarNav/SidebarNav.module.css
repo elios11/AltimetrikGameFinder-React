@@ -89,6 +89,31 @@
 /* Styles for desktop size */
 @media (width >= 1200px) {
     .sidebar__nav__links {
+        font-size: 2rem;
+        gap: 1.1rem;
         margin-top: 0;
+    }
+
+    .sidebar__nav__trending {
+        font-size: 1.8rem;
+        margin-top: 3.6rem;
+        margin-bottom: 5rem;
+        gap: 1.4rem;
+    }
+
+    .sidebar__nav-item-with-icon img {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    .sidebar__nav__popular {
+        font-size: 1.9rem;
+        gap: 1.3rem;
+    }
+
+    .sidebar__nav-section-title {
+        font-size: 2rem;
+        margin: 0;
+        margin-bottom: 0.5rem;
     }
 }

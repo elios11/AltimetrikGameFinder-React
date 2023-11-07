@@ -6,18 +6,25 @@
 
 .home__sidebar {
     display: none;
-    width: 15.4%;
 }
 
 /* Styles for desktop size */
 @media (width >= 1200px) {
+    .home {
+        margin: 0 0rem 0 2.4rem;
+        gap: 2rem;
+    }
+
     .home__sidebar {
         display: block;
+        min-width: max-content;
+        width: 20rem;
     }
 
     .home__games-container {
         display: flex;
         justify-content: center;
         width: 100%;
+        margin-top: 0.4rem;
     }
 }
