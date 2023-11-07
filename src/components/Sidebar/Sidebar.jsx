@@ -1,11 +1,11 @@
 import desktopAvatarCustom from '@assets/sidebar/desktopavatarcustom.svg';
+import SidebarNav from '@components/SidebarNav/SidebarNav';
 import Toggle from '@components/Toggle';
 import PropTypes from 'prop-types';
-import SidebarNav from '@components/SidebarNav/SidebarNav';
 
 import styles from './Sidebar.module.css';
 
-export default function Sidebar({ isSidebarOpen }) {
+export default function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
     const sidebarClosedClass = isSidebarOpen ? '' : styles['closed'];
 
     return (
@@ -18,7 +18,7 @@ export default function Sidebar({ isSidebarOpen }) {
                 </div>
             </div>
             <div className={styles['sidebar__line-div']}></div>
-            <SidebarNav />
+            <SidebarNav setIsSidebarOpen={setIsSidebarOpen} />
             <div className={styles['sidebar__line-div']}></div>
             <div className={styles['sidebar__dark-mode']}>
                 <span className={styles['sidebar__dark-mode__text']}>Dark mode</span>
@@ -30,4 +30,4 @@ export default function Sidebar({ isSidebarOpen }) {
     );
 }
 
-Sidebar.propTypes = { isSidebarOpen: PropTypes.bool };
+Sidebar.propTypes = { isSidebarOpen: PropTypes.bool, setIsSidebarOpen: PropTypes.func };

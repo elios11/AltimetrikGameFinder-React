@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import pageLogo from '@assets/brand/dark-logo.svg';
 import Sidebar from '@components/Sidebar/Sidebar';
 
+import LogoutModal from '../LogoutModal/LogoutModal';
 import HamburgerMenuIcon from './HamburgerMenuIcon/HamburgerMenuIcon';
 import styles from './Header.module.css';
 import SearchBar from './SearchBar/SearchBar';
-import LogoutModal from '../LogoutModal/LogoutModal';
 
 export default function Header() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -69,7 +69,7 @@ export default function Header() {
             <div className={styles['header__menu']}>
                 <HamburgerMenuIcon isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
             </div>
-            <Sidebar isSidebarOpen={isSidebarOpen} />
+            <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
 
             <a href="/">
                 <img className={styles['header__logo']} src={pageLogo} alt="Page logo" />
