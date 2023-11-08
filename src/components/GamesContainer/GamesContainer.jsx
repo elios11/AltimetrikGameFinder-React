@@ -16,9 +16,11 @@ export default function GamesContainer({ setModalGameId }) {
 
     /* Fetches games data and set the result to state */
     useEffect(() => {
-        fetchGames('https://rawg.io/api/games/')
-            .then((result) => setResult(result))
-            .catch((err) => setResult(err));
+        if (!result.loading) {
+            fetchGames('https://rawg.io/api/games/')
+                .then((result) => setResult(result))
+                .catch((err) => setResult(err));
+        }
     }, []);
 
     /* Fetches games description and set the result to gamesDescription state */

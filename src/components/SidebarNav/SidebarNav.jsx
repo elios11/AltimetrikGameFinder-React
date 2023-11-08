@@ -30,6 +30,7 @@ export default function SidebarNav({ setIsSidebarOpen }) {
     };
 
     const thisWeekSearch = () => {
+        setResult({ loading: true, data: {}, error: null });
         const currentDate = new Date();
         const otherDate = new Date();
         otherDate.setDate(otherDate.getDate() - 7);
@@ -38,6 +39,7 @@ export default function SidebarNav({ setIsSidebarOpen }) {
     };
 
     const thisMonthSearch = () => {
+        setResult({ loading: true, data: {}, error: null });
         const currentDate = new Date();
         const otherDate = new Date();
         otherDate.setMonth(otherDate.getMonth() - 1);
@@ -46,6 +48,7 @@ export default function SidebarNav({ setIsSidebarOpen }) {
     };
 
     const comingSoonSearch = () => {
+        setResult({ loading: true, data: {}, error: null });
         const currentDate = new Date();
         const otherDate = new Date();
         otherDate.setMonth(otherDate.getMonth() + 3);
@@ -54,6 +57,7 @@ export default function SidebarNav({ setIsSidebarOpen }) {
     };
 
     const bestOfTheYearSearch = () => {
+        setResult({ loading: true, data: {}, error: null });
         const currentDate = new Date();
         const currentYear = new Date().getFullYear();
         const firstDay = new Date(currentYear, 0, 1);
@@ -71,18 +75,18 @@ export default function SidebarNav({ setIsSidebarOpen }) {
                 <p className={styles['sidebar__nav-item']}>New Releases</p>
             </div>
             <div className={styles['sidebar__nav__trending']}>
-                <button className={styles['sidebar__nav-item-with-icon']} onClick={thisWeekSearch}>
+                <Link to="/" className={styles['sidebar__nav-item-with-icon']} onClick={thisWeekSearch}>
                     <img src={star} alt="This week icon" />
                     <p>This week</p>
-                </button>
-                <button className={styles['sidebar__nav-item-with-icon']} onClick={thisMonthSearch}>
+                </Link>
+                <Link to="/" className={styles['sidebar__nav-item-with-icon']} onClick={thisMonthSearch}>
                     <img src={calendar} alt="This month icon" />
                     <p>This month</p>
-                </button>
-                <button className={styles['sidebar__nav-item-with-icon']} onClick={comingSoonSearch}>
+                </Link>
+                <Link to="/" className={styles['sidebar__nav-item-with-icon']} onClick={comingSoonSearch}>
                     <img src={clock} alt="Coming soon icon" />
                     <p>Coming soon</p>
-                </button>
+                </Link>
             </div>
 
             <div className={styles['sidebar__nav__popular']}>
@@ -97,10 +101,10 @@ export default function SidebarNav({ setIsSidebarOpen }) {
                         Last searches
                     </Link>
                 </div>
-                <button className={styles['sidebar__nav-item-with-icon']} onClick={bestOfTheYearSearch}>
+                <Link to="/" className={styles['sidebar__nav-item-with-icon']} onClick={bestOfTheYearSearch}>
                     <img src={thumbsUp} alt="Best of the year icon" />
                     <p>Best of the year</p>
-                </button>
+                </Link>
             </div>
         </nav>
     );
