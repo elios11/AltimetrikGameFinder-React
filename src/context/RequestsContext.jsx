@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const RequestsContext = createContext(null);
 
 export function RequestsContextProvider({ children }) {
-    const [result, setResult] = useState({ loading: true, data: {}, error: null });
+    const [result, setResult] = useState({ loading: false, data: {}, error: null });
     const [gamesDescription, setGamesDescription] = useState({});
     const [gameAssets, setGameAssets] = useState({ images: null, videos: null });
 
