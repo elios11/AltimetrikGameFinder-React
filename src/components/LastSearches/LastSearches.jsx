@@ -1,13 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import clock from '@assets/icons/clock.svg';
+import Loader from '@components/Loader/Loader';
 import { getCookie, removeCookie } from '@utils/cookies';
-
+import RequestsContext from '@context/RequestsContext';
 import styles from './LastSearches.module.css';
-
+import useSearch from '../Header/SearchBar/useSearch';
 
 export default function LastSearches() {
+    const navigate = useNavigate();
     const [lastSearches, setLastSearches] = useState([]);
+    const [selectedGame, setSelectedGame] = useState(null);
+    const { setResult } = useContext(RequestsContext);
+    const results = useSearch(selectedGame);
 
     useEffect(() => {
         const lastSearchesJson = getCookie('lastSearches');
@@ -15,29 +21,45 @@ export default function LastSearches() {
         setLastSearches(lastSearches);
     }, []);
 
+    useEffect(() => {
+        if (results && results?.data.results) {
+            setResult(results);
+            navigate('/', { state: { avoidFetch: true } });
+        }
+    }, [results]);
+
+    const searchGame = (searchString) => {
+        setSelectedGame(searchString);
+    };
+
     const handleClear = () => {
         removeCookie('lastSearches');
         setLastSearches([]);
     };
 
     return (
-        <div className={styles['latest_searches__container']}>
-            <div className={styles['searched_item']}>
+        <div className={styles['latest-searches']}>
+            {results && results?.loading && <Loader />}
+            <div className={styles['latest-searches__searched-items-container']}>
                 {lastSearches.length > 0 ? (
                     lastSearches.map((item, index) => (
-                        <div key={index}>
-                            <img src={clock} alt="Last searches icon: light violet magnifying glass" />
-                            <p>{item}</p>
-                        </div>
+                        <button key={index} onClick={() => searchGame(item)}>
+                            <img
+                                className={styles['latest-searches__searched_item_icon']}
+                                src={clock}
+                                alt="Last searches icon: light violet magnifying glass"
+                            />
+                            <p className={styles['latest-searches__searched_item']}>{item}</p>
+                        </button>
                     ))
                 ) : (
                     <div>
-                        <p>Nothing searched yet ...</p>
+                        <p className={styles['latest-searches__feedback']}>Nothing searched yet...</p>
                     </div>
                 )}
             </div>
             <div>
-                <button className={styles['clear_searches__btn']} onClick={handleClear}>
+                <button className={styles['latest-searches__clear-search-btn']} onClick={handleClear}>
                     Clear searches
                 </button>
             </div>
