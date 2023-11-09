@@ -8,6 +8,7 @@ import searchBarIcon from '@assets/icons/search.svg';
 import useDebounce from '@hooks/useDebounce';
 import useOutsideClick from '@hooks/useOutsideClick';
 import useSearch from './useSearch';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchBar({ closeSearchBar, searchBarIconRef }) {
     const [search, setSearch] = useState(null);
@@ -15,10 +16,12 @@ export default function SearchBar({ closeSearchBar, searchBarIconRef }) {
     const debouncedSearch = useDebounce(search, 250);
     const results = useSearch(debouncedSearch);
     const { setResult } = useContext(RequestsContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (results) {
             setResult(results);
+            navigate('/');
         }
     }, [results]);
 
