@@ -1,0 +1,16 @@
+@media (width >= 1200px) {
+    .last-searches-container {
+        display: flex;
+        margin-left: 2.4rem;
+        margin-right: 2.4rem;
+    }
+
+    .last-searches {
+        margin-right: auto;
+    }
+
+    .last-searches-container__sidebar {
+        align-self: start;
+        margin-right: auto;
+    }
+}
