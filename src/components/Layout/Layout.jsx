@@ -9,9 +9,10 @@ import styles from './Layout.module.css';
 
 export default function Layout() {
     const location = useLocation();
-    const latestSearches = location.pathname === '/last-searches';
+    const latestSearches = location.pathname === '/last_searches';
     const title = latestSearches ? 'Latest searches' : 'New and trending';
     const subtitle = latestSearches ? '' : 'Based on player counts and release date';
+    const columnButtons = !latestSearches;
 
     return (
         <div>
@@ -23,7 +24,7 @@ export default function Layout() {
                         </div>
                         <div className={styles.body}>
                             <div className={styles.main}>
-                                <MainSection title={title} subtitle={subtitle} />
+                                <MainSection title={title} subtitle={subtitle} columnButtons={columnButtons} />
                             </div>
                             <Outlet />
                         </div>
