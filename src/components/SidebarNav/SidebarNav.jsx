@@ -29,46 +29,52 @@ export default function SidebarNav({ setIsSidebarOpen }) {
         return date.toISOString().split('T')[0];
     };
 
+    const closeSidebar = () => {
+        if (setIsSidebarOpen) {
+            setIsSidebarOpen(false);
+        }
+    };
+
+    const homeSearch = () => {
+        setComplexSearch();
+    };
+
     const thisWeekSearch = () => {
-        setResult({ loading: true, data: {}, error: null });
         const currentDate = new Date();
         const otherDate = new Date();
         otherDate.setDate(otherDate.getDate() - 7);
         setComplexSearch({ dates: `${formatDate(otherDate)},${formatDate(currentDate)}` });
-        setIsSidebarOpen(false);
+        closeSidebar();
     };
 
     const thisMonthSearch = () => {
-        setResult({ loading: true, data: {}, error: null });
         const currentDate = new Date();
         const otherDate = new Date();
         otherDate.setMonth(otherDate.getMonth() - 1);
         setComplexSearch({ dates: `${formatDate(otherDate)},${formatDate(currentDate)}` });
-        setIsSidebarOpen(false);
+        closeSidebar();
     };
 
     const comingSoonSearch = () => {
-        setResult({ loading: true, data: {}, error: null });
         const currentDate = new Date();
         const otherDate = new Date();
         otherDate.setMonth(otherDate.getMonth() + 3);
         setComplexSearch({ dates: `${formatDate(currentDate)},${formatDate(otherDate)}` });
-        setIsSidebarOpen(false);
+        closeSidebar();
     };
 
     const bestOfTheYearSearch = () => {
-        setResult({ loading: true, data: {}, error: null });
         const currentDate = new Date();
         const currentYear = new Date().getFullYear();
         const firstDay = new Date(currentYear, 0, 1);
         setComplexSearch({ dates: `${formatDate(firstDay)},${formatDate(currentDate)}`, ordering: `-rating` });
-        setIsSidebarOpen(false);
+        closeSidebar();
     };
 
     return (
         <nav className={styles['sidebar__nav']}>
             <div className={styles['sidebar__nav__links']}>
-                <Link className={styles['sidebar__nav-item']} to="/">
+                <Link className={styles['sidebar__nav-item']} to="/" onClick={homeSearch}>
                     Home
                 </Link>
                 <p className={styles['sidebar__nav-item']}>Reviews</p>
@@ -96,7 +102,7 @@ export default function SidebarNav({ setIsSidebarOpen }) {
                     <Link
                         to="/last_searches"
                         className={styles['sidebar__nav-item-with-icon__last-search']}
-                        onClick={() => setIsSidebarOpen(false)}
+                        onClick={() => closeSidebar()}
                     >
                         Last searches
                     </Link>
