@@ -9,7 +9,7 @@ import updateTitle from '@utils/updateTitle';
 export default function ThisWeekGames() {
     const [complexSearch, setComplexSearch] = useState(null);
     const results = useComplexSearch(complexSearch);
-    const { closeSidebar, setModalGameId } = useOutletContext();
+    const { closeSidebar, setModalGameId, setTitle, setSubtitle } = useOutletContext();
     const { setResult } = useContext(RequestsContext);
 
     useEffect(() => {
@@ -20,6 +20,8 @@ export default function ThisWeekGames() {
 
     useEffect(() => {
         updateTitle('GameFinder | Best of the year');
+        setTitle('Best of the year');
+        setSubtitle('Games that performed really well the last year');
 
         const currentDate = new Date();
         const currentYear = new Date().getFullYear();
