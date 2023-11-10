@@ -1,6 +1,5 @@
 import { useContext, useEffect } from 'react';
 
-import fetchGames from '@api/fetchGames';
 import fetchGamesDescription from '@api/fetchGamesDescription';
 import Skeleton from '@components/Skeleton/Skeleton';
 import RequestsContext from '@context/RequestsContext';
@@ -9,25 +8,10 @@ import PropTypes from 'prop-types';
 
 import GameCard from './GameCard/GameCard';
 import styles from './gamesContainer.module.css';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function GamesContainer({ setModalGameId }) {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const { result, setResult, gamesDescription, setGamesDescription } = useContext(RequestsContext);
+    const { result, gamesDescription, setGamesDescription } = useContext(RequestsContext);
     const { singleColumn } = useContext(SingleColumnContext);
-    const avoidFetch = location.state && location.state.avoidFetch;
-
-    /* Fetches games data and set the result to state */
-    useEffect(() => {
-        if (!result.loading && !avoidFetch) {
-            setResult({ loading: true, data: {}, error: null });
-            fetchGames('https://rawg.io/api/games/')
-                .then((result) => setResult(result))
-                .catch((err) => setResult(err));
-        }
-        navigate('/');
-    }, []);
 
     /* Fetches games description and set the result to gamesDescription state */
     useEffect(() => {
