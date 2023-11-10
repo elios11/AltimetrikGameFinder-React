@@ -1,13 +1,15 @@
-import styles from './Layout.module.css';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { RequestsContextProvider } from '@context/RequestsContext';
-import { SingleColumnContextProvider } from '@context/SingleColumnContext';
 
+import GameDataModal from '@components/GameDataModal/GameDataModal';
 import MainSection from '@components/MainSection/MainSection';
 import SidebarNav from '@components/SidebarNav/SidebarNav';
+import { RequestsContextProvider } from '@context/RequestsContext';
+import { SingleColumnContextProvider } from '@context/SingleColumnContext';
+import { useTheme } from '@context/ThemeContext';
+
 import Header from '../Header/Header';
-import GameDataModal from '@components/GameDataModal/GameDataModal';
+import styles from './Layout.module.css';
 
 export default function Layout() {
     const [title, setTitle] = useState();
@@ -23,8 +25,10 @@ export default function Layout() {
     const closeModal = () => setIsModalOpen(false);
     const openModal = () => setIsModalOpen(true);
 
+    const { isDarkMode } = useTheme();
+
     return (
-        <div>
+        <div className={isDarkMode ? '' : 'light'}>
             <RequestsContextProvider>
                 <SingleColumnContextProvider>
                     <div className={styles.layoutContainer}>
