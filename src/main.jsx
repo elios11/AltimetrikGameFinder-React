@@ -1,8 +1,12 @@
-import './index.css';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 
+import BestGamesOfYear from '@components/GamesHub/BestGamesOfYear/BestGamesOfYear';
+import ComingSoonGames from '@components/GamesHub/ComingSoonGames/ComingSoonGames';
+import HomeGames from '@components/GamesHub/HomeGames/HomeGames';
+import ThisMonthGames from '@components/GamesHub/ThisMonthGames/ThisMonthGames';
+import ThisWeekGames from '@components/GamesHub/ThisWeekGames/ThisWeekGames';
 import Layout from '@components/Layout/Layout';
 import UseIsLoggedIn from '@hooks/UseIsLoggedIn';
 import ForgotPassword from '@pages/ForgotPassword';
@@ -10,12 +14,10 @@ import LastSearches from '@pages/LastSearches';
 import Login from '@pages/Login';
 import PageNotFound from '@pages/PageNotFound/PageNotFound';
 import Register from '@pages/Register';
-import HomeGames from '@components/GamesHub/HomeGames/HomeGames';
-import ThisWeekGames from '@components/GamesHub/ThisWeekGames/ThisWeekGames';
-import ThisMonthGames from '@components/GamesHub/ThisMonthGames/ThisMonthGames';
-import ComingSoonGames from '@components/GamesHub/ComingSoonGames/ComingSoonGames';
-import BestGamesOfYear from '@components/GamesHub/BestGamesOfYear/BestGamesOfYear';
+
 import SearchedGames from './components/GamesHub/SearchedGames/SearchedGames';
+import ThemeProvider from './context/ThemeContext';
+import './index.css';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -43,6 +45,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <ThemeProvider>
+            <RouterProvider router={router} />
+        </ThemeProvider>
     </React.StrictMode>,
 );

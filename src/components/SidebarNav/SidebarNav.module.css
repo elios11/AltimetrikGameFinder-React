@@ -6,7 +6,8 @@
     cursor: pointer;
 }
 
-.sidebar__nav-item:hover {
+.sidebar__nav-item:hover,
+.sidebar__nav-item-with-icon:hover {
     color: var(--primary-color-1);
 }
 

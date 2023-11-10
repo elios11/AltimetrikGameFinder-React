@@ -1,13 +1,14 @@
-import styles from './Layout.module.css';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+
+import GameDataModal from '@components/GameDataModal/GameDataModal';
+import MainSection from '@components/MainSection/MainSection';
+import SidebarNav from '@components/SidebarNav/SidebarNav';
 import { RequestsContextProvider } from '@context/RequestsContext';
 import { SingleColumnContextProvider } from '@context/SingleColumnContext';
 
-import MainSection from '@components/MainSection/MainSection';
-import SidebarNav from '@components/SidebarNav/SidebarNav';
 import Header from '../Header/Header';
-import GameDataModal from '@components/GameDataModal/GameDataModal';
+import styles from './Layout.module.css';
 
 export default function Layout() {
     const [title, setTitle] = useState();

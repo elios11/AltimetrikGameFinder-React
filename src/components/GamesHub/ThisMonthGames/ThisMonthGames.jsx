@@ -9,7 +9,7 @@ import updateTitle from '@utils/updateTitle';
 export default function ThisMonthGames() {
     const [complexSearch, setComplexSearch] = useState(null);
     const results = useComplexSearch(complexSearch);
-    const { closeSidebar, setModalGameId, setTitle, setSubtitle } = useOutletContext();
+    const { closeSidebar, setModalGameId, setTitle, setSubtitle, setColumnButtons } = useOutletContext();
     const { setResult } = useContext(RequestsContext);
 
     useEffect(() => {
@@ -22,6 +22,7 @@ export default function ThisMonthGames() {
         updateTitle('GameFinder | This month');
         setTitle('This month');
         setSubtitle('Games released in the last month');
+        setColumnButtons(true);
 
         const currentDate = new Date();
         const otherDate = new Date();

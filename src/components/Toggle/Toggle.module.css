@@ -33,7 +33,7 @@
     width: 1.8rem;
     left: 0.4rem;
     bottom: 0.2rem;
-    background-color: var(--neutral-color-5);
+    background-color: #ffffff;
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }

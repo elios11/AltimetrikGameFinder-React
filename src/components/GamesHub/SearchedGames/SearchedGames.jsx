@@ -11,7 +11,7 @@ export default function SearchedGames() {
     const [game, setGame] = useState(null);
     const results = useSearch(game);
     const { setResult } = useContext(RequestsContext);
-    const { setModalGameId, setTitle, setSubtitle } = useOutletContext();
+    const { setModalGameId, setTitle, setSubtitle, setColumnButtons } = useOutletContext();
 
     useEffect(() => {
         if (results) {
@@ -25,6 +25,7 @@ export default function SearchedGames() {
             updateTitle(`Game Finder | ${searchedGame}`);
             setTitle(`Results for ${searchedGame}`);
             setSubtitle(`Games releated to ${searchedGame}`);
+            setColumnButtons(true);
 
             setGame(searchedGame);
         }

@@ -16,4 +16,47 @@
     --neutral-color-3: #515151; /* Medium gray */
     --neutral-color-4: #939393; /* Light gray */
     --neutral-color-5: #ffffff; /* White */
+    --neutral-color-6: #303030; /* Semi-Dark gray */
+
+    /* Other colors */
+    --body-bg: #151515;
+    --fading-bottom: #000000;
+    --modal-bg-initial: rgba(48, 48, 48, 0);
+    --modal-bg-end: rgba(48, 48, 48, 1);
+    --label-bg: #ffffff;
+    --modal-text: #ffffff;
+    --primary-btn-color: #ffffff;
+    --back-modal-title: #ffffff;
+    --sidebar-bg: #2a2a2a;
+    --sidebar-line: #515151;
+    --icon: #ffffff;
+
+    /* Login colors */
+    --login-page-bg-img: url('@assets/login/bg_dark.png');
+    --login-card-bg: rgba(23, 23, 23, 0.8);
+    --social-media-color: #ffffff;
+}
+
+body.light {
+    /* Neutral Colors */
+    --neutral-color-1: #ffffff; /* White */
+    --neutral-color-2: #d9d9d9; /* Dark gray */
+    --neutral-color-5: #151515; /* Darkest gray */
+    --neutral-color-6: #ffffff; /* Semi-Dark gray */
+
+    /* Other colors */
+    --body-bg: #f0f0f0;
+    --fading-bottom: #f0f0f0;
+    --modal-bg-initial: rgba(212, 212, 212, 0);
+    --modal-bg-end: rgba(250, 250, 250, 1);
+    --modal-text: #1b1b1b;
+    --back-modal-title: #515151;
+    --sidebar-bg: #ffffff;
+    --sidebar-line: #e4e4e4;
+    --icon: #515151;
+
+    /* Login colors */
+    --login-page-bg-img: url('@assets/login/bg_light.png');
+    --login-card-bg: rgba(240, 240, 240, 0.8);
+    --social-media-color: var(--primary-color-1);
 }

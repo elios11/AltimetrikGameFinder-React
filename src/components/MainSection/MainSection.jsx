@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { MultipleColumnsBtn, SingleColumnBtn } from './Columns';
 import styles from './MainSection.module.css';
 
-export default function MainSection({ title, subtitle, columnButtons }) {
+export default function MainSection({ title, subtitle, columnButtons = true }) {
     return (
         <main className={styles['main-section']}>
             <h1 className={styles['main-section__title']}>{title}</h1>
