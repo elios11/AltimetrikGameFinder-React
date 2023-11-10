@@ -6,7 +6,7 @@ import fetchGames from '@api/fetchGames';
 import updateTitle from '@utils/updateTitle';
 
 export default function HomeGames() {
-    const { closeSidebar, setModalGameId, setTitle, setSubtitle } = useOutletContext();
+    const { closeSidebar, setModalGameId, setTitle, setSubtitle, setColumnButtons } = useOutletContext();
     const { setResult } = useContext(RequestsContext);
 
     /* Fetches games data and set the result to state */
@@ -14,6 +14,7 @@ export default function HomeGames() {
         updateTitle('GameFinder | Home');
         setTitle('New and trending');
         setSubtitle('Based on player counts and release date');
+        setColumnButtons(true);
 
         setResult({ loading: true, data: {}, error: null });
         fetchGames('https://rawg.io/api/games/')
