@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-
+import PropTypes from 'prop-types';
 import pageLogo from '@assets/brand/dark-logo.svg';
 import Sidebar from '@components/Sidebar/Sidebar';
 
@@ -8,9 +8,8 @@ import HamburgerMenuIcon from './HamburgerMenuIcon/HamburgerMenuIcon';
 import styles from './Header.module.css';
 import SearchBar from './SearchBar/SearchBar';
 
-export default function Header() {
+export default function Header({ isSidebarOpen, setIsSidebarOpen }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
     const [scrollData, setScrollData] = useState({ y: 0, lastY: 0 });
     const [hideHeader, setHideHeader] = useState(false);
@@ -92,3 +91,8 @@ export default function Header() {
         </nav>
     );
 }
+
+Header.propTypes = {
+    isSidebarOpen: PropTypes.bool,
+    setIsSidebarOpen: PropTypes.func,
+};

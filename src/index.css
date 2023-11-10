@@ -111,7 +111,8 @@ body {
     display: block;
 }
 
-.text-primary {
+.text-primary,
+a.active {
     color: var(--primary-color-1);
 }
 

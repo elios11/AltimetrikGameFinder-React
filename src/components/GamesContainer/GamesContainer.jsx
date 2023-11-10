@@ -1,6 +1,5 @@
 import { useContext, useEffect } from 'react';
 
-import fetchGames from '@api/fetchGames';
 import fetchGamesDescription from '@api/fetchGamesDescription';
 import Skeleton from '@components/Skeleton/Skeleton';
 import RequestsContext from '@context/RequestsContext';
@@ -11,17 +10,8 @@ import GameCard from './GameCard/GameCard';
 import styles from './gamesContainer.module.css';
 
 export default function GamesContainer({ setModalGameId }) {
-    const { result, setResult, gamesDescription, setGamesDescription } = useContext(RequestsContext);
+    const { result, gamesDescription, setGamesDescription } = useContext(RequestsContext);
     const { singleColumn } = useContext(SingleColumnContext);
-
-    /* Fetches games data and set the result to state */
-    useEffect(() => {
-        if (!result.loading) {
-            fetchGames('https://rawg.io/api/games/')
-                .then((result) => setResult(result))
-                .catch((err) => setResult(err));
-        }
-    }, []);
 
     /* Fetches games description and set the result to gamesDescription state */
     useEffect(() => {

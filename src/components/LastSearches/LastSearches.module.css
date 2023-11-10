@@ -1,36 +1,103 @@
-.latest_searches__container {
+.latest-searches {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.searched_item {
+.latest-searches__searched-items-container {
     display: flex;
     flex-direction: column;
-    margin-left: 330px;
-    margin-right: auto;
-    padding-left: 5vw;
-    margin-top: 60px;
-    margin-bottom: 5px;
+    margin-top: 6rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    gap: 1rem;
+    /* To center it adjusted to the gap of the icon and text */
+    margin-left: -1rem;
 }
 
-.searched_item > div {
+.latest-searches__searched-items-container > button {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 1rem;
 }
 
-.searched_item > div > p {
+.latest-searches__searched_item_icon:hover {
+    opacity: 0.8;
+}
+
+.latest-searches__searched_item_icon {
+    align-self: center;
+}
+
+.latest-searches__searched_item {
     color: var(--neutral-color-5);
+    font-size: 1.8rem;
 }
 
-.clear_searches__btn {
+.latest-searches__searched_item:hover {
+    color: var(--primary-color-1);
+    transition: color 0.1s;
+}
+
+.latest-searches__clear-search-btn {
     color: var(--neutral-color-5);
     background-color: var(--neutral-color-1);
     border: 1px solid var(--primary-color-1);
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1.92rem;
-    margin-top: 50px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    margin-top: 5rem;
     cursor: pointer;
+    transition: all 0.2s;
+}
+
+.latest-searches__clear-search-btn:hover {
+    border: 1px solid var(--secondary-color-1);
+    color: var(--neutral-color-1);
+    background-color: var(--secondary-color-1);
+}
+
+.latest-searches__feedback {
+    font-size: 2rem;
+    cursor: text;
+}
+
+@media (width >= 768px) {
+    .latest-searches__searched-items-container {
+        gap: 1.3rem;
+    }
+
+    .latest-searches__feedback,
+    .latest-searches__searched_item {
+        font-size: 2.2rem;
+    }
+
+    .latest-searches__searched_item_icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .latest-searches__clear-search-btn {
+        font-size: 1.8rem;
+    }
+}
+
+@media (width >= 1200px) {
+    .latest-searches__searched-items-container {
+        gap: 2rem;
+    }
+
+    .latest-searches__feedback,
+    .latest-searches__searched_item {
+        font-size: 2.2rem;
+    }
+
+    .latest-searches__clear-search-btn {
+        font-size: 2rem;
+    }
+
+    .latest-searches__searched_item_icon {
+        width: 3rem;
+        height: 3rem;
+    }
 }

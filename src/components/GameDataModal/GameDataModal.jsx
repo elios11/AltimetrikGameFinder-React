@@ -54,6 +54,7 @@ export default function GameDataModal({ isModalOpen, closeModal, openModal, setM
         closeModal();
         setModalGameId(null);
         setGameData(null);
+        setGameAssets(null);
         setShowingDescription(false);
     }
 

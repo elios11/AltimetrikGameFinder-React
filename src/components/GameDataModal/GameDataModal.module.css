@@ -47,6 +47,17 @@
     }
 }
 
+@media (min-width: 1024px) {
+    .dialog::-webkit-scrollbar-track {
+        border-top-right-radius: 0;
+    }
+
+    .dialog::-webkit-scrollbar-thumb {
+        border-top-right-radius: 0;
+        border-radius: 0;
+    }
+}
+
 @media (width >= 1200px) {
     .dialog {
         --background-img-height: 50rem;

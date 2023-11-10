@@ -1,26 +1,31 @@
 import PropTypes from 'prop-types';
 import styles from './SearchBar.module.css';
-import { useContext, useEffect, useRef, useState } from 'react';
-import RequestsContext from '@context/RequestsContext';
+import { useEffect, useRef, useState } from 'react';
 
 import clearSearchBtn from '@assets/icons/close-x-btn.svg';
 import searchBarIcon from '@assets/icons/search.svg';
 import useDebounce from '@hooks/useDebounce';
 import useOutsideClick from '@hooks/useOutsideClick';
-import useSearch from './useSearch';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 
 export default function SearchBar({ closeSearchBar, searchBarIconRef }) {
     const [search, setSearch] = useState(null);
     const searchBarRef = useRef(null);
     const debouncedSearch = useDebounce(search, 250);
-    const results = useSearch(debouncedSearch);
-    const { setResult } = useContext(RequestsContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if (results) {
-            setResult(results);
+        if (debouncedSearch) {
+            navigate({
+                pathname: 'search',
+                search: createSearchParams({
+                    game: debouncedSearch,
+                }).toString(),
+            });
+        } else if (debouncedSearch === '') {
+            navigate('/');
         }
-    }, [results]);
+    }, [debouncedSearch]);
 
     const handleSetSearch = (e) => {
         setSearch(e.target.value);

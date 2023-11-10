@@ -3,36 +3,32 @@ import { setCookie, getCookie } from '@utils/cookies';
 import fetchGames from '@api/fetchGames';
 
 /* Save search results to result context */
-export default function useSearch(debouncedSearch) {
+export default function useSearch(searchString) {
     const [result, setResult] = useState(null);
 
     useEffect(() => {
-        if (debouncedSearch !== null) {
-            if (debouncedSearch !== '' && debouncedSearch.trim().length === 0) {
+        if (searchString !== null) {
+            if (searchString !== '' && searchString.trim().length === 0) {
                 return;
             }
-            setResult({ loading: true, data: {} });
+            setResult({ loading: true, data: {}, error: null });
 
-            fetchGames('https://rawg.io/api/games/', debouncedSearch)
+            fetchGames('https://rawg.io/api/games/', searchString)
                 .then((result) => setResult(result))
                 .catch((e) => setResult(e));
 
-            if (debouncedSearch !== '') {
+            if (searchString !== '') {
                 const lastSearchesJson = getCookie('lastSearches');
-                const lastSearchesArray = lastSearchesJson ? JSON.parse(lastSearchesJson) : null;
+                const lastSearchesArray = lastSearchesJson ? JSON.parse(lastSearchesJson) : [];
 
-                if (lastSearchesJson) {
-                    const lastSearchesNewArray = [...lastSearchesArray, debouncedSearch];
-                    const lastSearchesNewJson = JSON.stringify(lastSearchesNewArray);
-                    setCookie('lastSearches', lastSearchesNewJson);
-                } else {
-                    const lastSearchesNewArray = [debouncedSearch];
-                    const lastSearchesNewJson = JSON.stringify(lastSearchesNewArray);
+                if (!lastSearchesArray.includes(searchString)) {
+                    lastSearchesArray.unshift(searchString);
+                    const lastSearchesNewJson = JSON.stringify(lastSearchesArray);
                     setCookie('lastSearches', lastSearchesNewJson);
                 }
             }
         }
-    }, [debouncedSearch]);
+    }, [searchString]);
 
     return result;
 }
