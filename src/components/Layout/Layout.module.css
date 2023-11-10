@@ -6,6 +6,14 @@
     padding: 0 1.6rem 4rem;
 }
 
+.main__body-content {
+    display: flex;
+}
+
+.body__sidebar {
+    display: none;
+}
+
 .main {
     margin-top: 7rem;
     margin-bottom: 3rem;
@@ -29,13 +37,33 @@
 }
 
 @media (width >= 768px) {
+    .body {
+        padding: 0 2.4rem 4rem;
+    }
+
     .main {
-        margin: 11.5rem 0.8rem 2.2rem 0.8rem;
+        margin-top: 11.5rem;
+        margin-bottom: 2.2rem;
     }
 }
 
 @media (width >= 1200px) {
+    .body {
+        padding: 0 4rem 4rem;
+    }
+
     .main {
-        margin: 11.5rem 2.4rem 2rem 2.4rem;
+        margin-top: 11.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .main__body-content {
+        gap: 4rem;
+    }
+
+    .body__sidebar {
+        display: block;
+        min-width: max-content;
+        width: 20rem;
     }
 }
