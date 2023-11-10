@@ -1,32 +1,37 @@
-import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { createSearchParams, useNavigate, useOutletContext } from 'react-router-dom';
 
 import clock from '@assets/icons/clock.svg';
-import Loader from '@components/Loader/Loader';
 import { getCookie, removeCookie } from '@utils/cookies';
-import RequestsContext from '@context/RequestsContext';
 import styles from './LastSearches.module.css';
-import useSearch from '../Header/SearchBar/useSearch';
+import updateTitle from '@utils/updateTitle';
 
 export default function LastSearches() {
     const navigate = useNavigate();
     const [lastSearches, setLastSearches] = useState([]);
     const [selectedGame, setSelectedGame] = useState(null);
-    const { setResult } = useContext(RequestsContext);
-    const results = useSearch(selectedGame);
+    const { setTitle, setSubtitle } = useOutletContext();
 
     useEffect(() => {
+        updateTitle('GameFinder | Last searches');
+        setTitle('Last searches');
+        setSubtitle("List of the games that you've searched for");
+
         const lastSearchesJson = getCookie('lastSearches');
         const lastSearches = lastSearchesJson ? JSON.parse(lastSearchesJson) : [];
         setLastSearches(lastSearches);
     }, []);
 
     useEffect(() => {
-        if (results && results?.data.results) {
-            setResult(results);
-            navigate('/', { state: { avoidFetch: true } });
+        if (selectedGame) {
+            navigate({
+                pathname: '/search',
+                search: createSearchParams({
+                    game: selectedGame,
+                }).toString(),
+            });
         }
-    }, [results]);
+    }, [selectedGame]);
 
     const searchGame = (searchString) => {
         setSelectedGame(searchString);
@@ -39,7 +44,6 @@ export default function LastSearches() {
 
     return (
         <div className={styles['latest-searches']}>
-            {results && results?.loading && <Loader />}
             <div className={styles['latest-searches__searched-items-container']}>
                 {lastSearches.length > 0 ? (
                     lastSearches.map((item, index) => (
