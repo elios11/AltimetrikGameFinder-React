@@ -1,15 +1,29 @@
-import { createContext, useContext, useState, useMemo } from 'react';
-
+import { createContext, useState, useMemo, useEffect } from 'react';
+import { getCookie } from '@utils/cookies';
 import PropTypes from 'prop-types';
 
-const ThemeContext = createContext();
-
-export const useTheme = () => {
-    return useContext(ThemeContext);
-};
+export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const darkModeFromCookie = getCookie('darkMode');
+    const [isDarkMode, setIsDarkMode] = useState(darkModeFromCookie ? JSON.parse(darkModeFromCookie) : true);
+
+    useEffect(() => {
+        if (getCookie('darkMode')) {
+            setIsDarkMode(JSON.parse(getCookie('darkMode')));
+            return;
+        }
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+        if (mq.matches) {
+            setIsDarkMode(true);
+        }
+
+        // This callback will fire if the perferred color scheme changes without a reload
+        mq.addEventListener('change', (evt) => {
+            setIsDarkMode(evt.matches);
+        });
+    }, []);
 
     const toggleTheme = () => {
         setIsDarkMode((prevMode) => !prevMode);

@@ -95,8 +95,9 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
     font-size: 1.6rem;
-    background-color: #131313;
+    background-color: var(--body-bg);
     color: var(--neutral-color-5);
+    transition: all 0.2s;
 }
 
 .overflow-hidden {
@@ -122,7 +123,7 @@ a.active {
 
 .primary-button {
     background-color: var(--primary-color-1);
-    color: var(--neutral-color-5);
+    color: var(--primary-btn-color);
     border-radius: 0.6rem;
     font-size: 1.8rem;
     padding: 1rem 1.8rem;

@@ -1,10 +1,10 @@
 .card {
     display: flex;
     flex-direction: column;
-    background-color: #303030;
+    background-color: var(--neutral-color-6);
     border-radius: 1.2rem;
 
-    color: #fff;
+    color: var(--neutral-color-5);
     min-width: 24rem;
     width: 90vw;
     min-height: 33.2rem;

@@ -4,7 +4,8 @@
 
 .social-media-login__button {
     background-color: transparent;
-    border: 2px solid var(--neutral-color-5);
+    border: 2px solid var(--social-media-color);
+    color: var(--social-media-color);
     font-weight: 700;
     font-size: 1.4rem;
     width: 100%;

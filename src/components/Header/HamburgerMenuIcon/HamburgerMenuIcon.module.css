@@ -7,7 +7,7 @@
 }
 
 .hamburger-menu-icon div {
-    background-color: white;
+    background-color: var(--icon);
     width: 100%;
     height: 2px;
     border-radius: 0.5rem;

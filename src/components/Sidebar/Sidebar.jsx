@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Sidebar.module.css';
 
-export default function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
+export default function Sidebar({ isSidebarOpen, setIsSidebarOpen, openLogoutModal }) {
     const sidebarClosedClass = isSidebarOpen ? '' : styles['closed'];
 
     return (
@@ -25,9 +25,15 @@ export default function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
                 <Toggle />
             </div>
             <div className={styles['sidebar__line-div']}></div>
-            <div className={styles['sidebar__logout']}>Logout</div>
+            <button className={styles['sidebar__logout']} onClick={openLogoutModal}>
+                Logout
+            </button>
         </div>
     );
 }
 
-Sidebar.propTypes = { isSidebarOpen: PropTypes.bool, setIsSidebarOpen: PropTypes.func };
+Sidebar.propTypes = {
+    isSidebarOpen: PropTypes.bool,
+    setIsSidebarOpen: PropTypes.func,
+    openLogoutModal: PropTypes.func,
+};

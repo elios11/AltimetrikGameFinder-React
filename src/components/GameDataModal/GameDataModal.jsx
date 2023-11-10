@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import fetchGameAssets from '@api/fetchGameAssets';
 import fetchGames from '@api/fetchGames';
 import Dialog from '@components/Dialog';
+import Loader from '@components/Loader/Loader';
 import RequestsContext from '@context/RequestsContext';
 import PropTypes from 'prop-types';
 
@@ -19,8 +20,8 @@ export default function GameDataModal({ isModalOpen, closeModal, openModal, setM
     const modalBackground = `
         linear-gradient(
             180deg,
-            rgba(48, 48, 48, 0),
-            rgba(48, 48, 48, 1) var(--background-img-height)
+            var(--modal-bg-initial),
+            var(--modal-bg-end) var(--background-img-height)
         ),
         url("${gameData?.background_image}"`;
 
@@ -68,27 +69,30 @@ export default function GameDataModal({ isModalOpen, closeModal, openModal, setM
 
     return (
         modalGameId && (
-            <Dialog
-                type="modal"
-                isModalOpen={isModalOpen}
-                onClose={onDialogClose}
-                customStyles={`${styles.dialog} ${showingDescription ? styles['show-description'] : ''}`}
-            >
-                {showingDescription ? (
-                    <GameDataModalBack
-                        gameData={gameData}
-                        closeModal={closeModal}
-                        setShowingDescription={setShowingDescription}
-                    />
-                ) : (
-                    <GameDataModalInfo
-                        gameData={gameData}
-                        gameAssets={gameAssets}
-                        closeModal={closeModal}
-                        setShowingDescription={setShowingDescription}
-                    />
-                )}
-            </Dialog>
+            <>
+                <Loader />
+                <Dialog
+                    type="modal"
+                    isModalOpen={isModalOpen}
+                    onClose={onDialogClose}
+                    customStyles={`${styles.dialog} ${showingDescription ? styles['show-description'] : ''}`}
+                >
+                    {showingDescription ? (
+                        <GameDataModalBack
+                            gameData={gameData}
+                            closeModal={closeModal}
+                            setShowingDescription={setShowingDescription}
+                        />
+                    ) : (
+                        <GameDataModalInfo
+                            gameData={gameData}
+                            gameAssets={gameAssets}
+                            closeModal={closeModal}
+                            setShowingDescription={setShowingDescription}
+                        />
+                    )}
+                </Dialog>
+            </>
         )
     );
 }
