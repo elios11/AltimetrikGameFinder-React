@@ -31,7 +31,7 @@
 
 .latest-searches__searched_item {
     color: var(--neutral-color-5);
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .latest-searches__searched_item:hover {
@@ -45,7 +45,7 @@
     border: 1px solid var(--primary-color-1);
     padding: 1rem;
     border-radius: 0.5rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-top: 5rem;
     cursor: pointer;
     transition: all 0.2s;
