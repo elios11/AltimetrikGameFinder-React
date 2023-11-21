@@ -51,7 +51,7 @@ Game Finder is a web application designed to provide users with an easy way to s
 
 -   Use **JSON Server Auth** to log into your new account.
 -   Use of _session token_ for authenticated created accounts.
-    -   Default account created has the email: **exampleemail@gmail.com** and the password **password123**.
+    -   Default account created has the email: **exampleemail@gmail.com** and the password **@Password123**.
     -   You are also welcome to log in with your own registered account.
 
 ![Login Page](./src/assets/doc-img/login.png)
