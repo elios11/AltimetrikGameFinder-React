@@ -7,7 +7,7 @@ import SingleColumnContext from '@context/SingleColumnContext';
 import PropTypes from 'prop-types';
 
 import GameCard from './GameCard/GameCard';
-import styles from './gamesContainer.module.css';
+import styles from './GamesContainer.module.css';
 
 export default function GamesContainer({ setModalGameId }) {
     const { result, gamesDescription, setGamesDescription } = useContext(RequestsContext);
