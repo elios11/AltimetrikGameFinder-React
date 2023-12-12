@@ -1,7 +1,13 @@
 export default async function fetchGames(url, searchQuery, page, gameId, gameParam, dates, ordering) {
     const apiKey = import.meta.env.VITE_API_KEY;
-    const corsProxy = import.meta.env.VITE_CORS_PROXY;
+    let corsProxy;
     const result = { loading: true, data: {}, error: null };
+
+    if (window.location.hostname === 'localhost' || window.location.origin === 'http://localhost:3000') {
+        corsProxy = import.meta.env.VITE_CORS_PROXY;
+    } else {
+        corsProxy = '';
+    }
 
     let route = `${corsProxy}${url}?key=${apiKey}`;
     if (gameId) {
