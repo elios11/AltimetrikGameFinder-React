@@ -27,7 +27,7 @@ const router = createBrowserRouter(
                 <Route path="/register" element={<Register />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
             </Route>
-            <Route element={<UseIsLoggedIn needAccess={true} />}>
+            <Route element={<UseIsLoggedIn needAccess={false} />}>
                 <Route path="/" element={<Layout />}>
                     <Route path="/" element={<HomeGames />} />
                     <Route path="last_searches" element={<LastSearches />} />
