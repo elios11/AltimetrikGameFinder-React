@@ -25,8 +25,6 @@
 -   [🧩 Modules](#modules)
 -   [🚀 Getting Started](#-getting-started)
 -   [🗺 Roadmap](#-roadmap)
--   [👏 Acknowledgments](#-acknowledgments)
-
 ---
 
 ## 📍 Overview
@@ -193,7 +191,3 @@ And you should be in! The app will run on http://localhost:5173/ by default.
 -   [x] ℹ️ Task 18: Implement a 'Register' page
 
 ---
-
-## 👏 Acknowledgments
-
--   ℹ️ The design and idea of this project was made by [Altimetrik](https://altimetrik.com/) for their Become a Front End Developer with Altimetrik program.
